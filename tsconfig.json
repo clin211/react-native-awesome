@@ -12,7 +12,8 @@
         ],
         "types": [
             "react-native",
-            "jest"
+            "jest",
+            "node"
         ],
         "moduleResolution": "node",
         "noEmit": true,
@@ -53,6 +54,10 @@
             ]
         }
     },
+    "include": [
+        "./src/*",
+        "./scripts/*"
+    ],
     "exclude": [
         "node_modules",
         "babel.config.js",

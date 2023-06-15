@@ -1,3 +1,4 @@
-export type RootStackParamList = {
+export type ScreenParams = {
     Home: undefined;
+    CardDetail: undefined;
 };

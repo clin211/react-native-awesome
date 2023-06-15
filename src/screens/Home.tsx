@@ -1,7 +1,17 @@
-import React from 'react';
-import { View, Text, StatusBar, ScrollView, StyleSheet, useColorScheme } from 'react-native';
+import React, { FC } from 'react';
+import {
+    View,
+    Text,
+    StatusBar,
+    ScrollView,
+    StyleSheet,
+    useColorScheme,
+    Button,
+} from 'react-native';
+import { NativeStackScreenProps } from '@react-navigation/native-stack';
+import { ScreenParams } from '@/types/navigate.type';
 
-const Home = () => {
+const Home: FC<NativeStackScreenProps<ScreenParams, 'Home'>> = ({ navigation }) => {
     const isDarkMode = useColorScheme() === 'dark';
 
     return (
@@ -14,6 +24,7 @@ const Home = () => {
             <ScrollView style={styles.container}>
                 <View style={styles.first}>
                     <Text style={styles.text}>content</Text>
+                    <Button title="card detail" onPress={() => navigation.navigate('CardDetail')} />
                 </View>
             </ScrollView>
         </View>
