@@ -9,7 +9,8 @@
         "start": "react-native start",
         "test": "jest",
         "format": "prettier --check ./src",
-        "screen": "npx ts-node ./scripts/create-screen.ts"
+        "screen": "ts-node ./scripts/create-screen.ts",
+        "assets": "npx react-native-asset"
     },
     "dependencies": {
         "@react-navigation/native": "^6.1.6",
@@ -42,6 +43,7 @@
         "lint-staged": "^13.2.2",
         "metro-react-native-babel-preset": "0.73.9",
         "prettier": "^2.4.1",
+        "react-native-asset": "^2.1.1",
         "react-test-renderer": "18.2.0",
         "ts-node": "^10.9.1",
         "typescript": "4.8.4"

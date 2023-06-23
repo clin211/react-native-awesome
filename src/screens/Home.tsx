@@ -11,6 +11,16 @@ import {
 import { NativeStackScreenProps } from '@react-navigation/native-stack';
 import { ScreenParams } from '@/types/navigate.type';
 
+const fonts = [
+    'Manrope-Light',
+    'Manrope-ExtraLight',
+    'Manrope-Regular',
+    'Manrope-Medium',
+    'Manrope-SemiBold',
+    'Manrope-Bold',
+    'Manrope-ExtraBold',
+];
+const content = ['100', '200', '300', '400', '500', '600', '700', '800', '900'];
 const Home: FC<NativeStackScreenProps<ScreenParams, 'Home'>> = ({ navigation }) => {
     const isDarkMode = useColorScheme() === 'dark';
 
@@ -23,7 +33,40 @@ const Home: FC<NativeStackScreenProps<ScreenParams, 'Home'>> = ({ navigation }) 
             />
             <ScrollView style={styles.container}>
                 <View style={styles.first}>
-                    <Text style={styles.text}>content</Text>
+                    {content.map((item, index) => {
+                        return (
+                            <Text
+                                style={[
+                                    styles.text,
+                                    styles.montserrat,
+                                    { fontWeight: item as any },
+                                ]}
+                                key={index}
+                            >
+                                Whereas recognition of the inherent dignity 1234567890
+                            </Text>
+                        );
+                    })}
+                    <View style={{ height: 20 }}></View>
+                    {content.map(item => {
+                        return (
+                            <Text
+                                style={[styles.text, styles.manrope, { fontWeight: item as any }]}
+                                key={item}
+                            >
+                                <Text style={styles.title}>{item}:</Text>
+                                Whereas recognition of the inherent dignity 1234567890
+                            </Text>
+                        );
+                    })}
+                    {fonts.map(item => {
+                        return (
+                            <Text style={[styles.text, { fontFamily: item }]} key={item}>
+                                <Text style={styles.title}>{item}:</Text>
+                                Whereas recognition of the inherent dignity 1234567890
+                            </Text>
+                        );
+                    })}
                     <Button title="card detail" onPress={() => navigation.navigate('CardDetail')} />
                 </View>
             </ScrollView>
@@ -40,11 +83,24 @@ const styles = StyleSheet.create({
         borderWidth: 1,
         borderColor: 'white',
     },
+    title: {
+        fontSize: 24,
+        lineHeight: 24 * 1.2,
+        color: '#333',
+    },
     text: {
-        fontSize: 12,
-        fontWeight: '700',
-        lineHeight: 16,
-        color: '#ff4500',
+        fontSize: 18,
+        // fontWeight: '700',
+        lineHeight: 24,
+        color: 'rgb(32, 33, 36)',
+        marginVertical: 8,
+        marginHorizontal: 24,
+    },
+    montserrat: {
+        fontFamily: 'Montserrat',
+    },
+    manrope: {
+        fontFamily: 'Manrope',
     },
 });
 
