@@ -5,6 +5,7 @@ import {
   StyleSheet,
   Text,
   TextInput,
+  ToastAndroid,
   TouchableOpacity,
   View,
 } from 'react-native';
@@ -16,7 +17,11 @@ import React, {
 } from 'react';
 import Close from './Close';
 import {family} from '../theme';
+import {getUUID} from '../utils';
+import {load, remove, save} from '../utils/storage';
+import {ACCOUNT_LIST} from '../utils/constant';
 
+const types = ['games', 'platform', 'bank cards', 'others'];
 const AddAccount: ForwardRefRenderFunction<{}, any> = (props, ref) => {
   const [visible, setVisible] = useState(false);
   const [tab, setTab] = useState(0);
@@ -106,7 +111,6 @@ const AddAccount: ForwardRefRenderFunction<{}, any> = (props, ref) => {
       },
     });
 
-    const types = ['games', 'platform', 'bank cards', 'others'];
     return (
       <View style={styles.layout}>
         {types.map((item, index) => {
@@ -156,6 +160,7 @@ const AddAccount: ForwardRefRenderFunction<{}, any> = (props, ref) => {
       />
     );
   };
+
   const renderAccount = () => {
     const styles = StyleSheet.create({
       input: {
@@ -179,6 +184,7 @@ const AddAccount: ForwardRefRenderFunction<{}, any> = (props, ref) => {
       />
     );
   };
+
   const renderPassword = () => {
     const styles = StyleSheet.create({
       input: {
@@ -202,7 +208,29 @@ const AddAccount: ForwardRefRenderFunction<{}, any> = (props, ref) => {
       />
     );
   };
+
   const renderButton = () => {
+    const handleOnPressSave = async () => {
+      const id = getUUID();
+      const newAccount = {
+        id,
+        type: types[tab],
+        name,
+        account,
+        password,
+      };
+      if (!name || !account || !password) {
+        return;
+      }
+      const data = await load(ACCOUNT_LIST);
+      const list = data ? JSON.parse(data) : [];
+      list.push(newAccount);
+      await save(ACCOUNT_LIST, list);
+      hide();
+      setName('');
+      setAccount('');
+      setPassword('');
+    };
     const styles = StyleSheet.create({
       content: {
         alignItems: 'center',
@@ -227,7 +255,7 @@ const AddAccount: ForwardRefRenderFunction<{}, any> = (props, ref) => {
     });
     return (
       <View style={styles.content}>
-        <TouchableOpacity style={styles.saveBox}>
+        <TouchableOpacity style={styles.saveBox} onPress={handleOnPressSave}>
           <Text style={styles['save-text']}>save</Text>
         </TouchableOpacity>
       </View>
