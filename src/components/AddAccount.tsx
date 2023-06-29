@@ -5,7 +5,6 @@ import {
   StyleSheet,
   Text,
   TextInput,
-  ToastAndroid,
   TouchableOpacity,
   View,
 } from 'react-native';
@@ -18,11 +17,14 @@ import React, {
 import Close from './Close';
 import {family} from '../theme';
 import {getUUID} from '../utils';
-import {load, remove, save} from '../utils/storage';
+import {load, save} from '../utils/storage';
 import {ACCOUNT_LIST} from '../utils/constant';
 
 const types = ['games', 'platform', 'bank cards', 'others'];
-const AddAccount: ForwardRefRenderFunction<{}, any> = (props, ref) => {
+const AddAccount: ForwardRefRenderFunction<{}, {onSave: () => void}> = (
+  props,
+  ref,
+) => {
   const [visible, setVisible] = useState(false);
   const [tab, setTab] = useState(0);
   const [name, setName] = useState('');
@@ -226,6 +228,7 @@ const AddAccount: ForwardRefRenderFunction<{}, any> = (props, ref) => {
       const list = data ? JSON.parse(data) : [];
       list.push(newAccount);
       await save(ACCOUNT_LIST, list);
+      props?.onSave?.();
       hide();
       setName('');
       setAccount('');
