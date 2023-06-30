@@ -19,19 +19,36 @@ import {family} from '../theme';
 import {getUUID} from '../utils';
 import {load, save} from '../utils/storage';
 import {ACCOUNT_LIST} from '../utils/constant';
+import {AccountGroup, AccountType} from '../types/account';
 
-const types = ['games', 'platform', 'bank cards', 'others'];
+const types: AccountType[] = ['games', 'platform', 'bank cards', 'others'];
 const AddAccount: ForwardRefRenderFunction<{}, {onSave: () => void}> = (
   props,
   ref,
 ) => {
+  const [isModify, setIsModify] = useState(false);
   const [visible, setVisible] = useState(false);
   const [tab, setTab] = useState(0);
+  const [id, setId] = useState('');
   const [name, setName] = useState('');
   const [account, setAccount] = useState('');
   const [password, setPassword] = useState('');
 
-  const show = () => setVisible(true);
+  const show = (data?: AccountGroup) => {
+    setVisible(true);
+    if (data) {
+      setName(data.name);
+      setAccount(data.account);
+      setPassword(data.password);
+    } else {
+      setTab(0);
+      setId('');
+      setIsModify(false);
+      setName('');
+      setAccount('');
+      setPassword('');
+    }
+  };
   const hide = () => setVisible(false);
 
   useImperativeHandle(ref, () => {
@@ -65,7 +82,7 @@ const AddAccount: ForwardRefRenderFunction<{}, {onSave: () => void}> = (
     });
     return (
       <View style={styles.layout}>
-        <Text style={styles.title}>add account</Text>
+        <Text style={styles.title}>{isModify ? 'modify' : 'add'} account</Text>
         <View style={styles.close}>
           <Close size={20} color="#333" onPress={hide} />
         </View>
@@ -213,9 +230,8 @@ const AddAccount: ForwardRefRenderFunction<{}, {onSave: () => void}> = (
 
   const renderButton = () => {
     const handleOnPressSave = async () => {
-      const id = getUUID();
       const newAccount = {
-        id,
+        id: id || getUUID(),
         type: types[tab],
         name,
         account,
@@ -226,13 +242,21 @@ const AddAccount: ForwardRefRenderFunction<{}, {onSave: () => void}> = (
       }
       const data = await load(ACCOUNT_LIST);
       const list = data ? JSON.parse(data) : [];
-      list.push(newAccount);
+      if (isModify) {
+        list.map((item: AccountGroup) => {
+          if (item.id === id) {
+            item.name = name;
+            item.type = types[tab];
+            item.account = account;
+            item.password = password;
+          }
+        });
+      } else {
+        list.push(newAccount);
+      }
       await save(ACCOUNT_LIST, list);
       props?.onSave?.();
       hide();
-      setName('');
-      setAccount('');
-      setPassword('');
     };
     const styles = StyleSheet.create({
       content: {

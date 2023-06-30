@@ -1,16 +1,18 @@
 import {
+  Alert,
   Image,
   LayoutAnimation,
   SectionList,
   StyleSheet,
+  Switch,
   Text,
   TouchableOpacity,
   View,
 } from 'react-native';
-import React, {useEffect, useMemo, useRef, useState} from 'react';
+import React, {useEffect, useRef, useState} from 'react';
 import {family} from '../theme';
 import AddAccount from '../components/AddAccount';
-import {load} from '../utils/storage';
+import {load, save} from '../utils/storage';
 import {ACCOUNT_LIST} from '../utils/constant';
 import {
   AccountGroup,
@@ -29,17 +31,11 @@ const icons: Icons & {arrow: string} = {
 };
 
 const Home = () => {
+  const [hidePassword, setHidePassword] = useState(false);
   const [sectionState, setSectionState] = useState<SectionState>();
+  const [originData, setOriginData] = useState<AccountGroup[]>([]);
   const [list, setList] = useState<AccountList[]>([]);
   const addAccountRef = useRef(null);
-
-  const renderTitle = useMemo(() => {
-    return (
-      <View style={styles['title-box']}>
-        <Text style={styles['title-text']}>Account Manage</Text>
-      </View>
-    );
-  }, []);
 
   const handleOnPressArrow = (type: AccountType) => {
     const newSectionState = {...sectionState};
@@ -47,6 +43,7 @@ const Home = () => {
     LayoutAnimation.easeInEaseOut();
     setSectionState(newSectionState as any);
   };
+
   const loadData = async () => {
     const result = await load(ACCOUNT_LIST);
     if (result) {
@@ -64,11 +61,49 @@ const Home = () => {
         data,
       }));
 
+      LayoutAnimation.easeInEaseOut();
       setList(content as any);
       const sections = {};
       content.map(item => ((sections as any)[item.type] = true));
       setSectionState(sections as SectionState);
+      setOriginData(accounts);
     }
+  };
+
+  const handleDelete = (
+    item: AccountGroup,
+    type: AccountType,
+    index: number,
+  ) => {
+    Alert.alert(
+      'Tips',
+      `Are you sure you want to delete your ${item.name} account?`,
+      [
+        // @ts-ignore
+        {text: 'Cancel', onPress: addAccountRef.current.hide},
+        {
+          text: 'Sure',
+          onPress: () => {
+            const newList = [...list];
+            newList.map(l => {
+              if (l.type === type) {
+                l.data = l.data.filter((_, i) => i !== index);
+              }
+            });
+            setList(newList);
+            save(
+              ACCOUNT_LIST,
+              originData.filter(origin => origin.id !== item.id),
+            );
+          },
+        },
+      ],
+    );
+  };
+
+  const handleShowModal = (data?: AccountGroup) => {
+    // @ts-ignore
+    addAccountRef.current?.show(data);
   };
 
   useEffect(() => {
@@ -77,7 +112,14 @@ const Home = () => {
 
   return (
     <View style={styles.container}>
-      {renderTitle}
+      <View style={styles['title-box']}>
+        <Text style={styles['title-text']}>Account Manage</Text>
+        <Switch
+          style={styles.switch}
+          value={hidePassword}
+          onValueChange={setHidePassword}
+        />
+      </View>
 
       <SectionList
         style={styles.list}
@@ -119,19 +161,24 @@ const Home = () => {
           if (!sectionState?.[section.type]) {
             return null;
           }
+          if (section.data.length <= 0) {
+            return null;
+          }
           const isLast = index + 1 === section.data.length;
           return (
-            <View
+            <TouchableOpacity
               key={index}
-              style={[styles['item-row'], isLast && styles['last-item']]}>
+              style={[styles['item-row'], isLast && styles['last-item']]}
+              onPress={() => handleShowModal(item)}
+              onLongPress={() => handleDelete(item, section.type, index)}>
               <Text style={styles['item-name']}>{item.name}</Text>
               <View style={styles['item-info']}>
                 <Text style={styles['item-text']}>account: {item.account}</Text>
                 <Text style={styles['item-text']}>
-                  password: {item.password}
+                  password: {hidePassword ? '******' : item.password}
                 </Text>
               </View>
-            </View>
+            </TouchableOpacity>
           );
         }}
       />
@@ -139,10 +186,7 @@ const Home = () => {
       <TouchableOpacity
         style={styles.new}
         activeOpacity={0.5}
-        onPress={() => {
-          // @ts-ignore
-          addAccountRef.current.show();
-        }}>
+        onPress={() => handleShowModal()}>
         <Text style={styles['new-text']}>new</Text>
       </TouchableOpacity>
 
@@ -161,6 +205,7 @@ const styles = StyleSheet.create({
   'title-box': {
     height: 44,
     width: '100%',
+    flexDirection: 'row',
     alignItems: 'center',
     justifyContent: 'center',
     backgroundColor: '#fff',
@@ -171,6 +216,10 @@ const styles = StyleSheet.create({
     lineHeight: 24,
     fontWeight: 'bold',
     fontFamily: family.Bold,
+  },
+  switch: {
+    position: 'absolute',
+    right: 16,
   },
   new: {
     position: 'absolute',
