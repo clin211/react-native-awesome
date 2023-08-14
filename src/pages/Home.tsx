@@ -14,6 +14,9 @@ const Home: FC<NativeStackScreenProps<ScreenParams, 'Home'>> = ({
       <Pressable onPress={() => navigation.push('Detail')}>
         <Text style={styles.title}>Press</Text>
       </Pressable>
+      <Pressable onPress={() => navigation.push('DirectPurchase')}>
+        <Text style={styles.title}>Direct Purchase</Text>
+      </Pressable>
     </View>
   );
 };

@@ -3,12 +3,13 @@ import React, {useEffect, useMemo} from 'react';
 import {Platform, StatusBar} from 'react-native';
 import SplashScreen from 'react-native-splash-screen';
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
-import theme from './src/theme/colors';
 import Home from './src/pages/Home';
 import Detail from './src/pages/Detail';
 import ScreenParams from './src/types/navigation';
 import useMakeStyle from './src/hooks/useMakeStyle';
 import useStyles from './src/assets/styles/pages/root';
+import theme from './src/theme';
+import DirectPurchase from './src/pages/DirectPurchase';
 
 const Stack = createNativeStackNavigator<ScreenParams>();
 
@@ -53,6 +54,7 @@ function App(): JSX.Element {
           options={{headerShown: false}}
         />
         <Stack.Screen component={Detail} name="Detail" />
+        <Stack.Screen component={DirectPurchase} name="DirectPurchase" />
       </Stack.Navigator>
     </NavigationContainer>
   );
