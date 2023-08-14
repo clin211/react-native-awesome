@@ -11,7 +11,7 @@ const light = {
     text: '#000',
     border: '#ccc',
     notification: '#000',
-    headline: 'rgba(0, 0, 0 , 0.8)',
+    headline: 'rgba(0, 0, 0, 0.8)',
   },
 };
 
@@ -25,7 +25,7 @@ const dark = {
     text: '#fff',
     border: '#ccc',
     notification: '#fff',
-    headline: 'rgba(255, 255, 255 , 0.8)',
+    headline: 'rgba(255, 255, 255, 0.8)',
   },
 };
 
