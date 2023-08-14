@@ -6,11 +6,12 @@ const light = {
   colors: {
     ...DefaultTheme.colors,
     primary: '#ff4500',
-    background: '#fff',
+    background: '#f7f7f7',
     card: '#fff',
     text: '#000',
     border: '#ccc',
     notification: '#000',
+    headline: 'rgba(0, 0, 0 , 0.8)',
   },
 };
 
@@ -19,11 +20,12 @@ const dark = {
   colors: {
     ...DarkTheme.colors,
     primary: '#00BAFF',
-    background: '#000',
+    background: '#171B1C',
     card: '#000',
     text: '#fff',
     border: '#ccc',
     notification: '#fff',
+    headline: 'rgba(255, 255, 255 , 0.8)',
   },
 };
 

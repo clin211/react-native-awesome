@@ -1,26 +1,21 @@
-import React, {useMemo} from 'react';
-import {View, Text, StyleSheet, useColorScheme} from 'react-native';
-import {dark, light, ThemeType} from '../theme/colors';
+import React, {FC} from 'react';
+import {View, Text, Pressable} from 'react-native';
+import ScreenParams from '../types/navigation';
+import {NativeStackScreenProps} from '@react-navigation/native-stack';
+import useStyles from '../assets/styles/pages/home';
 
-const Home = () => {
-  const mode = useColorScheme() || 'light';
-  const styles = useMemo(
-    () => styling(mode === 'light' ? light : dark),
-    [mode],
-  );
+const Home: FC<NativeStackScreenProps<ScreenParams, 'Home'>> = ({
+  navigation,
+}) => {
+  const styles = useStyles();
   return (
     <View style={styles.container}>
-      <Text>Home</Text>
+      <Text style={styles.title}>Home</Text>
+      <Pressable onPress={() => navigation.push('Detail')}>
+        <Text style={styles.title}>Press</Text>
+      </Pressable>
     </View>
   );
 };
-
-const styling = (theme: ThemeType) =>
-  StyleSheet.create({
-    container: {
-      flex: 1,
-      backgroundColor: theme.colors.primary,
-    },
-  });
 
 export default Home;
