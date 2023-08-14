@@ -1,8 +1,9 @@
 import React, {FC} from 'react';
-import {View, Text, Pressable, StyleSheet} from 'react-native';
+import {View, Text} from 'react-native';
 import {NativeStackScreenProps} from '@react-navigation/native-stack';
 import ScreenParams from '../types/navigation';
-import useMakeStyle from '../hooks/useMakeStyle';
+import Touchable from '../components/button';
+import useStyles from '../assets/styles/pages/detail';
 
 const Detail: FC<NativeStackScreenProps<ScreenParams, 'Detail'>> = ({
   navigation,
@@ -10,31 +11,19 @@ const Detail: FC<NativeStackScreenProps<ScreenParams, 'Detail'>> = ({
   const styles = useStyles();
 
   const handleOnPress = () => {
-    navigation.push('Home');
+    navigation.goBack();
   };
 
   return (
     <View style={styles.container}>
       <Text style={styles.text}>Detail</Text>
-      <Pressable>
-        <Text onPress={handleOnPress}>home</Text>
-      </Pressable>
+      <Touchable>
+        <Text onPress={handleOnPress} style={styles.text}>
+          home
+        </Text>
+      </Touchable>
     </View>
   );
 };
 
-const useStyles = () => {
-  const {theme} = useMakeStyle();
-  return StyleSheet.create({
-    container: {
-      flex: 1,
-      backgroundColor: theme.colors.background,
-    },
-    text: {
-      fontSize: 20,
-      lineHeight: 24,
-      color: theme.colors.text,
-    },
-  });
-};
 export default Detail;
