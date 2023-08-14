@@ -10,6 +10,7 @@ import useMakeStyle from './src/hooks/useMakeStyle';
 import useStyles from './src/assets/styles/pages/root';
 import theme from './src/theme';
 import DirectPurchase from './src/pages/DirectPurchase';
+import Icons from './src/pages/Icons';
 
 const Stack = createNativeStackNavigator<ScreenParams>();
 
@@ -55,6 +56,7 @@ function App(): JSX.Element {
         />
         <Stack.Screen component={Detail} name="Detail" />
         <Stack.Screen component={DirectPurchase} name="DirectPurchase" />
+        <Stack.Screen component={Icons} name="Icons" />
       </Stack.Navigator>
     </NavigationContainer>
   );

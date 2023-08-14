@@ -3,7 +3,6 @@ import {View, Text, Pressable} from 'react-native';
 import ScreenParams from '../types/navigation';
 import {NativeStackScreenProps} from '@react-navigation/native-stack';
 import useStyles from '../assets/styles/pages/home';
-
 const Home: FC<NativeStackScreenProps<ScreenParams, 'Home'>> = ({
   navigation,
 }) => {
@@ -16,6 +15,9 @@ const Home: FC<NativeStackScreenProps<ScreenParams, 'Home'>> = ({
       </Pressable>
       <Pressable onPress={() => navigation.push('DirectPurchase')}>
         <Text style={styles.title}>Direct Purchase</Text>
+      </Pressable>
+      <Pressable onPress={() => navigation.push('Icons')}>
+        <Text style={styles.title}>Icons</Text>
       </Pressable>
     </View>
   );
