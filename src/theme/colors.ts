@@ -12,6 +12,7 @@ const light = {
     border: '#ccc',
     notification: '#000',
     headline: 'rgba(0, 0, 0, 0.8)',
+    transparent: 'rgba(0, 0, 0, 0)',
   },
 };
 
@@ -26,6 +27,7 @@ const dark = {
     border: '#ccc',
     notification: '#fff',
     headline: 'rgba(255, 255, 255, 0.8)',
+    transparent: 'rgba(0, 0, 0, 0)',
   },
 };
 
