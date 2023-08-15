@@ -1,96 +1,95 @@
 import React, {FC} from 'react';
 import {Pressable, PressableProps, ViewStyle} from 'react-native';
 import {SvgProps} from 'react-native-svg';
-import useMakeStyle from '../../hooks/useMakeStyle';
-import AccountWidget from '../../assets/images/icons/account.svg';
-import AddCartWidget from '../../assets/images/icons/add-cart.svg';
-import AddWidget from '../../assets/images/icons/add.svg';
-import ArrowBackWidget from '../../assets/images/icons/arrow-back.svg';
-import ArrowDownWidget from '../../assets/images/icons/arrow-down.svg';
-import ArrowForwardWidget from '../../assets/images/icons/arrow-forward.svg';
-import ArrowLeftWidget from '../../assets/images/icons/arrow-left.svg';
-import ArrowRightWidget from '../../assets/images/icons/arrow-right.svg';
-import ArrowUpWidget from '../../assets/images/icons/arrow-up.svg';
-import CameraFillWidget from '../../assets/images/icons/camera-fill.svg';
-import CameraWidget from '../../assets/images/icons/camera.svg';
-import CardWidget from '../../assets/images/icons/card.svg';
-import CheckCircleWidget from '../../assets/images/icons/check-circle.svg';
-import CheckFillWidget from '../../assets/images/icons/check-fill.svg';
-import CheckOutlineWidget from '../../assets/images/icons/check-outline.svg';
-import CheckboxFillWidget from '../../assets/images/icons/checkbox-fill.svg';
-import CheckboxWidget from '../../assets/images/icons/checkbox.svg';
-import ClearWidget from '../../assets/images/icons/clear.svg';
-import CodeWidget from '../../assets/images/icons/code.svg';
-import ConnectWidget from '../../assets/images/icons/connect.svg';
-import CopyWidget from '../../assets/images/icons/copy.svg';
-import CountdownWidget from '../../assets/images/icons/countdown.svg';
-import CouponWidget from '../../assets/images/icons/coupon.svg';
-import CurrencyWidget from '../../assets/images/icons/currency.svg';
-import DeleteAccountWidget from '../../assets/images/icons/delete-account.svg';
-import DeleteFillWidget from '../../assets/images/icons/delete-fill.svg';
-import DeleteForeverWidget from '../../assets/images/icons/delete-forever.svg';
-import DeleteWidget from '../../assets/images/icons/delete.svg';
-import DescriptionWidget from '../../assets/images/icons/description.svg';
-import DisableWidget from '../../assets/images/icons/disable.svg';
-import DoneWidget from '../../assets/images/icons/done.svg';
-import EditWidget from '../../assets/images/icons/edit.svg';
-import Edit2Widget from '../../assets/images/icons/edit2.svg';
-import EmailWidget from '../../assets/images/icons/email.svg';
-import ErrorWidget from '../../assets/images/icons/error.svg';
-import FavoriteFillWidget from '../../assets/images/icons/favorite-fill.svg';
-import FavoriteWidget from '../../assets/images/icons/favorite.svg';
-import FlagFillWidget from '../../assets/images/icons/flag-fill.svg';
-import FlagWidget from '../../assets/images/icons/flag.svg';
-import ForbidWidget from '../../assets/images/icons/forbid.svg';
-import Forbid2Widget from '../../assets/images/icons/forbid2.svg';
-import GTranslateWidget from '../../assets/images/icons/g-translate.svg';
-import GiftWidget from '../../assets/images/icons/gift.svg';
-import GlobalWidget from '../../assets/images/icons/global.svg';
-import HelpFillWidget from '../../assets/images/icons/help-fill.svg';
-import HelpWidget from '../../assets/images/icons/help.svg';
-import ImageFillWidget from '../../assets/images/icons/image-fill.svg';
-import ImageWidget from '../../assets/images/icons/image.svg';
-import InfoFillWidget from '../../assets/images/icons/info-fill.svg';
-import InfoWidget from '../../assets/images/icons/info.svg';
-import InstantWidget from '../../assets/images/icons/instant.svg';
-import LinkWidget from '../../assets/images/icons/link.svg';
-import ListWidget from '../../assets/images/icons/list.svg';
-import LivechatWidget from '../../assets/images/icons/livechat.svg';
-import LocalPayWidget from '../../assets/images/icons/local-pay.svg';
-import LocationWidget from '../../assets/images/icons/location.svg';
-import LogoutWidget from '../../assets/images/icons/logout.svg';
-import MarkEmailWidget from '../../assets/images/icons/mark-email.svg';
-import MinusWidget from '../../assets/images/icons/minus.svg';
-import MoneyWidget from '../../assets/images/icons/money.svg';
-import MoreHWidget from '../../assets/images/icons/more-h.svg';
-import MoreVWidget from '../../assets/images/icons/more-v.svg';
-import OfflineFillWidget from '../../assets/images/icons/offline-fill.svg';
-import OpenWidget from '../../assets/images/icons/open.svg';
-import OrderListWidget from '../../assets/images/icons/order-list.svg';
-import PasswordFillWidget from '../../assets/images/icons/password-fill.svg';
-import PasswordWidget from '../../assets/images/icons/password.svg';
-import PhoneWidget from '../../assets/images/icons/phone.svg';
-import QuestionWidget from '../../assets/images/icons/question.svg';
-import ReadWidget from '../../assets/images/icons/read.svg';
-import RefreshWidget from '../../assets/images/icons/refresh.svg';
-import ReplyWidget from '../../assets/images/icons/reply.svg';
-import SaveWidget from '../../assets/images/icons/save.svg';
-import SearchWidget from '../../assets/images/icons/search.svg';
-import SendWidget from '../../assets/images/icons/send.svg';
-import SettingsFillWidget from '../../assets/images/icons/settings-fill.svg';
-import SettingsWidget from '../../assets/images/icons/settings.svg';
-import ShareWidget from '../../assets/images/icons/share.svg';
-import StarBorderWidget from '../../assets/images/icons/star-border.svg';
-import StarFillWidget from '../../assets/images/icons/star-fill.svg';
-import StarWidget from '../../assets/images/icons/star.svg';
-import TopupWidget from '../../assets/images/icons/topup.svg';
-import TranslateWidget from '../../assets/images/icons/translate.svg';
-import VerifiedWidget from '../../assets/images/icons/verified.svg';
-import VisibilityOffWidget from '../../assets/images/icons/visibility-off.svg';
-import VisibilityWidget from '../../assets/images/icons/visibility.svg';
-import WaitWidget from '../../assets/images/icons/wait.svg';
-import WarningFillWidget from '../../assets/images/icons/warning-fill.svg';
-
+import useMakeStyle from '@/hooks/useMakeStyle';
+import AccountWidget from '@/assets/images/icons/account.svg';
+import AddCartWidget from '@/assets/images/icons/add-cart.svg';
+import AddWidget from '@/assets/images/icons/add.svg';
+import ArrowBackWidget from '@/assets/images/icons/arrow-back.svg';
+import ArrowDownWidget from '@/assets/images/icons/arrow-down.svg';
+import ArrowForwardWidget from '@/assets/images/icons/arrow-forward.svg';
+import ArrowLeftWidget from '@/assets/images/icons/arrow-left.svg';
+import ArrowRightWidget from '@/assets/images/icons/arrow-right.svg';
+import ArrowUpWidget from '@/assets/images/icons/arrow-up.svg';
+import CameraFillWidget from '@/assets/images/icons/camera-fill.svg';
+import CameraWidget from '@/assets/images/icons/camera.svg';
+import CardWidget from '@/assets/images/icons/card.svg';
+import CheckCircleWidget from '@/assets/images/icons/check-circle.svg';
+import CheckFillWidget from '@/assets/images/icons/check-fill.svg';
+import CheckOutlineWidget from '@/assets/images/icons/check-outline.svg';
+import CheckboxFillWidget from '@/assets/images/icons/checkbox-fill.svg';
+import CheckboxWidget from '@/assets/images/icons/checkbox.svg';
+import ClearWidget from '@/assets/images/icons/clear.svg';
+import CodeWidget from '@/assets/images/icons/code.svg';
+import ConnectWidget from '@/assets/images/icons/connect.svg';
+import CopyWidget from '@/assets/images/icons/copy.svg';
+import CountdownWidget from '@/assets/images/icons/countdown.svg';
+import CouponWidget from '@/assets/images/icons/coupon.svg';
+import CurrencyWidget from '@/assets/images/icons/currency.svg';
+import DeleteAccountWidget from '@/assets/images/icons/delete-account.svg';
+import DeleteFillWidget from '@/assets/images/icons/delete-fill.svg';
+import DeleteForeverWidget from '@/assets/images/icons/delete-forever.svg';
+import DeleteWidget from '@/assets/images/icons/delete.svg';
+import DescriptionWidget from '@/assets/images/icons/description.svg';
+import DisableWidget from '@/assets/images/icons/disable.svg';
+import DoneWidget from '@/assets/images/icons/done.svg';
+import EditWidget from '@/assets/images/icons/edit.svg';
+import Edit2Widget from '@/assets/images/icons/edit2.svg';
+import EmailWidget from '@/assets/images/icons/email.svg';
+import ErrorWidget from '@/assets/images/icons/error.svg';
+import FavoriteFillWidget from '@/assets/images/icons/favorite-fill.svg';
+import FavoriteWidget from '@/assets/images/icons/favorite.svg';
+import FlagFillWidget from '@/assets/images/icons/flag-fill.svg';
+import FlagWidget from '@/assets/images/icons/flag.svg';
+import ForbidWidget from '@/assets/images/icons/forbid.svg';
+import Forbid2Widget from '@/assets/images/icons/forbid2.svg';
+import GTranslateWidget from '@/assets/images/icons/g-translate.svg';
+import GiftWidget from '@/assets/images/icons/gift.svg';
+import GlobalWidget from '@/assets/images/icons/global.svg';
+import HelpFillWidget from '@/assets/images/icons/help-fill.svg';
+import HelpWidget from '@/assets/images/icons/help.svg';
+import ImageFillWidget from '@/assets/images/icons/image-fill.svg';
+import ImageWidget from '@/assets/images/icons/image.svg';
+import InfoFillWidget from '@/assets/images/icons/info-fill.svg';
+import InfoWidget from '@/assets/images/icons/info.svg';
+import InstantWidget from '@/assets/images/icons/instant.svg';
+import LinkWidget from '@/assets/images/icons/link.svg';
+import ListWidget from '@/assets/images/icons/list.svg';
+import LivechatWidget from '@/assets/images/icons/livechat.svg';
+import LocalPayWidget from '@/assets/images/icons/local-pay.svg';
+import LocationWidget from '@/assets/images/icons/location.svg';
+import LogoutWidget from '@/assets/images/icons/logout.svg';
+import MarkEmailWidget from '@/assets/images/icons/mark-email.svg';
+import MinusWidget from '@/assets/images/icons/minus.svg';
+import MoneyWidget from '@/assets/images/icons/money.svg';
+import MoreHWidget from '@/assets/images/icons/more-h.svg';
+import MoreVWidget from '@/assets/images/icons/more-v.svg';
+import OfflineFillWidget from '@/assets/images/icons/offline-fill.svg';
+import OpenWidget from '@/assets/images/icons/open.svg';
+import OrderListWidget from '@/assets/images/icons/order-list.svg';
+import PasswordFillWidget from '@/assets/images/icons/password-fill.svg';
+import PasswordWidget from '@/assets/images/icons/password.svg';
+import PhoneWidget from '@/assets/images/icons/phone.svg';
+import QuestionWidget from '@/assets/images/icons/question.svg';
+import ReadWidget from '@/assets/images/icons/read.svg';
+import RefreshWidget from '@/assets/images/icons/refresh.svg';
+import ReplyWidget from '@/assets/images/icons/reply.svg';
+import SaveWidget from '@/assets/images/icons/save.svg';
+import SearchWidget from '@/assets/images/icons/search.svg';
+import SendWidget from '@/assets/images/icons/send.svg';
+import SettingsFillWidget from '@/assets/images/icons/settings-fill.svg';
+import SettingsWidget from '@/assets/images/icons/settings.svg';
+import ShareWidget from '@/assets/images/icons/share.svg';
+import StarBorderWidget from '@/assets/images/icons/star-border.svg';
+import StarFillWidget from '@/assets/images/icons/star-fill.svg';
+import StarWidget from '@/assets/images/icons/star.svg';
+import TopupWidget from '@/assets/images/icons/topup.svg';
+import TranslateWidget from '@/assets/images/icons/translate.svg';
+import VerifiedWidget from '@/assets/images/icons/verified.svg';
+import VisibilityOffWidget from '@/assets/images/icons/visibility-off.svg';
+import VisibilityWidget from '@/assets/images/icons/visibility.svg';
+import WaitWidget from '@/assets/images/icons/wait.svg';
+import WarningFillWidget from '@/assets/images/icons/warning-fill.svg';
 interface CommonProps extends PressableProps {
   onPress?: () => void;
   style?: ViewStyle;
@@ -99,7 +98,7 @@ interface CommonProps extends PressableProps {
 export const Account: FC<CommonProps> = ({style, onPress, svgProps}) => {
   const {theme} = useMakeStyle();
   return (
-    <Pressable style={style} onPress={onPress}>
+    <Pressable style={style} onPress={onPress} testID="account">
       <AccountWidget fill={theme.colors.text} {...svgProps} />
     </Pressable>
   );
@@ -108,7 +107,7 @@ export const Account: FC<CommonProps> = ({style, onPress, svgProps}) => {
 export const AddCart: FC<CommonProps> = ({style, onPress, svgProps}) => {
   const {theme} = useMakeStyle();
   return (
-    <Pressable style={style} onPress={onPress}>
+    <Pressable style={style} onPress={onPress} testID="add-cart">
       <AddCartWidget fill={theme.colors.text} {...svgProps} />
     </Pressable>
   );
@@ -117,7 +116,7 @@ export const AddCart: FC<CommonProps> = ({style, onPress, svgProps}) => {
 export const Add: FC<CommonProps> = ({style, onPress, svgProps}) => {
   const {theme} = useMakeStyle();
   return (
-    <Pressable style={style} onPress={onPress}>
+    <Pressable style={style} onPress={onPress} testID="add">
       <AddWidget fill={theme.colors.text} {...svgProps} />
     </Pressable>
   );
@@ -126,7 +125,7 @@ export const Add: FC<CommonProps> = ({style, onPress, svgProps}) => {
 export const ArrowBack: FC<CommonProps> = ({style, onPress, svgProps}) => {
   const {theme} = useMakeStyle();
   return (
-    <Pressable style={style} onPress={onPress}>
+    <Pressable style={style} onPress={onPress} testID="arrow-back">
       <ArrowBackWidget fill={theme.colors.text} {...svgProps} />
     </Pressable>
   );
@@ -135,7 +134,7 @@ export const ArrowBack: FC<CommonProps> = ({style, onPress, svgProps}) => {
 export const ArrowDown: FC<CommonProps> = ({style, onPress, svgProps}) => {
   const {theme} = useMakeStyle();
   return (
-    <Pressable style={style} onPress={onPress}>
+    <Pressable style={style} onPress={onPress} testID="arrow-down">
       <ArrowDownWidget fill={theme.colors.text} {...svgProps} />
     </Pressable>
   );
@@ -144,7 +143,7 @@ export const ArrowDown: FC<CommonProps> = ({style, onPress, svgProps}) => {
 export const ArrowForward: FC<CommonProps> = ({style, onPress, svgProps}) => {
   const {theme} = useMakeStyle();
   return (
-    <Pressable style={style} onPress={onPress}>
+    <Pressable style={style} onPress={onPress} testID="arrow-forward">
       <ArrowForwardWidget fill={theme.colors.text} {...svgProps} />
     </Pressable>
   );
@@ -153,7 +152,7 @@ export const ArrowForward: FC<CommonProps> = ({style, onPress, svgProps}) => {
 export const ArrowLeft: FC<CommonProps> = ({style, onPress, svgProps}) => {
   const {theme} = useMakeStyle();
   return (
-    <Pressable style={style} onPress={onPress}>
+    <Pressable style={style} onPress={onPress} testID="arrow-left">
       <ArrowLeftWidget fill={theme.colors.text} {...svgProps} />
     </Pressable>
   );
@@ -162,7 +161,7 @@ export const ArrowLeft: FC<CommonProps> = ({style, onPress, svgProps}) => {
 export const ArrowRight: FC<CommonProps> = ({style, onPress, svgProps}) => {
   const {theme} = useMakeStyle();
   return (
-    <Pressable style={style} onPress={onPress}>
+    <Pressable style={style} onPress={onPress} testID="arrow-right">
       <ArrowRightWidget fill={theme.colors.text} {...svgProps} />
     </Pressable>
   );
@@ -171,7 +170,7 @@ export const ArrowRight: FC<CommonProps> = ({style, onPress, svgProps}) => {
 export const ArrowUp: FC<CommonProps> = ({style, onPress, svgProps}) => {
   const {theme} = useMakeStyle();
   return (
-    <Pressable style={style} onPress={onPress}>
+    <Pressable style={style} onPress={onPress} testID="arrow-up">
       <ArrowUpWidget fill={theme.colors.text} {...svgProps} />
     </Pressable>
   );
@@ -180,7 +179,7 @@ export const ArrowUp: FC<CommonProps> = ({style, onPress, svgProps}) => {
 export const CameraFill: FC<CommonProps> = ({style, onPress, svgProps}) => {
   const {theme} = useMakeStyle();
   return (
-    <Pressable style={style} onPress={onPress}>
+    <Pressable style={style} onPress={onPress} testID="camera-fill">
       <CameraFillWidget fill={theme.colors.text} {...svgProps} />
     </Pressable>
   );
@@ -189,7 +188,7 @@ export const CameraFill: FC<CommonProps> = ({style, onPress, svgProps}) => {
 export const Camera: FC<CommonProps> = ({style, onPress, svgProps}) => {
   const {theme} = useMakeStyle();
   return (
-    <Pressable style={style} onPress={onPress}>
+    <Pressable style={style} onPress={onPress} testID="camera">
       <CameraWidget fill={theme.colors.text} {...svgProps} />
     </Pressable>
   );
@@ -198,7 +197,7 @@ export const Camera: FC<CommonProps> = ({style, onPress, svgProps}) => {
 export const Card: FC<CommonProps> = ({style, onPress, svgProps}) => {
   const {theme} = useMakeStyle();
   return (
-    <Pressable style={style} onPress={onPress}>
+    <Pressable style={style} onPress={onPress} testID="card">
       <CardWidget fill={theme.colors.text} {...svgProps} />
     </Pressable>
   );
@@ -207,7 +206,7 @@ export const Card: FC<CommonProps> = ({style, onPress, svgProps}) => {
 export const CheckCircle: FC<CommonProps> = ({style, onPress, svgProps}) => {
   const {theme} = useMakeStyle();
   return (
-    <Pressable style={style} onPress={onPress}>
+    <Pressable style={style} onPress={onPress} testID="check-circle">
       <CheckCircleWidget fill={theme.colors.text} {...svgProps} />
     </Pressable>
   );
@@ -216,7 +215,7 @@ export const CheckCircle: FC<CommonProps> = ({style, onPress, svgProps}) => {
 export const CheckFill: FC<CommonProps> = ({style, onPress, svgProps}) => {
   const {theme} = useMakeStyle();
   return (
-    <Pressable style={style} onPress={onPress}>
+    <Pressable style={style} onPress={onPress} testID="check-fill">
       <CheckFillWidget fill={theme.colors.text} {...svgProps} />
     </Pressable>
   );
@@ -225,7 +224,7 @@ export const CheckFill: FC<CommonProps> = ({style, onPress, svgProps}) => {
 export const CheckOutline: FC<CommonProps> = ({style, onPress, svgProps}) => {
   const {theme} = useMakeStyle();
   return (
-    <Pressable style={style} onPress={onPress}>
+    <Pressable style={style} onPress={onPress} testID="check-outline">
       <CheckOutlineWidget fill={theme.colors.text} {...svgProps} />
     </Pressable>
   );
@@ -234,7 +233,7 @@ export const CheckOutline: FC<CommonProps> = ({style, onPress, svgProps}) => {
 export const CheckboxFill: FC<CommonProps> = ({style, onPress, svgProps}) => {
   const {theme} = useMakeStyle();
   return (
-    <Pressable style={style} onPress={onPress}>
+    <Pressable style={style} onPress={onPress} testID="checkbox-fill">
       <CheckboxFillWidget fill={theme.colors.text} {...svgProps} />
     </Pressable>
   );
@@ -243,7 +242,7 @@ export const CheckboxFill: FC<CommonProps> = ({style, onPress, svgProps}) => {
 export const Checkbox: FC<CommonProps> = ({style, onPress, svgProps}) => {
   const {theme} = useMakeStyle();
   return (
-    <Pressable style={style} onPress={onPress}>
+    <Pressable style={style} onPress={onPress} testID="checkbox">
       <CheckboxWidget fill={theme.colors.text} {...svgProps} />
     </Pressable>
   );
@@ -252,7 +251,7 @@ export const Checkbox: FC<CommonProps> = ({style, onPress, svgProps}) => {
 export const Clear: FC<CommonProps> = ({style, onPress, svgProps}) => {
   const {theme} = useMakeStyle();
   return (
-    <Pressable style={style} onPress={onPress}>
+    <Pressable style={style} onPress={onPress} testID="clear">
       <ClearWidget fill={theme.colors.text} {...svgProps} />
     </Pressable>
   );
@@ -261,7 +260,7 @@ export const Clear: FC<CommonProps> = ({style, onPress, svgProps}) => {
 export const Code: FC<CommonProps> = ({style, onPress, svgProps}) => {
   const {theme} = useMakeStyle();
   return (
-    <Pressable style={style} onPress={onPress}>
+    <Pressable style={style} onPress={onPress} testID="code">
       <CodeWidget fill={theme.colors.text} {...svgProps} />
     </Pressable>
   );
@@ -270,7 +269,7 @@ export const Code: FC<CommonProps> = ({style, onPress, svgProps}) => {
 export const Connect: FC<CommonProps> = ({style, onPress, svgProps}) => {
   const {theme} = useMakeStyle();
   return (
-    <Pressable style={style} onPress={onPress}>
+    <Pressable style={style} onPress={onPress} testID="connect">
       <ConnectWidget fill={theme.colors.text} {...svgProps} />
     </Pressable>
   );
@@ -279,7 +278,7 @@ export const Connect: FC<CommonProps> = ({style, onPress, svgProps}) => {
 export const Copy: FC<CommonProps> = ({style, onPress, svgProps}) => {
   const {theme} = useMakeStyle();
   return (
-    <Pressable style={style} onPress={onPress}>
+    <Pressable style={style} onPress={onPress} testID="copy">
       <CopyWidget fill={theme.colors.text} {...svgProps} />
     </Pressable>
   );
@@ -288,7 +287,7 @@ export const Copy: FC<CommonProps> = ({style, onPress, svgProps}) => {
 export const Countdown: FC<CommonProps> = ({style, onPress, svgProps}) => {
   const {theme} = useMakeStyle();
   return (
-    <Pressable style={style} onPress={onPress}>
+    <Pressable style={style} onPress={onPress} testID="countdown">
       <CountdownWidget fill={theme.colors.text} {...svgProps} />
     </Pressable>
   );
@@ -297,7 +296,7 @@ export const Countdown: FC<CommonProps> = ({style, onPress, svgProps}) => {
 export const Coupon: FC<CommonProps> = ({style, onPress, svgProps}) => {
   const {theme} = useMakeStyle();
   return (
-    <Pressable style={style} onPress={onPress}>
+    <Pressable style={style} onPress={onPress} testID="coupon">
       <CouponWidget fill={theme.colors.text} {...svgProps} />
     </Pressable>
   );
@@ -306,7 +305,7 @@ export const Coupon: FC<CommonProps> = ({style, onPress, svgProps}) => {
 export const Currency: FC<CommonProps> = ({style, onPress, svgProps}) => {
   const {theme} = useMakeStyle();
   return (
-    <Pressable style={style} onPress={onPress}>
+    <Pressable style={style} onPress={onPress} testID="currency">
       <CurrencyWidget fill={theme.colors.text} {...svgProps} />
     </Pressable>
   );
@@ -315,7 +314,7 @@ export const Currency: FC<CommonProps> = ({style, onPress, svgProps}) => {
 export const DeleteAccount: FC<CommonProps> = ({style, onPress, svgProps}) => {
   const {theme} = useMakeStyle();
   return (
-    <Pressable style={style} onPress={onPress}>
+    <Pressable style={style} onPress={onPress} testID="delete-account">
       <DeleteAccountWidget fill={theme.colors.text} {...svgProps} />
     </Pressable>
   );
@@ -324,7 +323,7 @@ export const DeleteAccount: FC<CommonProps> = ({style, onPress, svgProps}) => {
 export const DeleteFill: FC<CommonProps> = ({style, onPress, svgProps}) => {
   const {theme} = useMakeStyle();
   return (
-    <Pressable style={style} onPress={onPress}>
+    <Pressable style={style} onPress={onPress} testID="delete-fill">
       <DeleteFillWidget fill={theme.colors.text} {...svgProps} />
     </Pressable>
   );
@@ -333,7 +332,7 @@ export const DeleteFill: FC<CommonProps> = ({style, onPress, svgProps}) => {
 export const DeleteForever: FC<CommonProps> = ({style, onPress, svgProps}) => {
   const {theme} = useMakeStyle();
   return (
-    <Pressable style={style} onPress={onPress}>
+    <Pressable style={style} onPress={onPress} testID="delete-forever">
       <DeleteForeverWidget fill={theme.colors.text} {...svgProps} />
     </Pressable>
   );
@@ -342,7 +341,7 @@ export const DeleteForever: FC<CommonProps> = ({style, onPress, svgProps}) => {
 export const Delete: FC<CommonProps> = ({style, onPress, svgProps}) => {
   const {theme} = useMakeStyle();
   return (
-    <Pressable style={style} onPress={onPress}>
+    <Pressable style={style} onPress={onPress} testID="delete">
       <DeleteWidget fill={theme.colors.text} {...svgProps} />
     </Pressable>
   );
@@ -351,7 +350,7 @@ export const Delete: FC<CommonProps> = ({style, onPress, svgProps}) => {
 export const Description: FC<CommonProps> = ({style, onPress, svgProps}) => {
   const {theme} = useMakeStyle();
   return (
-    <Pressable style={style} onPress={onPress}>
+    <Pressable style={style} onPress={onPress} testID="description">
       <DescriptionWidget fill={theme.colors.text} {...svgProps} />
     </Pressable>
   );
@@ -360,7 +359,7 @@ export const Description: FC<CommonProps> = ({style, onPress, svgProps}) => {
 export const Disable: FC<CommonProps> = ({style, onPress, svgProps}) => {
   const {theme} = useMakeStyle();
   return (
-    <Pressable style={style} onPress={onPress}>
+    <Pressable style={style} onPress={onPress} testID="disable">
       <DisableWidget fill={theme.colors.text} {...svgProps} />
     </Pressable>
   );
@@ -369,7 +368,7 @@ export const Disable: FC<CommonProps> = ({style, onPress, svgProps}) => {
 export const Done: FC<CommonProps> = ({style, onPress, svgProps}) => {
   const {theme} = useMakeStyle();
   return (
-    <Pressable style={style} onPress={onPress}>
+    <Pressable style={style} onPress={onPress} testID="done">
       <DoneWidget fill={theme.colors.text} {...svgProps} />
     </Pressable>
   );
@@ -378,7 +377,7 @@ export const Done: FC<CommonProps> = ({style, onPress, svgProps}) => {
 export const Edit: FC<CommonProps> = ({style, onPress, svgProps}) => {
   const {theme} = useMakeStyle();
   return (
-    <Pressable style={style} onPress={onPress}>
+    <Pressable style={style} onPress={onPress} testID="edit">
       <EditWidget fill={theme.colors.text} {...svgProps} />
     </Pressable>
   );
@@ -387,7 +386,7 @@ export const Edit: FC<CommonProps> = ({style, onPress, svgProps}) => {
 export const Edit2: FC<CommonProps> = ({style, onPress, svgProps}) => {
   const {theme} = useMakeStyle();
   return (
-    <Pressable style={style} onPress={onPress}>
+    <Pressable style={style} onPress={onPress} testID="edit2">
       <Edit2Widget fill={theme.colors.text} {...svgProps} />
     </Pressable>
   );
@@ -396,7 +395,7 @@ export const Edit2: FC<CommonProps> = ({style, onPress, svgProps}) => {
 export const Email: FC<CommonProps> = ({style, onPress, svgProps}) => {
   const {theme} = useMakeStyle();
   return (
-    <Pressable style={style} onPress={onPress}>
+    <Pressable style={style} onPress={onPress} testID="email">
       <EmailWidget fill={theme.colors.text} {...svgProps} />
     </Pressable>
   );
@@ -405,7 +404,7 @@ export const Email: FC<CommonProps> = ({style, onPress, svgProps}) => {
 export const Error: FC<CommonProps> = ({style, onPress, svgProps}) => {
   const {theme} = useMakeStyle();
   return (
-    <Pressable style={style} onPress={onPress}>
+    <Pressable style={style} onPress={onPress} testID="error">
       <ErrorWidget fill={theme.colors.text} {...svgProps} />
     </Pressable>
   );
@@ -414,7 +413,7 @@ export const Error: FC<CommonProps> = ({style, onPress, svgProps}) => {
 export const FavoriteFill: FC<CommonProps> = ({style, onPress, svgProps}) => {
   const {theme} = useMakeStyle();
   return (
-    <Pressable style={style} onPress={onPress}>
+    <Pressable style={style} onPress={onPress} testID="favorite-fill">
       <FavoriteFillWidget fill={theme.colors.text} {...svgProps} />
     </Pressable>
   );
@@ -423,7 +422,7 @@ export const FavoriteFill: FC<CommonProps> = ({style, onPress, svgProps}) => {
 export const Favorite: FC<CommonProps> = ({style, onPress, svgProps}) => {
   const {theme} = useMakeStyle();
   return (
-    <Pressable style={style} onPress={onPress}>
+    <Pressable style={style} onPress={onPress} testID="favorite">
       <FavoriteWidget fill={theme.colors.text} {...svgProps} />
     </Pressable>
   );
@@ -432,7 +431,7 @@ export const Favorite: FC<CommonProps> = ({style, onPress, svgProps}) => {
 export const FlagFill: FC<CommonProps> = ({style, onPress, svgProps}) => {
   const {theme} = useMakeStyle();
   return (
-    <Pressable style={style} onPress={onPress}>
+    <Pressable style={style} onPress={onPress} testID="flag-fill">
       <FlagFillWidget fill={theme.colors.text} {...svgProps} />
     </Pressable>
   );
@@ -441,7 +440,7 @@ export const FlagFill: FC<CommonProps> = ({style, onPress, svgProps}) => {
 export const Flag: FC<CommonProps> = ({style, onPress, svgProps}) => {
   const {theme} = useMakeStyle();
   return (
-    <Pressable style={style} onPress={onPress}>
+    <Pressable style={style} onPress={onPress} testID="flag">
       <FlagWidget fill={theme.colors.text} {...svgProps} />
     </Pressable>
   );
@@ -450,7 +449,7 @@ export const Flag: FC<CommonProps> = ({style, onPress, svgProps}) => {
 export const Forbid: FC<CommonProps> = ({style, onPress, svgProps}) => {
   const {theme} = useMakeStyle();
   return (
-    <Pressable style={style} onPress={onPress}>
+    <Pressable style={style} onPress={onPress} testID="forbid">
       <ForbidWidget fill={theme.colors.text} {...svgProps} />
     </Pressable>
   );
@@ -459,7 +458,7 @@ export const Forbid: FC<CommonProps> = ({style, onPress, svgProps}) => {
 export const Forbid2: FC<CommonProps> = ({style, onPress, svgProps}) => {
   const {theme} = useMakeStyle();
   return (
-    <Pressable style={style} onPress={onPress}>
+    <Pressable style={style} onPress={onPress} testID="forbid2">
       <Forbid2Widget fill={theme.colors.text} {...svgProps} />
     </Pressable>
   );
@@ -468,7 +467,7 @@ export const Forbid2: FC<CommonProps> = ({style, onPress, svgProps}) => {
 export const GTranslate: FC<CommonProps> = ({style, onPress, svgProps}) => {
   const {theme} = useMakeStyle();
   return (
-    <Pressable style={style} onPress={onPress}>
+    <Pressable style={style} onPress={onPress} testID="g-translate">
       <GTranslateWidget fill={theme.colors.text} {...svgProps} />
     </Pressable>
   );
@@ -477,7 +476,7 @@ export const GTranslate: FC<CommonProps> = ({style, onPress, svgProps}) => {
 export const Gift: FC<CommonProps> = ({style, onPress, svgProps}) => {
   const {theme} = useMakeStyle();
   return (
-    <Pressable style={style} onPress={onPress}>
+    <Pressable style={style} onPress={onPress} testID="gift">
       <GiftWidget fill={theme.colors.text} {...svgProps} />
     </Pressable>
   );
@@ -486,7 +485,7 @@ export const Gift: FC<CommonProps> = ({style, onPress, svgProps}) => {
 export const Global: FC<CommonProps> = ({style, onPress, svgProps}) => {
   const {theme} = useMakeStyle();
   return (
-    <Pressable style={style} onPress={onPress}>
+    <Pressable style={style} onPress={onPress} testID="global">
       <GlobalWidget fill={theme.colors.text} {...svgProps} />
     </Pressable>
   );
@@ -495,7 +494,7 @@ export const Global: FC<CommonProps> = ({style, onPress, svgProps}) => {
 export const HelpFill: FC<CommonProps> = ({style, onPress, svgProps}) => {
   const {theme} = useMakeStyle();
   return (
-    <Pressable style={style} onPress={onPress}>
+    <Pressable style={style} onPress={onPress} testID="help-fill">
       <HelpFillWidget fill={theme.colors.text} {...svgProps} />
     </Pressable>
   );
@@ -504,7 +503,7 @@ export const HelpFill: FC<CommonProps> = ({style, onPress, svgProps}) => {
 export const Help: FC<CommonProps> = ({style, onPress, svgProps}) => {
   const {theme} = useMakeStyle();
   return (
-    <Pressable style={style} onPress={onPress}>
+    <Pressable style={style} onPress={onPress} testID="help">
       <HelpWidget fill={theme.colors.text} {...svgProps} />
     </Pressable>
   );
@@ -513,7 +512,7 @@ export const Help: FC<CommonProps> = ({style, onPress, svgProps}) => {
 export const ImageFill: FC<CommonProps> = ({style, onPress, svgProps}) => {
   const {theme} = useMakeStyle();
   return (
-    <Pressable style={style} onPress={onPress}>
+    <Pressable style={style} onPress={onPress} testID="image-fill">
       <ImageFillWidget fill={theme.colors.text} {...svgProps} />
     </Pressable>
   );
@@ -522,7 +521,7 @@ export const ImageFill: FC<CommonProps> = ({style, onPress, svgProps}) => {
 export const Image: FC<CommonProps> = ({style, onPress, svgProps}) => {
   const {theme} = useMakeStyle();
   return (
-    <Pressable style={style} onPress={onPress}>
+    <Pressable style={style} onPress={onPress} testID="image">
       <ImageWidget fill={theme.colors.text} {...svgProps} />
     </Pressable>
   );
@@ -531,7 +530,7 @@ export const Image: FC<CommonProps> = ({style, onPress, svgProps}) => {
 export const InfoFill: FC<CommonProps> = ({style, onPress, svgProps}) => {
   const {theme} = useMakeStyle();
   return (
-    <Pressable style={style} onPress={onPress}>
+    <Pressable style={style} onPress={onPress} testID="info-fill">
       <InfoFillWidget fill={theme.colors.text} {...svgProps} />
     </Pressable>
   );
@@ -540,7 +539,7 @@ export const InfoFill: FC<CommonProps> = ({style, onPress, svgProps}) => {
 export const Info: FC<CommonProps> = ({style, onPress, svgProps}) => {
   const {theme} = useMakeStyle();
   return (
-    <Pressable style={style} onPress={onPress}>
+    <Pressable style={style} onPress={onPress} testID="info">
       <InfoWidget fill={theme.colors.text} {...svgProps} />
     </Pressable>
   );
@@ -549,7 +548,7 @@ export const Info: FC<CommonProps> = ({style, onPress, svgProps}) => {
 export const Instant: FC<CommonProps> = ({style, onPress, svgProps}) => {
   const {theme} = useMakeStyle();
   return (
-    <Pressable style={style} onPress={onPress}>
+    <Pressable style={style} onPress={onPress} testID="instant">
       <InstantWidget fill={theme.colors.text} {...svgProps} />
     </Pressable>
   );
@@ -558,7 +557,7 @@ export const Instant: FC<CommonProps> = ({style, onPress, svgProps}) => {
 export const Link: FC<CommonProps> = ({style, onPress, svgProps}) => {
   const {theme} = useMakeStyle();
   return (
-    <Pressable style={style} onPress={onPress}>
+    <Pressable style={style} onPress={onPress} testID="link">
       <LinkWidget fill={theme.colors.text} {...svgProps} />
     </Pressable>
   );
@@ -567,7 +566,7 @@ export const Link: FC<CommonProps> = ({style, onPress, svgProps}) => {
 export const List: FC<CommonProps> = ({style, onPress, svgProps}) => {
   const {theme} = useMakeStyle();
   return (
-    <Pressable style={style} onPress={onPress}>
+    <Pressable style={style} onPress={onPress} testID="list">
       <ListWidget fill={theme.colors.text} {...svgProps} />
     </Pressable>
   );
@@ -576,7 +575,7 @@ export const List: FC<CommonProps> = ({style, onPress, svgProps}) => {
 export const Livechat: FC<CommonProps> = ({style, onPress, svgProps}) => {
   const {theme} = useMakeStyle();
   return (
-    <Pressable style={style} onPress={onPress}>
+    <Pressable style={style} onPress={onPress} testID="livechat">
       <LivechatWidget fill={theme.colors.text} {...svgProps} />
     </Pressable>
   );
@@ -585,7 +584,7 @@ export const Livechat: FC<CommonProps> = ({style, onPress, svgProps}) => {
 export const LocalPay: FC<CommonProps> = ({style, onPress, svgProps}) => {
   const {theme} = useMakeStyle();
   return (
-    <Pressable style={style} onPress={onPress}>
+    <Pressable style={style} onPress={onPress} testID="local-pay">
       <LocalPayWidget fill={theme.colors.text} {...svgProps} />
     </Pressable>
   );
@@ -594,7 +593,7 @@ export const LocalPay: FC<CommonProps> = ({style, onPress, svgProps}) => {
 export const Location: FC<CommonProps> = ({style, onPress, svgProps}) => {
   const {theme} = useMakeStyle();
   return (
-    <Pressable style={style} onPress={onPress}>
+    <Pressable style={style} onPress={onPress} testID="location">
       <LocationWidget fill={theme.colors.text} {...svgProps} />
     </Pressable>
   );
@@ -603,7 +602,7 @@ export const Location: FC<CommonProps> = ({style, onPress, svgProps}) => {
 export const Logout: FC<CommonProps> = ({style, onPress, svgProps}) => {
   const {theme} = useMakeStyle();
   return (
-    <Pressable style={style} onPress={onPress}>
+    <Pressable style={style} onPress={onPress} testID="logout">
       <LogoutWidget fill={theme.colors.text} {...svgProps} />
     </Pressable>
   );
@@ -612,7 +611,7 @@ export const Logout: FC<CommonProps> = ({style, onPress, svgProps}) => {
 export const MarkEmail: FC<CommonProps> = ({style, onPress, svgProps}) => {
   const {theme} = useMakeStyle();
   return (
-    <Pressable style={style} onPress={onPress}>
+    <Pressable style={style} onPress={onPress} testID="mark-email">
       <MarkEmailWidget fill={theme.colors.text} {...svgProps} />
     </Pressable>
   );
@@ -621,7 +620,7 @@ export const MarkEmail: FC<CommonProps> = ({style, onPress, svgProps}) => {
 export const Minus: FC<CommonProps> = ({style, onPress, svgProps}) => {
   const {theme} = useMakeStyle();
   return (
-    <Pressable style={style} onPress={onPress}>
+    <Pressable style={style} onPress={onPress} testID="minus">
       <MinusWidget fill={theme.colors.text} {...svgProps} />
     </Pressable>
   );
@@ -630,7 +629,7 @@ export const Minus: FC<CommonProps> = ({style, onPress, svgProps}) => {
 export const Money: FC<CommonProps> = ({style, onPress, svgProps}) => {
   const {theme} = useMakeStyle();
   return (
-    <Pressable style={style} onPress={onPress}>
+    <Pressable style={style} onPress={onPress} testID="money">
       <MoneyWidget fill={theme.colors.text} {...svgProps} />
     </Pressable>
   );
@@ -639,7 +638,7 @@ export const Money: FC<CommonProps> = ({style, onPress, svgProps}) => {
 export const MoreH: FC<CommonProps> = ({style, onPress, svgProps}) => {
   const {theme} = useMakeStyle();
   return (
-    <Pressable style={style} onPress={onPress}>
+    <Pressable style={style} onPress={onPress} testID="more-h">
       <MoreHWidget fill={theme.colors.text} {...svgProps} />
     </Pressable>
   );
@@ -648,7 +647,7 @@ export const MoreH: FC<CommonProps> = ({style, onPress, svgProps}) => {
 export const MoreV: FC<CommonProps> = ({style, onPress, svgProps}) => {
   const {theme} = useMakeStyle();
   return (
-    <Pressable style={style} onPress={onPress}>
+    <Pressable style={style} onPress={onPress} testID="more-v">
       <MoreVWidget fill={theme.colors.text} {...svgProps} />
     </Pressable>
   );
@@ -657,7 +656,7 @@ export const MoreV: FC<CommonProps> = ({style, onPress, svgProps}) => {
 export const OfflineFill: FC<CommonProps> = ({style, onPress, svgProps}) => {
   const {theme} = useMakeStyle();
   return (
-    <Pressable style={style} onPress={onPress}>
+    <Pressable style={style} onPress={onPress} testID="offline-fill">
       <OfflineFillWidget fill={theme.colors.text} {...svgProps} />
     </Pressable>
   );
@@ -666,7 +665,7 @@ export const OfflineFill: FC<CommonProps> = ({style, onPress, svgProps}) => {
 export const Open: FC<CommonProps> = ({style, onPress, svgProps}) => {
   const {theme} = useMakeStyle();
   return (
-    <Pressable style={style} onPress={onPress}>
+    <Pressable style={style} onPress={onPress} testID="open">
       <OpenWidget fill={theme.colors.text} {...svgProps} />
     </Pressable>
   );
@@ -675,7 +674,7 @@ export const Open: FC<CommonProps> = ({style, onPress, svgProps}) => {
 export const OrderList: FC<CommonProps> = ({style, onPress, svgProps}) => {
   const {theme} = useMakeStyle();
   return (
-    <Pressable style={style} onPress={onPress}>
+    <Pressable style={style} onPress={onPress} testID="order-list">
       <OrderListWidget fill={theme.colors.text} {...svgProps} />
     </Pressable>
   );
@@ -684,7 +683,7 @@ export const OrderList: FC<CommonProps> = ({style, onPress, svgProps}) => {
 export const PasswordFill: FC<CommonProps> = ({style, onPress, svgProps}) => {
   const {theme} = useMakeStyle();
   return (
-    <Pressable style={style} onPress={onPress}>
+    <Pressable style={style} onPress={onPress} testID="password-fill">
       <PasswordFillWidget fill={theme.colors.text} {...svgProps} />
     </Pressable>
   );
@@ -693,7 +692,7 @@ export const PasswordFill: FC<CommonProps> = ({style, onPress, svgProps}) => {
 export const Password: FC<CommonProps> = ({style, onPress, svgProps}) => {
   const {theme} = useMakeStyle();
   return (
-    <Pressable style={style} onPress={onPress}>
+    <Pressable style={style} onPress={onPress} testID="password">
       <PasswordWidget fill={theme.colors.text} {...svgProps} />
     </Pressable>
   );
@@ -702,7 +701,7 @@ export const Password: FC<CommonProps> = ({style, onPress, svgProps}) => {
 export const Phone: FC<CommonProps> = ({style, onPress, svgProps}) => {
   const {theme} = useMakeStyle();
   return (
-    <Pressable style={style} onPress={onPress}>
+    <Pressable style={style} onPress={onPress} testID="phone">
       <PhoneWidget fill={theme.colors.text} {...svgProps} />
     </Pressable>
   );
@@ -711,7 +710,7 @@ export const Phone: FC<CommonProps> = ({style, onPress, svgProps}) => {
 export const Question: FC<CommonProps> = ({style, onPress, svgProps}) => {
   const {theme} = useMakeStyle();
   return (
-    <Pressable style={style} onPress={onPress}>
+    <Pressable style={style} onPress={onPress} testID="question">
       <QuestionWidget fill={theme.colors.text} {...svgProps} />
     </Pressable>
   );
@@ -720,7 +719,7 @@ export const Question: FC<CommonProps> = ({style, onPress, svgProps}) => {
 export const Read: FC<CommonProps> = ({style, onPress, svgProps}) => {
   const {theme} = useMakeStyle();
   return (
-    <Pressable style={style} onPress={onPress}>
+    <Pressable style={style} onPress={onPress} testID="read">
       <ReadWidget fill={theme.colors.text} {...svgProps} />
     </Pressable>
   );
@@ -729,7 +728,7 @@ export const Read: FC<CommonProps> = ({style, onPress, svgProps}) => {
 export const Refresh: FC<CommonProps> = ({style, onPress, svgProps}) => {
   const {theme} = useMakeStyle();
   return (
-    <Pressable style={style} onPress={onPress}>
+    <Pressable style={style} onPress={onPress} testID="refresh">
       <RefreshWidget fill={theme.colors.text} {...svgProps} />
     </Pressable>
   );
@@ -738,7 +737,7 @@ export const Refresh: FC<CommonProps> = ({style, onPress, svgProps}) => {
 export const Reply: FC<CommonProps> = ({style, onPress, svgProps}) => {
   const {theme} = useMakeStyle();
   return (
-    <Pressable style={style} onPress={onPress}>
+    <Pressable style={style} onPress={onPress} testID="reply">
       <ReplyWidget fill={theme.colors.text} {...svgProps} />
     </Pressable>
   );
@@ -747,7 +746,7 @@ export const Reply: FC<CommonProps> = ({style, onPress, svgProps}) => {
 export const Save: FC<CommonProps> = ({style, onPress, svgProps}) => {
   const {theme} = useMakeStyle();
   return (
-    <Pressable style={style} onPress={onPress}>
+    <Pressable style={style} onPress={onPress} testID="save">
       <SaveWidget fill={theme.colors.text} {...svgProps} />
     </Pressable>
   );
@@ -756,7 +755,7 @@ export const Save: FC<CommonProps> = ({style, onPress, svgProps}) => {
 export const Search: FC<CommonProps> = ({style, onPress, svgProps}) => {
   const {theme} = useMakeStyle();
   return (
-    <Pressable style={style} onPress={onPress}>
+    <Pressable style={style} onPress={onPress} testID="search">
       <SearchWidget fill={theme.colors.text} {...svgProps} />
     </Pressable>
   );
@@ -765,7 +764,7 @@ export const Search: FC<CommonProps> = ({style, onPress, svgProps}) => {
 export const Send: FC<CommonProps> = ({style, onPress, svgProps}) => {
   const {theme} = useMakeStyle();
   return (
-    <Pressable style={style} onPress={onPress}>
+    <Pressable style={style} onPress={onPress} testID="send">
       <SendWidget fill={theme.colors.text} {...svgProps} />
     </Pressable>
   );
@@ -774,7 +773,7 @@ export const Send: FC<CommonProps> = ({style, onPress, svgProps}) => {
 export const SettingsFill: FC<CommonProps> = ({style, onPress, svgProps}) => {
   const {theme} = useMakeStyle();
   return (
-    <Pressable style={style} onPress={onPress}>
+    <Pressable style={style} onPress={onPress} testID="settings-fill">
       <SettingsFillWidget fill={theme.colors.text} {...svgProps} />
     </Pressable>
   );
@@ -783,7 +782,7 @@ export const SettingsFill: FC<CommonProps> = ({style, onPress, svgProps}) => {
 export const Settings: FC<CommonProps> = ({style, onPress, svgProps}) => {
   const {theme} = useMakeStyle();
   return (
-    <Pressable style={style} onPress={onPress}>
+    <Pressable style={style} onPress={onPress} testID="settings">
       <SettingsWidget fill={theme.colors.text} {...svgProps} />
     </Pressable>
   );
@@ -792,7 +791,7 @@ export const Settings: FC<CommonProps> = ({style, onPress, svgProps}) => {
 export const Share: FC<CommonProps> = ({style, onPress, svgProps}) => {
   const {theme} = useMakeStyle();
   return (
-    <Pressable style={style} onPress={onPress}>
+    <Pressable style={style} onPress={onPress} testID="share">
       <ShareWidget fill={theme.colors.text} {...svgProps} />
     </Pressable>
   );
@@ -801,7 +800,7 @@ export const Share: FC<CommonProps> = ({style, onPress, svgProps}) => {
 export const StarBorder: FC<CommonProps> = ({style, onPress, svgProps}) => {
   const {theme} = useMakeStyle();
   return (
-    <Pressable style={style} onPress={onPress}>
+    <Pressable style={style} onPress={onPress} testID="star-border">
       <StarBorderWidget fill={theme.colors.text} {...svgProps} />
     </Pressable>
   );
@@ -810,7 +809,7 @@ export const StarBorder: FC<CommonProps> = ({style, onPress, svgProps}) => {
 export const StarFill: FC<CommonProps> = ({style, onPress, svgProps}) => {
   const {theme} = useMakeStyle();
   return (
-    <Pressable style={style} onPress={onPress}>
+    <Pressable style={style} onPress={onPress} testID="star-fill">
       <StarFillWidget fill={theme.colors.text} {...svgProps} />
     </Pressable>
   );
@@ -819,7 +818,7 @@ export const StarFill: FC<CommonProps> = ({style, onPress, svgProps}) => {
 export const Star: FC<CommonProps> = ({style, onPress, svgProps}) => {
   const {theme} = useMakeStyle();
   return (
-    <Pressable style={style} onPress={onPress}>
+    <Pressable style={style} onPress={onPress} testID="star">
       <StarWidget fill={theme.colors.text} {...svgProps} />
     </Pressable>
   );
@@ -828,7 +827,7 @@ export const Star: FC<CommonProps> = ({style, onPress, svgProps}) => {
 export const Topup: FC<CommonProps> = ({style, onPress, svgProps}) => {
   const {theme} = useMakeStyle();
   return (
-    <Pressable style={style} onPress={onPress}>
+    <Pressable style={style} onPress={onPress} testID="topup">
       <TopupWidget fill={theme.colors.text} {...svgProps} />
     </Pressable>
   );
@@ -837,7 +836,7 @@ export const Topup: FC<CommonProps> = ({style, onPress, svgProps}) => {
 export const Translate: FC<CommonProps> = ({style, onPress, svgProps}) => {
   const {theme} = useMakeStyle();
   return (
-    <Pressable style={style} onPress={onPress}>
+    <Pressable style={style} onPress={onPress} testID="translate">
       <TranslateWidget fill={theme.colors.text} {...svgProps} />
     </Pressable>
   );
@@ -846,7 +845,7 @@ export const Translate: FC<CommonProps> = ({style, onPress, svgProps}) => {
 export const Verified: FC<CommonProps> = ({style, onPress, svgProps}) => {
   const {theme} = useMakeStyle();
   return (
-    <Pressable style={style} onPress={onPress}>
+    <Pressable style={style} onPress={onPress} testID="verified">
       <VerifiedWidget fill={theme.colors.text} {...svgProps} />
     </Pressable>
   );
@@ -855,7 +854,7 @@ export const Verified: FC<CommonProps> = ({style, onPress, svgProps}) => {
 export const VisibilityOff: FC<CommonProps> = ({style, onPress, svgProps}) => {
   const {theme} = useMakeStyle();
   return (
-    <Pressable style={style} onPress={onPress}>
+    <Pressable style={style} onPress={onPress} testID="visibility-off">
       <VisibilityOffWidget fill={theme.colors.text} {...svgProps} />
     </Pressable>
   );
@@ -864,7 +863,7 @@ export const VisibilityOff: FC<CommonProps> = ({style, onPress, svgProps}) => {
 export const Visibility: FC<CommonProps> = ({style, onPress, svgProps}) => {
   const {theme} = useMakeStyle();
   return (
-    <Pressable style={style} onPress={onPress}>
+    <Pressable style={style} onPress={onPress} testID="visibility">
       <VisibilityWidget fill={theme.colors.text} {...svgProps} />
     </Pressable>
   );
@@ -873,7 +872,7 @@ export const Visibility: FC<CommonProps> = ({style, onPress, svgProps}) => {
 export const Wait: FC<CommonProps> = ({style, onPress, svgProps}) => {
   const {theme} = useMakeStyle();
   return (
-    <Pressable style={style} onPress={onPress}>
+    <Pressable style={style} onPress={onPress} testID="wait">
       <WaitWidget fill={theme.colors.text} {...svgProps} />
     </Pressable>
   );
@@ -882,7 +881,7 @@ export const Wait: FC<CommonProps> = ({style, onPress, svgProps}) => {
 export const WarningFill: FC<CommonProps> = ({style, onPress, svgProps}) => {
   const {theme} = useMakeStyle();
   return (
-    <Pressable style={style} onPress={onPress}>
+    <Pressable style={style} onPress={onPress} testID="warning-fill">
       <WarningFillWidget fill={theme.colors.text} {...svgProps} />
     </Pressable>
   );

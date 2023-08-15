@@ -22,12 +22,12 @@ async function run() {
       );
       name = name.charAt(0).toUpperCase() + name.slice(1);
 
-      const im = `import ${name}Widget from '../assets/images/icons/${file}';`;
+      const im = `import ${name}Widget from '@/assets/images/icons/${file}';`;
       imports.push(im);
       widgets.push(`export const ${name}: FC<CommonProps> = ({style, onPress, svgProps}) => {
   const {theme} = useMakeStyle();
   return (
-    <Pressable style={style} onPress={onPress}>
+    <Pressable style={style} onPress={onPress} testID="${filename}">
       <${name}Widget fill={theme.colors.text} {...svgProps} />
     </Pressable>
   );
@@ -35,7 +35,7 @@ async function run() {
       exportStr.push(name);
     });
     let content =
-      "import React, {FC} from 'react';\nimport {Pressable, PressableProps, ViewStyle} from 'react-native';\nimport {SvgProps} from 'react-native-svg';\nimport useMakeStyle from '../../hooks/useMakeStyle';";
+      "import React, {FC} from 'react';\nimport {Pressable, PressableProps, ViewStyle} from 'react-native';\nimport {SvgProps} from 'react-native-svg';\nimport useMakeStyle from '@/hooks/useMakeStyle';\n";
     content += imports.join('\n');
     content += '\n';
     content += `interface CommonProps extends PressableProps {
