@@ -9,6 +9,7 @@ const useStyles = () => {
       backgroundColor: theme.colors.background,
     },
     content: {
+      width: '100%',
       flexDirection: 'row',
       flexWrap: 'wrap',
       justifyContent: 'center',
@@ -17,12 +18,20 @@ const useStyles = () => {
     },
     item: {
       marginBottom: 10,
-      width: 100,
+      width: '25%',
       height: 100,
       alignItems: 'center',
       justifyContent: 'center',
     },
-    name: {},
+    name: {
+      fontSize: 12,
+      lineHeight: 16,
+      color: theme.colors.text,
+      textAlign: 'center',
+      fontWeight: '500',
+      textTransform: 'capitalize',
+      marginTop: 8,
+    },
   });
 };
 

@@ -10,11 +10,9 @@ import {
 import React from 'react';
 import useStyles from '../assets/styles/pages/direct-purchase';
 import useBoolean from '../hooks/useBoolean';
-import ArrowRight from '../assets/images/icons/arrow-right.svg';
-import {useTheme} from '@react-navigation/native';
+import {ArrowRight} from '../components/Icons';
 
 const DirectPurchase = () => {
-  const theme = useTheme();
   const styles = useStyles();
   return (
     <ScrollView>
@@ -38,7 +36,7 @@ const DirectPurchase = () => {
           </View>
           <View style={styles['margin-start']}>
             {/* <SvgUri uri={require('../assets/icons/chevron-right.svg')} /> */}
-            <ArrowRight fill={theme.colors.text} />
+            <ArrowRight />
           </View>
         </Pressable>
       </View>
@@ -51,7 +49,7 @@ const DirectPurchase = () => {
           />
           <View style={styles['payment-price-box']}>
             <Text style={styles['payment-price-text']}>RM 43.80</Text>
-            <ArrowRight fill={theme.colors.text} />
+            <ArrowRight />
             {/* <Svg name="more" width="24" height="24" /> */}
           </View>
         </Pressable>
@@ -74,7 +72,7 @@ const DirectPurchase = () => {
               2,850
             </Text>
             {/* <Svg name="seagm-coin" width="16" height="16" /> */}
-            <ArrowRight fill={theme.colors.text} />
+            <ArrowRight />
           </View>
         </View>
         <View style={styles['cell-row']}>
