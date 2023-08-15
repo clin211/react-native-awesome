@@ -11,7 +11,6 @@ import useStyles from './src/assets/styles/pages/root';
 import theme from './src/theme';
 import DirectPurchase from './src/pages/DirectPurchase';
 import Icons from './src/pages/Icons';
-import {ArrowBack} from './src/components/Icons';
 import Back from './src/components/Back';
 
 const Stack = createNativeStackNavigator<ScreenParams>();
@@ -50,7 +49,10 @@ function App(): JSX.Element {
           statusBarTranslucent: true,
           gestureEnabled: false,
           headerStyle: styles.header,
-          headerLeft: () => <Back />,
+          // eslint-disable-next-line react/no-unstable-nested-components
+          headerLeft() {
+            return <Back />;
+          },
         }}>
         <Stack.Screen
           name="Home"

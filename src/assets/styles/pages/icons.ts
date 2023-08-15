@@ -17,11 +17,12 @@ const useStyles = () => {
       backgroundColor: theme.colors.card,
     },
     item: {
-      marginBottom: 10,
       width: '25%',
       height: 100,
       alignItems: 'center',
       justifyContent: 'center',
+      borderWidth: StyleSheet.hairlineWidth,
+      borderColor: theme.colors.border,
     },
     name: {
       fontSize: 12,

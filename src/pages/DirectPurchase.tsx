@@ -25,7 +25,7 @@ const DirectPurchase = () => {
         <Pressable style={styles['sku-box']} onPress={() => {}}>
           <View style={styles['sku-detail']}>
             <Image
-              style={{width: 48, height: 48, borderRadius: 8}}
+              style={styles['sku-image']}
               source={{
                 uri: 'https://seagm-media.seagmcdn.com/icon_400/639.jpg?x-oss-process=image/resize,w_96',
               }}

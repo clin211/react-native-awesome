@@ -172,6 +172,11 @@ const useStyles = () => {
       flexDirection: 'row',
       alignItems: 'center',
     },
+    'sku-image': {
+      width: 48,
+      height: 48,
+      borderRadius: 8,
+    },
     'sku-title': {
       flex: 1,
       marginStart: 8,
