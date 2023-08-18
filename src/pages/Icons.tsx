@@ -90,6 +90,9 @@ import {
   Visibility,
   Wait,
   WarningFill,
+  MobileRecharge,
+  GameCard,
+  DirectTopup,
 } from '../components/Icons';
 
 const Icons = () => {
@@ -448,6 +451,18 @@ const Icons = () => {
         <View style={styles.item}>
           <WarningFill />
           <Text style={styles.name}>warning-fill</Text>
+        </View>
+        <View style={styles.item}>
+          <MobileRecharge />
+          <Text style={styles.name}>mobile-recharge</Text>
+        </View>
+        <View style={styles.item}>
+          <GameCard />
+          <Text style={styles.name}>game-card</Text>
+        </View>
+        <View style={styles.item}>
+          <DirectTopup />
+          <Text style={styles.name}>direct-topup</Text>
         </View>
       </View>
     </ScrollView>

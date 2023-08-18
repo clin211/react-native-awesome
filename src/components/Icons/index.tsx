@@ -31,6 +31,7 @@ import DeleteFillWidget from '@/assets/images/icons/delete-fill.svg';
 import DeleteForeverWidget from '@/assets/images/icons/delete-forever.svg';
 import DeleteWidget from '@/assets/images/icons/delete.svg';
 import DescriptionWidget from '@/assets/images/icons/description.svg';
+import DirectTopupWidget from '@/assets/images/icons/direct-topup.svg';
 import DisableWidget from '@/assets/images/icons/disable.svg';
 import DoneWidget from '@/assets/images/icons/done.svg';
 import EditWidget from '@/assets/images/icons/edit.svg';
@@ -44,6 +45,7 @@ import FlagWidget from '@/assets/images/icons/flag.svg';
 import ForbidWidget from '@/assets/images/icons/forbid.svg';
 import Forbid2Widget from '@/assets/images/icons/forbid2.svg';
 import GTranslateWidget from '@/assets/images/icons/g-translate.svg';
+import GameCardWidget from '@/assets/images/icons/game-card.svg';
 import GiftWidget from '@/assets/images/icons/gift.svg';
 import GlobalWidget from '@/assets/images/icons/global.svg';
 import HelpFillWidget from '@/assets/images/icons/help-fill.svg';
@@ -61,6 +63,7 @@ import LocationWidget from '@/assets/images/icons/location.svg';
 import LogoutWidget from '@/assets/images/icons/logout.svg';
 import MarkEmailWidget from '@/assets/images/icons/mark-email.svg';
 import MinusWidget from '@/assets/images/icons/minus.svg';
+import MobileRechargeWidget from '@/assets/images/icons/mobile-recharge.svg';
 import MoneyWidget from '@/assets/images/icons/money.svg';
 import MoreHWidget from '@/assets/images/icons/more-h.svg';
 import MoreVWidget from '@/assets/images/icons/more-v.svg';
@@ -356,6 +359,15 @@ export const Description: FC<CommonProps> = ({style, onPress, svgProps}) => {
   );
 };
 
+export const DirectTopup: FC<CommonProps> = ({style, onPress, svgProps}) => {
+  const {theme} = useMakeStyle();
+  return (
+    <Pressable style={style} onPress={onPress} testID="direct-topup">
+      <DirectTopupWidget fill={theme.colors.text} {...svgProps} />
+    </Pressable>
+  );
+};
+
 export const Disable: FC<CommonProps> = ({style, onPress, svgProps}) => {
   const {theme} = useMakeStyle();
   return (
@@ -469,6 +481,15 @@ export const GTranslate: FC<CommonProps> = ({style, onPress, svgProps}) => {
   return (
     <Pressable style={style} onPress={onPress} testID="g-translate">
       <GTranslateWidget fill={theme.colors.text} {...svgProps} />
+    </Pressable>
+  );
+};
+
+export const GameCard: FC<CommonProps> = ({style, onPress, svgProps}) => {
+  const {theme} = useMakeStyle();
+  return (
+    <Pressable style={style} onPress={onPress} testID="game-card">
+      <GameCardWidget fill={theme.colors.text} {...svgProps} />
     </Pressable>
   );
 };
@@ -622,6 +643,15 @@ export const Minus: FC<CommonProps> = ({style, onPress, svgProps}) => {
   return (
     <Pressable style={style} onPress={onPress} testID="minus">
       <MinusWidget fill={theme.colors.text} {...svgProps} />
+    </Pressable>
+  );
+};
+
+export const MobileRecharge: FC<CommonProps> = ({style, onPress, svgProps}) => {
+  const {theme} = useMakeStyle();
+  return (
+    <Pressable style={style} onPress={onPress} testID="mobile-recharge">
+      <MobileRechargeWidget fill={theme.colors.text} {...svgProps} />
     </Pressable>
   );
 };

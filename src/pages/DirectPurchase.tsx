@@ -7,15 +7,37 @@ import {
   Image,
   Pressable,
 } from 'react-native';
-import React from 'react';
+import React, {useEffect, useMemo, useRef} from 'react';
 import useStyles from '../assets/styles/pages/direct-purchase';
 import useBoolean from '../hooks/useBoolean';
 import {ArrowRight} from '../components/Icons';
+import AutoHeightWebView from '@/components/WebView';
+import useMakeStyle from '@/hooks/useMakeStyle';
+import {WebView} from 'react-native-webview';
 
 const DirectPurchase = () => {
+  const {mode} = useMakeStyle();
   const styles = useStyles();
+  const descriptionBoxRef = useRef<WebView>(null);
+
+  useEffect(() => {
+    // 这种方式会导致 webview 重载，体验不好
+    descriptionBoxRef.current?.reload();
+  }, [mode]);
+
+  const descriptionDOM = useMemo(
+    () => (
+      <View style={[styles['description-container']]}>
+        <AutoHeightWebView
+          ref={descriptionBoxRef}
+          source={{uri: 'https://www.seagm.com/description/'}}
+        />
+      </View>
+    ),
+    [styles],
+  );
   return (
-    <ScrollView>
+    <ScrollView keyboardShouldPersistTaps="handled" overScrollMode="never">
       <View style={styles['input-box']}>
         <CommonTitle title={'Order Information'} number={1} />
       </View>
@@ -98,6 +120,7 @@ const DirectPurchase = () => {
           <Text style={[styles['cell-right']]}>RM 2,850</Text>
         </View>
       </View>
+      {descriptionDOM}
     </ScrollView>
   );
 };
