@@ -15,6 +15,10 @@ const useStyles = () => {
       color: theme.colors.headline,
       textTransform: 'capitalize',
     },
+    'game-card-icon': {
+      width: 140 * theme.scaleRatio.width,
+      height: 140 * theme.scaleRatio.height,
+    },
   });
 };
 

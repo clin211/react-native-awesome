@@ -4,6 +4,8 @@ import ScreenParams from '../types/navigation';
 import {NativeStackScreenProps} from '@react-navigation/native-stack';
 import useStyles from '../assets/styles/pages/home';
 import useMakeStyle from '@/hooks/useMakeStyle';
+import LottieView from 'lottie-react-native';
+
 const Home: FC<NativeStackScreenProps<ScreenParams, 'Home'>> = ({
   navigation,
 }) => {
@@ -26,6 +28,24 @@ const Home: FC<NativeStackScreenProps<ScreenParams, 'Home'>> = ({
       <Pressable onPress={() => navigation.push('Icons')}>
         <Text style={styles.title}>Icons</Text>
       </Pressable>
+      <LottieView
+        style={styles['game-card-icon']}
+        source={require('../assets/lotties/game-cards.json')}
+        autoPlay
+        loop={false}
+      />
+      <LottieView
+        style={[styles['game-card-icon']]}
+        source={require('../assets/lotties/mobile-recharge.json')}
+        autoPlay
+        loop
+      />
+      <LottieView
+        style={[styles['game-card-icon']]}
+        source={require('../assets/lotties/mobile-recharge2.json')}
+        autoPlay
+        loop
+      />
     </View>
   );
 };
