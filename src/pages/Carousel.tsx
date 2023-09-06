@@ -1,7 +1,8 @@
-import {Image, Pressable, Text, View} from 'react-native';
+import {Image, Pressable, ScrollView, Text, View} from 'react-native';
 import React from 'react';
 import Carousel from 'react-native-reanimated-carousel';
 import useStyles from '@/assets/styles/pages/carousel';
+import {GestureHandlerRootView} from 'react-native-gesture-handler';
 
 const swiperData = [
   {
@@ -50,34 +51,40 @@ const Swiper = () => {
   };
 
   return (
-    <View style={styles.container}>
-      <Text style={styles.text}>Carousel</Text>
-      <View style={styles['carousel-container']}>
-        <View style={styles['carousel-box']}>
-          <Carousel
-            loop
-            width={styles.carousel.width}
-            height={styles.carousel.height}
-            autoPlay={true}
-            data={swiperData}
-            scrollAnimationDuration={1000}
-            onSnapToItem={index => console.log('current index:', index)}
-            renderItem={({item}) => (
-              <Pressable
-                style={styles.pressable}
-                onPress={() => handleOnPressBannerItem(item)}>
-                <Image
-                  source={{uri: item.image}}
-                  style={styles['carousel-image']}
-                  resizeMethod="resize"
-                  resizeMode="contain"
-                />
-              </Pressable>
-            )}
-          />
+    <GestureHandlerRootView style={{flex: 1}}>
+      <ScrollView style={styles.container}>
+        <Text style={styles.text}>Carousel</Text>
+        <View style={styles['carousel-container']}>
+          <View style={styles['carousel-box']}>
+            <Carousel
+              loop
+              width={styles.carousel.width}
+              height={styles.carousel.height}
+              autoPlay={true}
+              data={swiperData}
+              scrollAnimationDuration={500}
+              panGestureHandlerProps={{
+                activeOffsetX: [-10, 10],
+              }}
+              onSnapToItem={index => console.log('current index:', index)}
+              renderItem={({item}) => (
+                <Pressable
+                  style={styles.pressable}
+                  onPress={() => handleOnPressBannerItem(item)}>
+                  <Image
+                    source={{uri: item.image}}
+                    style={styles['carousel-image']}
+                    resizeMethod="resize"
+                    resizeMode="contain"
+                  />
+                </Pressable>
+              )}
+            />
+          </View>
+          <View style={{height: 1000}} />
         </View>
-      </View>
-    </View>
+      </ScrollView>
+    </GestureHandlerRootView>
   );
 };
 
