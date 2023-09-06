@@ -10,6 +10,7 @@ import theme from '@/theme';
 import DirectPurchase from '@/pages/DirectPurchase';
 import Icons from '@/pages/Icons';
 import Back from '@/components/Back';
+import Swiper from '@/pages/Carousel';
 
 const Stack = createNativeStackNavigator<ScreenParams>();
 
@@ -45,6 +46,7 @@ function App(): JSX.Element {
         <Stack.Screen component={Detail} name="Detail" />
         <Stack.Screen component={DirectPurchase} name="DirectPurchase" />
         <Stack.Screen component={Icons} name="Icons" />
+        <Stack.Screen component={Swiper} name="Swiper" />
       </Stack.Navigator>
     </NavigationContainer>
   );

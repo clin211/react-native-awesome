@@ -3,6 +3,7 @@ type ScreenParams = {
   Detail: undefined;
   DirectPurchase: undefined;
   Icons: undefined;
+  Swiper: undefined;
 };
 
 export default ScreenParams;
