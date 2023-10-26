@@ -31,6 +31,9 @@ const Home: FC<NativeStackScreenProps<ScreenParams, 'Home'>> = ({
       <Pressable onPress={() => navigation.push('Swiper')}>
         <Text style={styles.title}>Swiper</Text>
       </Pressable>
+      <Pressable onPress={() => navigation.push('CardDetailWebView')}>
+        <Text style={styles.title}>card detail webview</Text>
+      </Pressable>
       <LottieView
         style={styles['game-card-icon']}
         source={require('../assets/lotties/game-cards.json')}

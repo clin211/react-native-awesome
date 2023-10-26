@@ -11,6 +11,7 @@ import DirectPurchase from '@/pages/DirectPurchase';
 import Icons from '@/pages/Icons';
 import Back from '@/components/Back';
 import Swiper from '@/pages/Carousel';
+import CardDetailWebView from '@/pages/CardDetailWebView';
 
 const Stack = createNativeStackNavigator<ScreenParams>();
 
@@ -47,6 +48,7 @@ function App(): JSX.Element {
         <Stack.Screen component={DirectPurchase} name="DirectPurchase" />
         <Stack.Screen component={Icons} name="Icons" />
         <Stack.Screen component={Swiper} name="Swiper" />
+        <Stack.Screen component={CardDetailWebView} name="CardDetailWebView" />
       </Stack.Navigator>
     </NavigationContainer>
   );

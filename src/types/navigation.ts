@@ -4,6 +4,7 @@ type ScreenParams = {
   DirectPurchase: undefined;
   Icons: undefined;
   Swiper: undefined;
+  CardDetailWebView: undefined;
 };
 
 export default ScreenParams;
