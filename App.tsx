@@ -32,6 +32,8 @@ function App(): JSX.Element {
           headerTitleStyle: styles.title,
           headerShadowVisible: false,
           statusBarTranslucent: true,
+          statusBarColor: 'transparent',
+          statusBarStyle: 'dark',
           gestureEnabled: false,
           headerStyle: styles.header,
           // eslint-disable-next-line react/no-unstable-nested-components

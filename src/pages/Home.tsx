@@ -14,26 +14,39 @@ const Home: FC<NativeStackScreenProps<ScreenParams, 'Home'>> = ({
   const barStyle = isDark ? 'light-content' : 'dark-content';
   console.log(barStyle);
   const styles = useStyles();
+  const btnAll = [
+    {
+      onPress: () => navigation.push('Detail'),
+      title: 'Detail',
+    },
+    {
+      title: 'Direct Purchase',
+      onPress: () => navigation.push('DirectPurchase'),
+    },
+    {title: 'Icons', onPress: () => navigation.push('Icons')},
+    {title: 'Swiper', onPress: () => navigation.push('Swiper')},
+    {
+      title: 'card detail webview',
+      onPress: () => navigation.push('CardDetailWebView'),
+    },
+  ];
   useEffect(() => {}, []);
   return (
     <View style={styles.container}>
       <StatusBar barStyle={barStyle} translucent />
       <Text style={styles.title}>Home</Text>
-      <Pressable onPress={() => navigation.push('Detail')}>
-        <Text style={styles.title}>Press</Text>
-      </Pressable>
-      <Pressable onPress={() => navigation.push('DirectPurchase')}>
-        <Text style={styles.title}>Direct Purchase</Text>
-      </Pressable>
-      <Pressable onPress={() => navigation.push('Icons')}>
-        <Text style={styles.title}>Icons</Text>
-      </Pressable>
-      <Pressable onPress={() => navigation.push('Swiper')}>
-        <Text style={styles.title}>Swiper</Text>
-      </Pressable>
-      <Pressable onPress={() => navigation.push('CardDetailWebView')}>
-        <Text style={styles.title}>card detail webview</Text>
-      </Pressable>
+
+      <View style={styles['btn-all']}>
+        {btnAll.map((item, index) => (
+          <Pressable
+            key={`${item.title}-${index}`}
+            style={styles.button}
+            onPress={item.onPress}>
+            <Text style={styles['button-text']}>{item.title}</Text>
+          </Pressable>
+        ))}
+      </View>
+
       <LottieView
         style={styles['game-card-icon']}
         source={require('../assets/lotties/game-cards.json')}

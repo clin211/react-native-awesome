@@ -1,5 +1,5 @@
 import {StyleSheet, StatusBar} from 'react-native';
-import useMakeStyle from '../../../hooks/useMakeStyle';
+import useMakeStyle from '@/hooks/useMakeStyle';
 
 const useStyles = () => {
   const {theme} = useMakeStyle();
@@ -18,6 +18,29 @@ const useStyles = () => {
     'game-card-icon': {
       width: 140 * theme.scaleRatio.width,
       height: 140 * theme.scaleRatio.height,
+    },
+    'btn-all': {
+      paddingHorizontal: 24,
+      flexWrap: 'wrap',
+      flexDirection: 'row',
+      alignItems: 'stretch',
+      alignSelf: 'flex-start',
+    },
+    button: {
+      paddingHorizontal: 16,
+      paddingVertical: 6,
+      borderRadius: 20,
+      borderWidth: 1,
+      borderColor: '#ff4500',
+      alignSelf: 'flex-start',
+      marginVertical: 4,
+      marginEnd: 12,
+    },
+    'button-text': {
+      fontSize: 16,
+      fontWeight: '500',
+      color: '#ff4500',
+      textTransform: 'capitalize',
     },
   });
 };
