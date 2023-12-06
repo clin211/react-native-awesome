@@ -1,6 +1,10 @@
 import React, { useEffect } from 'react';
-import { View, Text, StatusBar } from 'react-native';
-import { SafeAreaProvider, initialWindowMetrics } from 'react-native-safe-area-context';
+import { View, Text, StatusBar, Platform } from 'react-native';
+import {
+    SafeAreaProvider,
+    SafeAreaView,
+    initialWindowMetrics,
+} from 'react-native-safe-area-context';
 import Navigator from './navigator';
 
 const App = () => {
@@ -12,6 +16,7 @@ const App = () => {
     return (
         <SafeAreaProvider initialMetrics={initialWindowMetrics}>
             <Navigator />
+            {Platform.OS === 'android' && <SafeAreaView mode="margin" edges={['bottom']} />}
         </SafeAreaProvider>
     );
 };
