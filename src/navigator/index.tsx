@@ -8,6 +8,7 @@ import {
 } from '@react-navigation/stack';
 import { ScreenParams } from './navigator';
 import Modal from '@/screens/Modal';
+import Fonts from '@/screens/Fonts';
 
 const RootNavigator = createStackNavigator<ScreenParams>();
 
@@ -25,6 +26,7 @@ const Navigator = () => {
             >
                 <RootNavigator.Screen name="Home" component={Home} />
                 <RootNavigator.Screen name="Modal" component={Modal} />
+                <RootNavigator.Screen name="Fonts" component={Fonts} />
             </RootNavigator.Navigator>
         </NavigationContainer>
     );

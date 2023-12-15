@@ -15,10 +15,7 @@ import { KeyboardInsetsView } from '@sdcx/keyboard-insets';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 
 const Home: FC<NativeStackScreenProps<ScreenParams, 'Home'>> = ({ navigation, route }) => {
-    console.log('navigation, route:', JSON.stringify(navigation));
-    console.log('navigation, route:', JSON.stringify(route, null, 4));
     const insets = useSafeAreaInsets();
-    console.log('insets:', insets);
 
     useLayoutEffect(() => {
         StatusBar.setBackgroundColor('transparent');
@@ -32,6 +29,9 @@ const Home: FC<NativeStackScreenProps<ScreenParams, 'Home'>> = ({ navigation, ro
             <Text>this is home page</Text>
             <Pressable style={styles.pressable} onPress={() => navigation.navigate('Modal')}>
                 <Text style={styles.text}>Modal</Text>
+            </Pressable>
+            <Pressable style={styles.pressable} onPress={() => navigation.navigate('Fonts')}>
+                <Text style={styles.text}>Fonts</Text>
             </Pressable>
             <FlatList
                 style={{ flex: 1 }}
