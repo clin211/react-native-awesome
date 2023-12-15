@@ -1,12 +1,24 @@
 import React, { FC, useLayoutEffect } from 'react';
 import { NativeStackScreenProps } from '@react-navigation/native-stack';
-import { FlatList, ScrollView, StatusBar, Text, TextInput, View } from 'react-native';
+import {
+    FlatList,
+    Pressable,
+    ScrollView,
+    StatusBar,
+    StyleSheet,
+    Text,
+    TextInput,
+    View,
+} from 'react-native';
 import { ScreenParams } from '@/navigator/navigator';
 import { KeyboardInsetsView } from '@sdcx/keyboard-insets';
+import { useSafeAreaInsets } from 'react-native-safe-area-context';
 
 const Home: FC<NativeStackScreenProps<ScreenParams, 'Home'>> = ({ navigation, route }) => {
     console.log('navigation, route:', JSON.stringify(navigation));
     console.log('navigation, route:', JSON.stringify(route, null, 4));
+    const insets = useSafeAreaInsets();
+    console.log('insets:', insets);
 
     useLayoutEffect(() => {
         StatusBar.setBackgroundColor('transparent');
@@ -14,9 +26,13 @@ const Home: FC<NativeStackScreenProps<ScreenParams, 'Home'>> = ({ navigation, ro
             headerShown: false,
         });
     }, []);
+
     return (
-        <KeyboardInsetsView extraHeight={8} style={{ flex: 1 }}>
+        <KeyboardInsetsView extraHeight={8} style={{ flex: 1, paddingTop: insets.top }}>
             <Text>this is home page</Text>
+            <Pressable style={styles.pressable} onPress={() => navigation.navigate('Modal')}>
+                <Text style={styles.text}>Modal</Text>
+            </Pressable>
             <FlatList
                 style={{ flex: 1 }}
                 contentContainerStyle={{ flexGrow: 1, gap: 8, paddingHorizontal: 24 }}
@@ -30,6 +46,7 @@ const Home: FC<NativeStackScreenProps<ScreenParams, 'Home'>> = ({ navigation, ro
                                 width: '100%',
                             }}
                             placeholder={'请输入内容' + item}
+                            placeholderTextColor={'grey'}
                             returnKeyLabel="Next"
                             returnKeyType="next"
                         />
@@ -41,3 +58,22 @@ const Home: FC<NativeStackScreenProps<ScreenParams, 'Home'>> = ({ navigation, ro
 };
 
 export default Home;
+
+const styles = StyleSheet.create({
+    pressable: {
+        marginHorizontal: 24,
+        marginVertical: 8,
+        height: 40,
+        borderWidth: 1,
+        borderRadius: 4,
+        borderColor: 'skyblue',
+        alignItems: 'center',
+        justifyContent: 'center',
+    },
+    text: {
+        fontSize: 16,
+        fontWeight: '500',
+        fontStyle: 'italic',
+        color: 'skyblue',
+    },
+});
