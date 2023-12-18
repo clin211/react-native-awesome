@@ -1,14 +1,10 @@
-import React from 'react';
-import { Pressable, ScrollView, SectionList, StyleSheet, Text, View } from 'react-native';
+import React, { FC } from 'react';
+import { NativeStackScreenProps } from '@react-navigation/native-stack';
+import { Pressable, SectionList, StyleSheet, Text, View } from 'react-native';
+import { fonts } from '@/theme';
+import { ScreenParams } from '@/navigator/navigator';
 
-const config = [
-    {
-        content: 'ABCDEFGHIJKLMNOPQRSTUVWXYZ abcdefghijklmnopqrstuvwxyz 1234567890',
-        title: 'Manrope',
-        weight: [200, 300, 400, 500, 600, 700, 800],
-    },
-];
-const Fonts = () => {
+const Fonts: FC<NativeStackScreenProps<ScreenParams, 'Fonts'>> = ({ navigation }) => {
     const list = [
         {
             title: 'Manrope',
@@ -28,7 +24,7 @@ const Fonts = () => {
             sections={list}
             style={styles.container}
             keyExtractor={(_, index) => index.toString()}
-            contentContainerStyle={{ rowGap: 12 }}
+            contentContainerStyle={{ rowGap: 12, paddingBottom: 30 }}
             renderSectionHeader={({ section: { title } }) => {
                 const isDongFang = title == '东方大楷';
                 return (
@@ -38,7 +34,7 @@ const Fonts = () => {
                             style={[
                                 styles.title,
                                 isDongFang && {
-                                    fontFamily: fontFamily.DongFangDaKai,
+                                    fontFamily: fonts.AlimamaDongFangDaKai.Regular,
                                     lineHeight: 26,
                                 },
                             ]}
@@ -52,15 +48,33 @@ const Fonts = () => {
                 const { title } = section;
                 const style = (styles as any)[`${title}-${item}`];
                 const isDongFang = title == '东方大楷';
+                if (isDongFang) console.log('item:', item);
                 return (
                     <View style={styles.item}>
                         <View style={styles['item-header']}>
-                            <Text style={styles['item-title']}>
+                            <Text
+                                style={[
+                                    styles['item-title'],
+                                    isDongFang && {
+                                        fontWeight: item as any,
+                                        fontFamily: fonts.AlimamaDongFangDaKai.Regular,
+                                    },
+                                ]}
+                            >
                                 {isDongFang ? '东方大楷' : style.fontFamily}
                             </Text>
-                            <Pressable style={styles['item-views']}>
-                                <Text style={styles['views-text']}>views</Text>
-                            </Pressable>
+                            {!isDongFang && (
+                                <Pressable
+                                    style={styles['item-views']}
+                                    onPress={() =>
+                                        navigation.navigate('FontDetail', {
+                                            font: style.fontFamily,
+                                        })
+                                    }
+                                >
+                                    <Text style={styles['views-text']}>views</Text>
+                                </Pressable>
+                            )}
                         </View>
                         {!isDongFang && (
                             <Text style={[styles.text, style]}>
@@ -80,21 +94,6 @@ const Fonts = () => {
 };
 
 export default Fonts;
-
-/**
- * @desc 字体
- * @return string
- */
-export const fontFamily = {
-    ExtraLight: 'Manrope-ExtraLight', // 200
-    Light: 'Manrope-Light', // 300
-    Regular: 'Manrope-Regular', // 400
-    Medium: 'Manrope-Medium', // 500
-    SemiBold: 'Manrope-SemiBold', // 600
-    Bold: 'Manrope-Bold', // 700
-    ExtraBold: 'Manrope-ExtraBold', // 800
-    DongFangDaKai: 'AlimamaDongFangDaKai-Regular',
-};
 
 const styles = StyleSheet.create({
     container: {
@@ -120,7 +119,7 @@ const styles = StyleSheet.create({
         fontSize: 24,
         lineHeight: 24,
         textAlignVertical: 'center',
-        fontFamily: fontFamily.Bold,
+        fontFamily: fonts.Manrope.Bold,
         color: 'rgba(0, 0, 0, 0.8)',
     },
     item: {
@@ -140,7 +139,7 @@ const styles = StyleSheet.create({
         fontSize: 12,
         lineHeight: 12,
         color: '#ff4500',
-        fontFamily: fontFamily.Medium,
+        fontFamily: fonts.Manrope.Medium,
         textAlign: 'center',
         textAlignVertical: 'center',
         flex: 1,
@@ -149,7 +148,7 @@ const styles = StyleSheet.create({
         fontSize: 16,
         lineHeight: 20,
         color: 'rgba(0, 0, 0, 0.6)',
-        fontFamily: fontFamily.SemiBold,
+        fontFamily: fonts.Manrope.SemiBold,
         marginBottom: 8,
     },
     text: {
@@ -159,25 +158,25 @@ const styles = StyleSheet.create({
         color: 'skyblue',
     },
     'Manrope-200': {
-        fontFamily: fontFamily.ExtraLight,
+        fontFamily: fonts.Manrope.ExtraLight,
     },
     'Manrope-300': {
-        fontFamily: fontFamily.Light,
+        fontFamily: fonts.Manrope.Light,
     },
     'Manrope-400': {
-        fontFamily: fontFamily.Regular,
+        fontFamily: fonts.Manrope.Regular,
     },
     'Manrope-500': {
-        fontFamily: fontFamily.Medium,
+        fontFamily: fonts.Manrope.Medium,
     },
     'Manrope-600': {
-        fontFamily: fontFamily.SemiBold,
+        fontFamily: fonts.Manrope.SemiBold,
     },
     'Manrope-700': {
-        fontFamily: fontFamily.Bold,
+        fontFamily: fonts.Manrope.Bold,
     },
     'Manrope-800': {
-        fontFamily: fontFamily.ExtraBold,
+        fontFamily: fonts.Manrope.ExtraBold,
     },
     'zhao-cai': {
         fontSize: 24,
@@ -186,31 +185,31 @@ const styles = StyleSheet.create({
         fontWeight: '100',
     },
     'Montserrat-100': {
-        fontFamily: 'Montserrat-Thin',
+        fontFamily: fonts.Montserrat.Thin,
     },
     'Montserrat-200': {
-        fontFamily: 'Montserrat-ExtraLight',
+        fontFamily: fonts.Montserrat.ExtraLight,
     },
     'Montserrat-300': {
-        fontFamily: 'Montserrat-Light',
+        fontFamily: fonts.Montserrat.Light,
     },
     'Montserrat-400': {
-        fontFamily: 'Montserrat-Regular',
+        fontFamily: fonts.Montserrat.Regular,
     },
     'Montserrat-500': {
-        fontFamily: 'Montserrat-Medium',
+        fontFamily: fonts.Montserrat.Medium,
     },
     'Montserrat-600': {
-        fontFamily: 'Montserrat-SemiBold',
+        fontFamily: fonts.Montserrat.SemiBold,
     },
     'Montserrat-700': {
-        fontFamily: 'Montserrat-Bold',
+        fontFamily: fonts.Montserrat.Bold,
     },
     'Montserrat-800': {
-        fontFamily: 'Montserrat-ExtraBold',
+        fontFamily: fonts.Montserrat.ExtraBold,
     },
     'dong-fang-da-kai': {
-        fontFamily: 'AlimamaDongFangDaKai-Regular',
+        fontFamily: fonts.AlimamaDongFangDaKai.Regular,
         fontSize: 14,
     },
 });

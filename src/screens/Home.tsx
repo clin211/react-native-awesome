@@ -14,7 +14,7 @@ import { ScreenParams } from '@/navigator/navigator';
 import { KeyboardInsetsView } from '@sdcx/keyboard-insets';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 
-const Home: FC<NativeStackScreenProps<ScreenParams, 'Home'>> = ({ navigation, route }) => {
+const Home: FC<NativeStackScreenProps<ScreenParams, 'Home'>> = ({ navigation }) => {
     const insets = useSafeAreaInsets();
 
     useLayoutEffect(() => {
@@ -26,7 +26,6 @@ const Home: FC<NativeStackScreenProps<ScreenParams, 'Home'>> = ({ navigation, ro
 
     return (
         <KeyboardInsetsView extraHeight={8} style={{ flex: 1, paddingTop: insets.top }}>
-            <Text>this is home page</Text>
             <Pressable style={styles.pressable} onPress={() => navigation.navigate('Modal')}>
                 <Text style={styles.text}>Modal</Text>
             </Pressable>
