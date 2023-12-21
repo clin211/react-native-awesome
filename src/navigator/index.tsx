@@ -11,6 +11,7 @@ import Modal from '@/screens/Modal';
 import Fonts from '@/screens/Fonts';
 import FontDetail from '@/screens/FontDetail';
 import { fonts } from '@/theme';
+import Floating from '@/screens/Floating';
 
 const RootNavigator = createStackNavigator<ScreenParams>();
 
@@ -35,6 +36,7 @@ const Navigator = () => {
                 <RootNavigator.Screen name="Modal" component={Modal} />
                 <RootNavigator.Screen name="Fonts" component={Fonts} />
                 <RootNavigator.Screen name="FontDetail" component={FontDetail} />
+                <RootNavigator.Screen name="Floating" component={Floating} />
             </RootNavigator.Navigator>
         </NavigationContainer>
     );

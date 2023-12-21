@@ -3,4 +3,5 @@ export type ScreenParams = {
     Modal: undefined;
     Fonts: undefined;
     FontDetail: { font: string };
+    Floating: undefined;
 };
