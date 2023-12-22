@@ -35,6 +35,24 @@ const Home: FC<NativeStackScreenProps<ScreenParams, 'Home'>> = ({ navigation }) 
             <Pressable style={styles.pressable} onPress={() => navigation.navigate('Floating')}>
                 <Text style={styles.text}>Floating</Text>
             </Pressable>
+            <Pressable
+                style={styles.pressable}
+                onPress={() => navigation.navigate('ScrollableTab')}
+            >
+                <Text style={styles.text}>scrollable tab view</Text>
+            </Pressable>
+            <Pressable
+                style={styles.pressable}
+                onPress={() => navigation.navigate('VerticalScrollable')}
+            >
+                <Text style={styles.text}>scrollable vertical</Text>
+            </Pressable>
+            <Pressable
+                style={styles.pressable}
+                onPress={() => navigation.navigate('ScrollableTabNew')}
+            >
+                <Text style={styles.text}>scrollable new version</Text>
+            </Pressable>
             <FlatList
                 style={{ flex: 1 }}
                 contentContainerStyle={{ flexGrow: 1, gap: 8, paddingHorizontal: 24 }}

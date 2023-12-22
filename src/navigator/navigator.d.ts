@@ -4,4 +4,7 @@ export type ScreenParams = {
     Fonts: undefined;
     FontDetail: { font: string };
     Floating: undefined;
+    ScrollableTab: undefined;
+    ScrollableTabNew: undefined;
+    VerticalScrollable: undefined;
 };

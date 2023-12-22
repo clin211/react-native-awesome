@@ -12,6 +12,9 @@ import Fonts from '@/screens/Fonts';
 import FontDetail from '@/screens/FontDetail';
 import { fonts } from '@/theme';
 import Floating from '@/screens/Floating';
+import ScrollableTab from '@/screens/ScrollableTab';
+import VerticalScrollable from '@/screens/VerticalScrollable';
+import ScrollableTabNew from '@/screens/ScrollableTabNew';
 
 const RootNavigator = createStackNavigator<ScreenParams>();
 
@@ -37,6 +40,9 @@ const Navigator = () => {
                 <RootNavigator.Screen name="Fonts" component={Fonts} />
                 <RootNavigator.Screen name="FontDetail" component={FontDetail} />
                 <RootNavigator.Screen name="Floating" component={Floating} />
+                <RootNavigator.Screen name="ScrollableTab" component={ScrollableTab} />
+                <RootNavigator.Screen name="ScrollableTabNew" component={ScrollableTabNew} />
+                <RootNavigator.Screen name="VerticalScrollable" component={VerticalScrollable} />
             </RootNavigator.Navigator>
         </NavigationContainer>
     );
