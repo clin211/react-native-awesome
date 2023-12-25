@@ -15,6 +15,8 @@ import Floating from '@/screens/Floating';
 import ScrollableTab from '@/screens/ScrollableTab';
 import VerticalScrollable from '@/screens/VerticalScrollable';
 import ScrollableTabNew from '@/screens/ScrollableTabNew';
+import RecycleTestComponent from '@/screens/RecyclerListView';
+import SpecialDeals from '@/screens/SpecialDeals';
 
 const RootNavigator = createStackNavigator<ScreenParams>();
 
@@ -43,6 +45,8 @@ const Navigator = () => {
                 <RootNavigator.Screen name="ScrollableTab" component={ScrollableTab} />
                 <RootNavigator.Screen name="ScrollableTabNew" component={ScrollableTabNew} />
                 <RootNavigator.Screen name="VerticalScrollable" component={VerticalScrollable} />
+                <RootNavigator.Screen name="SpecialDeals" component={SpecialDeals} />
+                <RootNavigator.Screen name="RecyclerListView" component={RecycleTestComponent} />
             </RootNavigator.Navigator>
         </NavigationContainer>
     );

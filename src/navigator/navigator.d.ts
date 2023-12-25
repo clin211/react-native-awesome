@@ -7,4 +7,6 @@ export type ScreenParams = {
     ScrollableTab: undefined;
     ScrollableTabNew: undefined;
     VerticalScrollable: undefined;
+    SpecialDeals: undefined;
+    RecyclerListView: undefined;
 };

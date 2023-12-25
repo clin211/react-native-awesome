@@ -53,6 +53,15 @@ const Home: FC<NativeStackScreenProps<ScreenParams, 'Home'>> = ({ navigation }) 
             >
                 <Text style={styles.text}>scrollable new version</Text>
             </Pressable>
+            <Pressable
+                style={styles.pressable}
+                onPress={() => navigation.navigate('RecyclerListView')}
+            >
+                <Text style={styles.text}>recycler list view</Text>
+            </Pressable>
+            <Pressable style={styles.pressable} onPress={() => navigation.navigate('SpecialDeals')}>
+                <Text style={styles.text}>special deals</Text>
+            </Pressable>
             <FlatList
                 style={{ flex: 1 }}
                 contentContainerStyle={{ flexGrow: 1, gap: 8, paddingHorizontal: 24 }}
