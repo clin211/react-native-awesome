@@ -8,4 +8,5 @@ export type ScreenParams = {
     ScrollableTabNew: undefined;
     VerticalScrollable: undefined;
     SpecialDeals: undefined;
+    Animal: undefined;
 };

@@ -56,6 +56,9 @@ const Home: FC<NativeStackScreenProps<ScreenParams, 'Home'>> = ({ navigation }) 
             <Pressable style={styles.pressable} onPress={() => navigation.navigate('SpecialDeals')}>
                 <Text style={styles.text}>special deals</Text>
             </Pressable>
+            <Pressable style={styles.pressable} onPress={() => navigation.navigate('Animal')}>
+                <Text style={styles.text}>animal</Text>
+            </Pressable>
             <FlatList
                 style={{ flex: 1 }}
                 contentContainerStyle={{ flexGrow: 1, gap: 8, paddingHorizontal: 24 }}

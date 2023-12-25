@@ -16,6 +16,7 @@ import ScrollableTab from '@/screens/ScrollableTab';
 import VerticalScrollable from '@/screens/VerticalScrollable';
 import ScrollableTabNew from '@/screens/ScrollableTabNew';
 import SpecialDeals from '@/screens/SpecialDeals';
+import Animal from '@/screens/Animal';
 
 const RootNavigator = createStackNavigator<ScreenParams>();
 
@@ -45,6 +46,7 @@ const Navigator = () => {
                 <RootNavigator.Screen name="ScrollableTabNew" component={ScrollableTabNew} />
                 <RootNavigator.Screen name="VerticalScrollable" component={VerticalScrollable} />
                 <RootNavigator.Screen name="SpecialDeals" component={SpecialDeals} />
+                <RootNavigator.Screen name="Animal" component={Animal} />
             </RootNavigator.Navigator>
         </NavigationContainer>
     );
