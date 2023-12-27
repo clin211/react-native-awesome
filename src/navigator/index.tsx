@@ -1,4 +1,3 @@
-import Home from '@/screens/Home';
 import React from 'react';
 import { NavigationContainer } from '@react-navigation/native';
 import {
@@ -6,11 +5,13 @@ import {
     HeaderStyleInterpolators,
     createStackNavigator,
 } from '@react-navigation/stack';
+import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import { ScreenParams } from './navigator';
+import { fonts } from '@/theme';
+import Home from '@/screens/Home';
 import Modal from '@/screens/Modal';
 import Fonts from '@/screens/Fonts';
 import FontDetail from '@/screens/FontDetail';
-import { fonts } from '@/theme';
 import Floating from '@/screens/Floating';
 import ScrollableTab from '@/screens/ScrollableTab';
 import VerticalScrollable from '@/screens/VerticalScrollable';
@@ -21,6 +22,9 @@ import Animal from '@/screens/Animal';
 const RootNavigator = createStackNavigator<ScreenParams>();
 
 const Navigator = () => {
+    const insets = useSafeAreaInsets();
+    global.insets = insets;
+
     return (
         <NavigationContainer>
             <RootNavigator.Navigator

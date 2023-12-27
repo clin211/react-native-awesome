@@ -9,6 +9,7 @@ import Navigator from './navigator';
 import { GestureHandlerRootView } from 'react-native-gesture-handler';
 import { ModalProvider } from 'react-native-modalfy';
 import { stack } from '@/components/modal';
+import LoadingProvider from '@/components/loading/';
 
 const App = () => {
     useEffect(() => {
@@ -19,10 +20,14 @@ const App = () => {
     return (
         <SafeAreaProvider initialMetrics={initialWindowMetrics}>
             <GestureHandlerRootView style={{ flex: 1 }}>
-                <ModalProvider stack={stack}>
-                    <Navigator />
-                    {Platform.OS === 'android' && <SafeAreaView mode="margin" edges={['bottom']} />}
-                </ModalProvider>
+                <LoadingProvider>
+                    <ModalProvider stack={stack}>
+                        <Navigator />
+                        {Platform.OS === 'android' && (
+                            <SafeAreaView mode="margin" edges={['bottom']} />
+                        )}
+                    </ModalProvider>
+                </LoadingProvider>
             </GestureHandlerRootView>
         </SafeAreaProvider>
     );

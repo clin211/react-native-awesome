@@ -26,7 +26,7 @@ const Animal = () => {
             {isValidating && <Text>validating...</Text>}
             <RecyclerListView
                 style={{ flex: 1 }}
-                dataProvider={dataProvider.cloneWithRows(data.items)}
+                dataProvider={dataProvider.cloneWithRows([1, 2, 4, 5])}
                 layoutProvider={
                     new LayoutProvider(
                         () => 1,
@@ -57,8 +57,8 @@ const Animal = () => {
                                     justifyContent: 'space-between',
                                 }}
                             >
-                                <Text style={{ color: 'red' }}>{data.name}</Text>
-                                <Text style={{ color: 'red' }}>{data.liked}</Text>
+                                <Text style={{ color: 'red' }}>srgond</Text>
+                                <Text style={{ color: 'red' }}>3244</Text>
                             </View>
                         </View>
                     );
