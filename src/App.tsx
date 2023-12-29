@@ -1,38 +1,40 @@
 import React, { useEffect } from 'react';
-import { StatusBar, Platform } from 'react-native';
+import { StatusBar, Platform, PermissionsAndroid } from 'react-native';
 import {
     SafeAreaProvider,
     SafeAreaView,
     initialWindowMetrics,
 } from 'react-native-safe-area-context';
 import { GestureHandlerRootView } from 'react-native-gesture-handler';
-import { PersistQueryClientProvider } from '@tanstack/react-query-persist-client';
 import Navigator from './navigator';
 import { ModalProvider } from 'react-native-modalfy';
 import { stack } from '@/components/modal';
 import LoadingProvider from '@/components/loading/';
-import { clientPersister } from './utils/storage';
+import { firebaseState } from './utils/request-permission';
 
 const App = () => {
     useEffect(() => {
+        firebaseState().then(async res => {
+            await res.checkPermission();
+            console.log('global push id', global.push_id);
+        });
+        PermissionsAndroid.request(PermissionsAndroid.PERMISSIONS.POST_NOTIFICATIONS);
         StatusBar.setBarStyle('dark-content');
         StatusBar.setBackgroundColor('transparent');
     }, []);
 
     return (
         <SafeAreaProvider initialMetrics={initialWindowMetrics}>
-            <PersistQueryClientProvider persistOptions={{ persister: clientPersister }}>
-                <GestureHandlerRootView style={{ flex: 1 }}>
-                    <LoadingProvider>
-                        <ModalProvider stack={stack}>
-                            <Navigator />
-                            {Platform.OS === 'android' && (
-                                <SafeAreaView mode="margin" edges={['bottom']} />
-                            )}
-                        </ModalProvider>
-                    </LoadingProvider>
-                </GestureHandlerRootView>
-            </PersistQueryClientProvider>
+            <GestureHandlerRootView style={{ flex: 1 }}>
+                <LoadingProvider>
+                    <ModalProvider stack={stack}>
+                        <Navigator />
+                        {Platform.OS === 'android' && (
+                            <SafeAreaView mode="margin" edges={['bottom']} />
+                        )}
+                    </ModalProvider>
+                </LoadingProvider>
+            </GestureHandlerRootView>
         </SafeAreaProvider>
     );
 };

@@ -66,7 +66,7 @@ export default Home;
 
 const styles = StyleSheet.create({
     container: {
-        paddingTop: global.insets.top,
+        paddingTop: global.insets?.top ?? 34,
     },
     pressable: {
         marginHorizontal: 24,

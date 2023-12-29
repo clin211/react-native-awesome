@@ -1,4 +1,4 @@
-package com.lin;
+package pro.clin.app;
 
 import android.os.Bundle;
 import com.facebook.react.ReactActivity;
