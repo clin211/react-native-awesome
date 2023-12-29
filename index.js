@@ -3,7 +3,7 @@
  */
 
 import { AppRegistry, Text, TextInput } from 'react-native';
-import messaging from '@react-native-firebase/messaging';
+import messaging, { FirebaseMessagingTypes, AndroidImportance } from '@react-native-firebase/messaging';
 import notifee, { EventType } from '@notifee/react-native';
 import App from './src/App';
 import { name as appName } from './app.json';
@@ -13,18 +13,19 @@ Text.defaultProps.allowFontScaling = false;
 TextInput.defaultProps = {};
 TextInput.defaultProps.allowFontScaling = false;
 
-function onMessageReceived (message) {
-    const { type, timestamp } = message.data;
+async function onMessageReceived (message: FirebaseMessagingTypes.RemoteMessage) {
+    const channelId = await notifee.createChannel({
+        id: 'default',
+        name: 'Default Channel',
+        badge: true,
+        // importance: AndroidImportance.HIGH,
+    });
+    const { content } = message.data;
+    // console.log('content:', JSON.stringify(, null, 4))
 
-    if (type === 'order_shipped') {
-        notifee.displayNotification({
-            title: 'Your order has been shipped',
-            body: `Your order was shipped at ${new Date(Number(timestamp)).toString()}!`,
-            android: {
-                channelId: 'orders',
-            },
-        });
-    }
+    const data = JSON.parse(content);
+    data.android.channelId = channelId;
+    notifee.displayNotification(data)
 }
 
 messaging().onMessage(onMessageReceived);

@@ -1,6 +1,7 @@
 import React, { FC, useEffect, useLayoutEffect, useState } from 'react';
 import { NativeStackScreenProps } from '@react-navigation/native-stack';
 import { Pressable, ScrollView, StatusBar, StyleSheet, Text } from 'react-native';
+import notifee from '@notifee/react-native';
 import { ScreenParams } from '@/navigator/navigator';
 import { useLoading } from '@/components/loading';
 import useSWR from 'swr';
@@ -23,6 +24,25 @@ const Home: FC<NativeStackScreenProps<ScreenParams, 'Home'>> = ({ navigation }) 
         if (!isLoading) loading.close();
     }, [isLoading]);
 
+    // Bootstrap sequence function
+    async function bootstrap() {
+        const initialNotification = await notifee.getInitialNotification();
+
+        if (initialNotification) {
+            console.log(
+                'Notification caused application to open',
+                JSON.stringify(initialNotification.notification, null, 4),
+            );
+            console.log(
+                'Press action used to open the app',
+                JSON.stringify(initialNotification.pressAction, null, 4),
+            );
+        }
+    }
+
+    useEffect(() => {
+        bootstrap();
+    }, []);
     useLayoutEffect(() => {
         StatusBar.setBackgroundColor('transparent');
         navigation.setOptions({
