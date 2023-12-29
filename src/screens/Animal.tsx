@@ -2,7 +2,6 @@ import React from 'react';
 import { Image, Text, View, useWindowDimensions } from 'react-native';
 import useSWR from 'swr';
 import { animals } from '@/api/animal';
-import Loading from '@/components/loading';
 import { DataProvider, LayoutProvider, RecyclerListView } from 'recyclerlistview';
 
 const Animal = () => {

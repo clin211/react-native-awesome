@@ -1886,6 +1886,33 @@
   dependencies:
     "@sinonjs/commons" "^3.0.0"
 
+"@tanstack/query-core@5.14.2":
+  version "5.14.2"
+  resolved "https://registry.npmmirror.com/@tanstack/query-core/-/query-core-5.14.2.tgz#ef0c1a93e142d5cce90b0ac2d0333a88fc0fbb95"
+  integrity sha512-QmoJvC72sSWs3hgGis8JdmlDvqLfYGWUK4UG6OR9Q6t28JMN9m2FDwKPqoSJ9YVocELCSjMt/FGjEiLfk8000Q==
+
+"@tanstack/query-persist-client-core@5.14.2":
+  version "5.14.2"
+  resolved "https://registry.npmmirror.com/@tanstack/query-persist-client-core/-/query-persist-client-core-5.14.2.tgz#57f9583a5559438aa5bb33b22189deee4284d60c"
+  integrity sha512-xkegtYnO5Mi/uOdr7EHyevUkQxVcIzJagvjgh2oJ1L6PocNdaQ2J1dby1I+bBBT7RxS/6ZZ5gG08F+A1mRgM+A==
+  dependencies:
+    "@tanstack/query-core" "5.14.2"
+
+"@tanstack/query-sync-storage-persister@^5.14.2":
+  version "5.14.2"
+  resolved "https://registry.npmmirror.com/@tanstack/query-sync-storage-persister/-/query-sync-storage-persister-5.14.2.tgz#527ea507b65d0b5c69e6f64be255d6ea8ab825ec"
+  integrity sha512-XDRCXSxmqbNn4iHsZp5D0kv1Jh6YPHtzMZys/b/DHUnExmFJELau1jdktPPfGEaU0kGVes8UT6VEUq+EglzqWg==
+  dependencies:
+    "@tanstack/query-core" "5.14.2"
+    "@tanstack/query-persist-client-core" "5.14.2"
+
+"@tanstack/react-query-persist-client@^5.15.0":
+  version "5.15.0"
+  resolved "https://registry.npmmirror.com/@tanstack/react-query-persist-client/-/react-query-persist-client-5.15.0.tgz#1f1e59f56e43f5e33b82ad23e4b9274476fe5152"
+  integrity sha512-xNIKS2cMWZ+8yW3BiZuTBTyaMpZd/E5ySzK8e4iewThYlxzy9XPwrRA9ta2WlSNRuKv6eOaRoFfHvqKErG8P1g==
+  dependencies:
+    "@tanstack/query-persist-client-core" "5.14.2"
+
 "@tsconfig/react-native@^3.0.2":
   version "3.0.2"
   resolved "https://registry.npmmirror.com/@tsconfig/react-native/-/react-native-3.0.2.tgz#f7db242eee4820f5a3d0edcc86c920bb7d9ec0f2"
@@ -5688,6 +5715,11 @@ react-native-gesture-handler@^2.14.0:
     invariant "^2.2.4"
     lodash "^4.17.21"
     prop-types "^15.7.2"
+
+react-native-mmkv@^2.11.0:
+  version "2.11.0"
+  resolved "https://registry.npmmirror.com/react-native-mmkv/-/react-native-mmkv-2.11.0.tgz#51b9985f6a5c09fe9c16d8c1861cc2901856ace1"
+  integrity sha512-28PdUHjZJmAw3q+8zJDAAdohnZMpDC7WgRUJxACOMkcmJeqS3u5cKS/lSq2bhf1CvaeIiHYHUWiyatUjMRCDQQ==
 
 react-native-modalfy@^3.5.2:
   version "3.5.2"

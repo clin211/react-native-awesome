@@ -5,11 +5,13 @@ import {
     SafeAreaView,
     initialWindowMetrics,
 } from 'react-native-safe-area-context';
-import Navigator from './navigator';
 import { GestureHandlerRootView } from 'react-native-gesture-handler';
+import { PersistQueryClientProvider } from '@tanstack/react-query-persist-client';
+import Navigator from './navigator';
 import { ModalProvider } from 'react-native-modalfy';
 import { stack } from '@/components/modal';
 import LoadingProvider from '@/components/loading/';
+import { clientPersister } from './utils/storage';
 
 const App = () => {
     useEffect(() => {
@@ -19,16 +21,18 @@ const App = () => {
 
     return (
         <SafeAreaProvider initialMetrics={initialWindowMetrics}>
-            <GestureHandlerRootView style={{ flex: 1 }}>
-                <LoadingProvider>
-                    <ModalProvider stack={stack}>
-                        <Navigator />
-                        {Platform.OS === 'android' && (
-                            <SafeAreaView mode="margin" edges={['bottom']} />
-                        )}
-                    </ModalProvider>
-                </LoadingProvider>
-            </GestureHandlerRootView>
+            <PersistQueryClientProvider persistOptions={{ persister: clientPersister }}>
+                <GestureHandlerRootView style={{ flex: 1 }}>
+                    <LoadingProvider>
+                        <ModalProvider stack={stack}>
+                            <Navigator />
+                            {Platform.OS === 'android' && (
+                                <SafeAreaView mode="margin" edges={['bottom']} />
+                            )}
+                        </ModalProvider>
+                    </LoadingProvider>
+                </GestureHandlerRootView>
+            </PersistQueryClientProvider>
         </SafeAreaProvider>
     );
 };
