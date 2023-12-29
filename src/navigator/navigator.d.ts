@@ -9,4 +9,5 @@ export type ScreenParams = {
     VerticalScrollable: undefined;
     SpecialDeals: undefined;
     Animal: undefined;
+    Notification: undefined;
 };

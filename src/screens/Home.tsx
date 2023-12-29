@@ -1,4 +1,4 @@
-import React, { FC, useEffect, useLayoutEffect } from 'react';
+import React, { FC, useEffect, useLayoutEffect, useState } from 'react';
 import { NativeStackScreenProps } from '@react-navigation/native-stack';
 import { Pressable, ScrollView, StatusBar, StyleSheet, Text } from 'react-native';
 import { ScreenParams } from '@/navigator/navigator';
@@ -57,6 +57,9 @@ const Home: FC<NativeStackScreenProps<ScreenParams, 'Home'>> = ({ navigation }) 
             </Pressable>
             <Pressable style={styles.pressable} onPress={() => navigation.navigate('Animal')}>
                 <Text style={styles.text}>animal</Text>
+            </Pressable>
+            <Pressable style={styles.pressable} onPress={() => navigation.navigate('Notification')}>
+                <Text style={styles.text}>Notification</Text>
             </Pressable>
         </ScrollView>
     );

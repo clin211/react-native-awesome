@@ -12,6 +12,7 @@
     },
     "dependencies": {
         "@floating-ui/react-native": "^0.10.1",
+        "@notifee/react-native": "^7.8.2",
         "@react-native-community/hooks": "^3.0.0",
         "@react-native-firebase/app": "^18.7.3",
         "@react-native-firebase/messaging": "^18.7.3",
