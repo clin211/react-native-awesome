@@ -5,11 +5,18 @@ import { ScreenParams } from '@/navigator/navigator';
 import { useLoading } from '@/components/loading';
 import useSWR from 'swr';
 import { fetchTodo } from '@/api/animal';
+import { firebaseState } from '@/utils/request-permission';
 
 const Home: FC<NativeStackScreenProps<ScreenParams, 'Home'>> = ({ navigation }) => {
     const loading = useLoading();
 
     const { data, error, isLoading, isValidating, mutate } = useSWR('todo', fetchTodo);
+
+    const handleOnPressFetchPushID = async () => {
+        const res = await firebaseState();
+        await res.checkPermission();
+        console.log('global push id', global.push_id);
+    };
 
     useEffect(() => {
         if (isLoading) loading.show({ message: 'this is loading...' });
@@ -61,6 +68,9 @@ const Home: FC<NativeStackScreenProps<ScreenParams, 'Home'>> = ({ navigation }) 
             <Pressable style={styles.pressable} onPress={() => navigation.navigate('Notification')}>
                 <Text style={styles.text}>Notification</Text>
             </Pressable>
+            <Text style={styles.text} onPress={handleOnPressFetchPushID}>
+                fetch push id
+            </Text>
         </ScrollView>
     );
 };

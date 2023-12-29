@@ -13,21 +13,21 @@ Text.defaultProps.allowFontScaling = false;
 TextInput.defaultProps = {};
 TextInput.defaultProps.allowFontScaling = false;
 
-// Register background handler
-messaging().setBackgroundMessageHandler(async remoteMessage => {
-    console.log('Message handled in the background!', remoteMessage);
-});
+function onMessageReceived (message) {
+    const { type, timestamp } = message.data;
 
-notifee.onBackgroundEvent(async ({ type, detail }) => {
-    const { notification, pressAction } = detail;
-
-    // Check if the user pressed the "Mark as read" action
-    if (type === EventType.ACTION_PRESS && pressAction.id === 'mark-as-read') {
-        console.log('notification:', notification);
-
-        // Remove the notification
-        await notifee.cancelNotification(notification.id);
+    if (type === 'order_shipped') {
+        notifee.displayNotification({
+            title: 'Your order has been shipped',
+            body: `Your order was shipped at ${new Date(Number(timestamp)).toString()}!`,
+            android: {
+                channelId: 'orders',
+            },
+        });
     }
-});
+}
+
+messaging().onMessage(onMessageReceived);
+messaging().setBackgroundMessageHandler(onMessageReceived);
 
 AppRegistry.registerComponent(appName, () => App);
