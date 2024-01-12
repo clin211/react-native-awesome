@@ -38,6 +38,13 @@ const InternalWebview: FC<NativeStackScreenProps<ScreenParams, 'InternalWebview'
                     source={{ uri: 'https://mdnice.com/writing/611a0c9b60fb4b6ba627e86f45582685' }}
                 />
             </View>
+            <View style={styles.box}>
+                <AutoHeightWebView
+                    source={{
+                        uri: 'https://www.seagm.dev/app/detail/instruction?id=118&version=3212',
+                    }}
+                />
+            </View>
 
             <View>
                 <Text>review</Text>

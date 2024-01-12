@@ -254,12 +254,14 @@ export const shouldUpdate = ({ prevProps, nextProps }: any) => {
 const injectScript = `
 // 删除 dom
 function removeDOM(){
-    document.querySelector('.navbar').remove();
-    document.querySelector('.dydXqf').style.paddingTop=0;
-    document.querySelector('.top-container').remove();
-    document.querySelector('.writing-title').remove();
-    document.querySelector('.bottom-container').remove();
-    document.querySelector('.dwbTTH').remove();
+    if(window.location.href.includes('mdnice.com')){
+        document.querySelector('.navbar').remove();
+        document.querySelector('.dydXqf').style.paddingTop=0;
+        document.querySelector('.top-container').remove();
+        document.querySelector('.writing-title').remove();
+        document.querySelector('.bottom-container').remove();
+        document.querySelector('.dwbTTH').remove();
+    }
 };
 
 function updateSize(){

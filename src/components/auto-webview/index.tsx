@@ -46,8 +46,8 @@ const AutoHeightWebView: FC<AutoHeightWebViewProps & WebViewProps> = props => {
     const handleMessage = (event: WebViewMessageEvent) => {
         const data = JSON.parse(event.nativeEvent.data);
         console.log('🚀 ~ handleMessage ~ data:', data);
-        if (data?.type === 'size') {
-            setSize(data);
+        if (data?.height || data?.type === 'size') {
+            setSize(s => ({ ...s, ...data }));
         }
         props?.onMessage?.(event);
     };
