@@ -4,7 +4,7 @@ import LottieView from 'lottie-react-native';
 import { WebView, WebViewMessageEvent, WebViewProps } from 'react-native-webview';
 import { WebViewErrorEvent, WebViewNavigationEvent } from 'react-native-webview/lib/WebViewTypes';
 import injectScript from './utils';
-import { air } from '@/assets/lotties';
+import { air, notFound } from '@/assets/lotties';
 
 interface File {
     href: string;
@@ -41,6 +41,7 @@ let defaultProps = {
 
 const AutoHeightWebView: FC<AutoHeightWebViewProps & WebViewProps> = props => {
     const [loading, setLoading] = useState(true);
+    const [isError, setIsError] = useState(false);
     const [size, setSize] = useState<ViewStyle>({ width: '100%', height: 300 });
 
     const handleMessage = (event: WebViewMessageEvent) => {
@@ -58,20 +59,31 @@ const AutoHeightWebView: FC<AutoHeightWebViewProps & WebViewProps> = props => {
     };
 
     const handleError = (event: WebViewErrorEvent) => {
-        console.log('event:', event);
+        console.warn('error event:', event.nativeEvent);
+        setIsError(true);
     };
 
     return (
         <View style={[styles.webView, size]}>
-            <WebView
-                injectedJavaScript={injectScript}
-                onMessage={handleMessage}
-                onLoad={handleOnload}
-                onError={handleError}
-                {...defaultProps}
-                {...props}
-            />
-            {loading && <LottieView source={air} autoPlay loop style={styles.loading} />}
+            {!isError && (
+                <WebView
+                    injectedJavaScript={injectScript}
+                    onMessage={handleMessage}
+                    onLoad={handleOnload}
+                    onError={handleError}
+                    {...defaultProps}
+                    {...props}
+                />
+            )}
+            {loading && <LottieView source={air} autoPlay loop style={styles.placeholder} />}
+            {isError && (
+                <LottieView
+                    source={notFound}
+                    autoPlay
+                    loop
+                    style={[styles.placeholder, { backgroundColor: 'transparent' }]}
+                />
+            )}
         </View>
     );
 };
@@ -90,7 +102,7 @@ const styles = StyleSheet.create({
     webView: {
         backgroundColor: 'transparent',
     },
-    loading: {
+    placeholder: {
         position: 'absolute',
         top: 0,
         left: 0,
