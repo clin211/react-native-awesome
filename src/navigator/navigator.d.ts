@@ -11,4 +11,5 @@ export type ScreenParams = {
     Animal: undefined;
     Notification: undefined;
     InternalWebview: undefined;
+    Article: undefined;
 };

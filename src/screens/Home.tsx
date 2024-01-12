@@ -88,6 +88,9 @@ const Home: FC<NativeStackScreenProps<ScreenParams, 'Home'>> = ({ navigation }) 
             <Pressable style={styles.pressable} onPress={() => navigation.navigate('Notification')}>
                 <Text style={styles.text}>Notification</Text>
             </Pressable>
+            <Pressable style={styles.pressable} onPress={() => navigation.navigate('Article')}>
+                <Text style={styles.text}>Article</Text>
+            </Pressable>
             <Pressable
                 style={styles.pressable}
                 onPress={() => navigation.navigate('InternalWebview')}

@@ -3,7 +3,11 @@
         "Alimama",
         "BIGTEXT",
         "collapsable",
+        "cypher",
+        "highlightjs",
+        "hljs",
         "lotties",
+        "markdownit",
         "MMKV",
         "modalfy",
         "notifee",
@@ -11,6 +15,7 @@
         "tabbar",
         "tanstack",
         "ZCKS",
-        "zhao"
+        "zhao",
+        "Zoomedin"
     ]
 }

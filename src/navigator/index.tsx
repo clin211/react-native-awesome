@@ -20,6 +20,7 @@ import SpecialDeals from '@/screens/SpecialDeals';
 import Animal from '@/screens/Animal';
 import Notification from '@/screens/Notification';
 import InternalWebview from '@/screens/InternalWebview';
+import Article from '@/screens/Article';
 
 const RootNavigator = createStackNavigator<ScreenParams>();
 
@@ -55,6 +56,7 @@ const Navigator = () => {
                 <RootNavigator.Screen name="Animal" component={Animal} />
                 <RootNavigator.Screen name="Notification" component={Notification} />
                 <RootNavigator.Screen name="InternalWebview" component={InternalWebview} />
+                <RootNavigator.Screen name="Article" component={Article} />
             </RootNavigator.Navigator>
         </NavigationContainer>
     );
