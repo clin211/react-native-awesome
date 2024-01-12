@@ -10,4 +10,5 @@ export type ScreenParams = {
     SpecialDeals: undefined;
     Animal: undefined;
     Notification: undefined;
+    InternalWebview: undefined;
 };
