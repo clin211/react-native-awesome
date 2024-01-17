@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { StatusBar, Platform, PermissionsAndroid } from 'react-native';
+import { StatusBar, Platform, PermissionsAndroid, useColorScheme, Appearance } from 'react-native';
 import {
     SafeAreaProvider,
     SafeAreaView,
@@ -9,13 +9,22 @@ import { GestureHandlerRootView } from 'react-native-gesture-handler';
 import { ModalProvider } from 'react-native-modalfy';
 import messaging, { FirebaseMessagingTypes } from '@react-native-firebase/messaging';
 import notifee, { EventType } from '@notifee/react-native';
-import Navigator from './navigator';
+import Navigator from '@/navigator';
 import { stack } from '@/components/modal';
 import LoadingProvider from '@/components/loading/';
-import { firebaseState } from './utils/request-permission';
+import { firebaseState } from '@/utils/request-permission';
+import ThemeProvider, { defaultTheme } from './theme';
+import { dark, light } from './theme/color';
 
 const App = () => {
     const [message, setMessage] = useState<FirebaseMessagingTypes.RemoteMessage[]>([]);
+    const [currentSystemTheme, setCurrentSystemTheme] = useState(defaultTheme);
+
+    const systemColorScheme = useColorScheme();
+    useEffect(() => {
+        const isDark = systemColorScheme === 'dark';
+        setCurrentSystemTheme(dt => ({ ...dt, isDark, colors: isDark ? dark : light }));
+    }, [systemColorScheme]);
 
     useEffect(() => {
         return notifee.onForegroundEvent(({ type, detail }) => {
@@ -61,14 +70,16 @@ const App = () => {
     return (
         <SafeAreaProvider initialMetrics={initialWindowMetrics}>
             <GestureHandlerRootView style={{ flex: 1 }}>
-                <LoadingProvider>
-                    <ModalProvider stack={stack}>
-                        <Navigator />
-                        {Platform.OS === 'android' && (
-                            <SafeAreaView mode="margin" edges={['bottom']} />
-                        )}
-                    </ModalProvider>
-                </LoadingProvider>
+                <ThemeProvider value={currentSystemTheme}>
+                    <LoadingProvider>
+                        <ModalProvider stack={stack}>
+                            <Navigator />
+                            {Platform.OS === 'android' && (
+                                <SafeAreaView mode="margin" edges={['bottom']} />
+                            )}
+                        </ModalProvider>
+                    </LoadingProvider>
+                </ThemeProvider>
             </GestureHandlerRootView>
         </SafeAreaProvider>
     );

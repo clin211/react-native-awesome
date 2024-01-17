@@ -1,15 +1,19 @@
 import React, { FC, useEffect, useLayoutEffect, useState } from 'react';
 import { NativeStackScreenProps } from '@react-navigation/native-stack';
-import { Pressable, ScrollView, StatusBar, StyleSheet, Text } from 'react-native';
+import { Appearance, Pressable, ScrollView, StatusBar, StyleSheet, Text } from 'react-native';
 import notifee from '@notifee/react-native';
 import { ScreenParams } from '@/navigator/navigator';
 import { useLoading } from '@/components/loading';
 import useSWR from 'swr';
 import { fetchTodo } from '@/api/animal';
 import { firebaseState } from '@/utils/request-permission';
+import { useTheme } from '@/theme';
 
 const Home: FC<NativeStackScreenProps<ScreenParams, 'Home'>> = ({ navigation }) => {
     const loading = useLoading();
+    const theme = useTheme();
+
+    const styles = useStyles();
 
     const { data, error, isLoading, isValidating, mutate } = useSWR('todo', fetchTodo);
 
@@ -17,6 +21,12 @@ const Home: FC<NativeStackScreenProps<ScreenParams, 'Home'>> = ({ navigation }) 
         const res = await firebaseState();
         await res.checkPermission();
         console.log('global push id', global.push_id);
+    };
+
+    const handleSwitchMode = () => {
+        console.log('handle switch mode', theme.dark);
+        Appearance.setColorScheme(theme.isDark ? 'light' : 'dark');
+        console.log('current system theme', Appearance.getColorScheme());
     };
 
     useEffect(() => {
@@ -97,6 +107,9 @@ const Home: FC<NativeStackScreenProps<ScreenParams, 'Home'>> = ({ navigation }) 
             >
                 <Text style={styles.text}>internal webview</Text>
             </Pressable>
+            <Pressable style={styles.pressable} onPress={handleSwitchMode}>
+                <Text style={styles.text}>switch mode</Text>
+            </Pressable>
             <Text style={styles.text} onPress={handleOnPressFetchPushID}>
                 fetch push id
             </Text>
@@ -106,24 +119,29 @@ const Home: FC<NativeStackScreenProps<ScreenParams, 'Home'>> = ({ navigation }) 
 
 export default Home;
 
-const styles = StyleSheet.create({
-    container: {
-        paddingTop: global.insets?.top ?? 34,
-    },
-    pressable: {
-        marginHorizontal: 24,
-        marginVertical: 8,
-        height: 40,
-        borderWidth: 1,
-        borderRadius: 4,
-        borderColor: 'skyblue',
-        alignItems: 'center',
-        justifyContent: 'center',
-    },
-    text: {
-        fontSize: 16,
-        fontWeight: '500',
-        fontStyle: 'italic',
-        color: 'skyblue',
-    },
-});
+const useStyles = () => {
+    const theme = useTheme();
+    console.log('theme colors:', theme.colors.primary);
+    return StyleSheet.create({
+        container: {
+            paddingTop: global.insets?.top ?? 34,
+            backgroundColor: theme.colors.background,
+        },
+        pressable: {
+            marginHorizontal: 24,
+            marginVertical: 8,
+            height: 40,
+            borderWidth: 1,
+            borderRadius: 4,
+            borderColor: theme.colors.primary,
+            alignItems: 'center',
+            justifyContent: 'center',
+        },
+        text: {
+            fontSize: 16,
+            fontWeight: '500',
+            fontStyle: 'italic',
+            color: theme.colors.primary,
+        },
+    });
+};
