@@ -29,6 +29,8 @@ export const fonts = {
     },
 };
 
+export const fontAll: string[] = Object.values(fonts).flatMap(font => Object.values(font));
+
 export const defaultTheme: Theme = {
     isDark: Appearance.getColorScheme() === 'dark',
     dark,

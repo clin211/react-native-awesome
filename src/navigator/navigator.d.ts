@@ -12,4 +12,7 @@ export type ScreenParams = {
     Notification: undefined;
     InternalWebview: undefined;
     Article: undefined;
+    RenderHtml: undefined;
+    CustomRender: undefined;
+    PrerenderHtml: undefined;
 };

@@ -4,6 +4,7 @@
         "BIGTEXT",
         "collapsable",
         "cypher",
+        "domutils",
         "highlightjs",
         "hljs",
         "lotties",

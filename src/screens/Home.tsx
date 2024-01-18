@@ -110,6 +110,18 @@ const Home: FC<NativeStackScreenProps<ScreenParams, 'Home'>> = ({ navigation }) 
             <Pressable style={styles.pressable} onPress={handleSwitchMode}>
                 <Text style={styles.text}>switch mode</Text>
             </Pressable>
+            <Pressable style={styles.pressable} onPress={() => navigation.navigate('RenderHtml')}>
+                <Text style={styles.text}>render html</Text>
+            </Pressable>
+            <Pressable style={styles.pressable} onPress={() => navigation.navigate('CustomRender')}>
+                <Text style={styles.text}>custom html</Text>
+            </Pressable>
+            <Pressable
+                style={styles.pressable}
+                onPress={() => navigation.navigate('PrerenderHtml')}
+            >
+                <Text style={styles.text}>prerender html</Text>
+            </Pressable>
             <Text style={styles.text} onPress={handleOnPressFetchPushID}>
                 fetch push id
             </Text>

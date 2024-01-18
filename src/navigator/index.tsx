@@ -21,6 +21,9 @@ import Animal from '@/screens/Animal';
 import Notification from '@/screens/Notification';
 import InternalWebview from '@/screens/InternalWebview';
 import Article from '@/screens/Article';
+import RenderHtml from '@/screens/RenderHtml';
+import CustomRender from '@/screens/CustomRender';
+import PrerenderHtml from '@/screens/PrerenderHtml';
 
 const RootNavigator = createStackNavigator<ScreenParams>();
 
@@ -57,6 +60,9 @@ const Navigator = () => {
                 <RootNavigator.Screen name="Notification" component={Notification} />
                 <RootNavigator.Screen name="InternalWebview" component={InternalWebview} />
                 <RootNavigator.Screen name="Article" component={Article} />
+                <RootNavigator.Screen name="RenderHtml" component={RenderHtml} />
+                <RootNavigator.Screen name="CustomRender" component={CustomRender} />
+                <RootNavigator.Screen name="PrerenderHtml" component={PrerenderHtml} />
             </RootNavigator.Navigator>
         </NavigationContainer>
     );
