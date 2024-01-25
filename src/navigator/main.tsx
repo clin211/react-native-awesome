@@ -26,11 +26,17 @@ const Item: FC<ItemProps> = ({ source, isPlay }) => {
 };
 
 interface TabBarProps {
-    name: 'Home' | 'Cart' | 'Search' | 'Profile' | 'Setting';
+    name: 'Home' | 'Cart' | 'Search' | 'User' | 'Setting';
     activeIcon: JSX.Element;
     inactiveIcon: JSX.Element;
 }
-
+const sources = {
+    Home: home,
+    Cart: cart,
+    Search: search,
+    User: user,
+    List: settings,
+};
 const MainNavigator = createBottomTabNavigator();
 const Main = () => {
     const theme = useTheme();
@@ -51,7 +57,7 @@ const Main = () => {
             inactiveIcon: <Item source={search} isPlay={false} />,
         },
         {
-            name: 'Profile',
+            name: 'User',
             activeIcon: <Item source={user} isPlay />,
             inactiveIcon: <Item source={user} isPlay={false} />,
         },
@@ -83,7 +89,7 @@ const Main = () => {
             } else if (item.name === 'Setting' && val.name === 'Setting') {
                 val.activeIcon = <Item source={settings} isPlay={true} />;
                 bgColor = '#ff6666';
-            } else if (item.name === 'Profile' && val.name === 'Profile') {
+            } else if (item.name === 'User' && val.name === 'User') {
                 val.activeIcon = <Item source={user} isPlay={true} />;
                 bgColor = '#66ff99';
             }
@@ -109,7 +115,7 @@ const Main = () => {
                     >
                         <View
                             style={{
-                                backgroundColor: '#fff',
+                                backgroundColor: '#ffc0c7',
                                 width: '90%',
                                 height: 80,
                                 flexDirection: 'row',
@@ -125,10 +131,11 @@ const Main = () => {
                                             borderWidth: 1,
                                             alignItems: 'center',
                                             justifyContent: 'center',
+                                            zIndex: 1000,
                                         }}
                                         onPress={() => props.navigation.navigate(item.name)}
                                     >
-                                        <Text>{item.name}</Text>
+                                        <LottieView source={cart} autoPlay />
                                     </Pressable>
                                 );
                             })}
@@ -141,7 +148,7 @@ const Main = () => {
             <MainNavigator.Screen name="Notice" component={Notice} />
             <MainNavigator.Screen name="List" component={List} />
             <MainNavigator.Screen name="Cart" component={Cart} />
-            <MainNavigator.Screen name="UserCenter" component={UserCenter} />
+            <MainNavigator.Screen name="User" component={UserCenter} />
         </MainNavigator.Navigator>
     );
 };
