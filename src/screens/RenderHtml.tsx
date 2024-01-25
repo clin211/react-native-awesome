@@ -117,7 +117,7 @@ const RenderHtml = () => {
             color: theme.colors.primary,
         },
         li: {
-            color: theme.colors.text.headline,
+            color: theme.colors.textColor1,
         },
     };
 
@@ -131,7 +131,7 @@ const RenderHtml = () => {
     const markerTextStyle = {
         fontSize: 14,
         marginEnd: 10,
-        color: theme.colors.text.headline,
+        color: theme.colors.textColor1,
     };
     const renderersProps: Partial<RenderersProps> = {
         a: {

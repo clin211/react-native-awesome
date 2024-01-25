@@ -1,12 +1,6 @@
 import commonStyle from './common-style';
 
-export interface Colors {
-    primary: string;
-    background: string;
-    text: {
-        headline: string;
-    };
-}
+type Colors = typeof light;
 
 export interface Theme {
     isDark: boolean;

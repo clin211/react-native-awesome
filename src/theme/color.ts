@@ -1,17 +1,44 @@
-import { Colors } from './theming';
-
-export const dark: Colors = {
-    primary: 'skyblue',
-    background: '#121212',
-    text: {
-        headline: 'rgba(255, 255, 255, 0.75)',
-    },
+export const light = {
+    primary: 'rgb(255, 69, 0)',
+    baseBg: '#1C1817',
+    bgl1: '#3B3330',
+    bgl2: '#322C29',
+    bgl3: '#2A2422',
+    maskA50: 'rgba(14, 12, 12, 0.5)',
+    textColor1: 'rgba(0, 0, 0, 0.80)',
+    textColor2: 'rgba(0, 0, 0, 0.6)',
+    textColor3: 'rgba(0, 0, 0, 0.4)',
+    textColor4: 'rgba(0, 0, 0, 0.2)',
+    textColor5: 'rgba(0, 0, 0, 0.10)',
+    bgcWarning: 'rgba(255, 255, 255, 0.1)',
+    textColorWarning: 'rgba(255,255,255,0)',
+    bgcAlert: 'rgba(255, 50, 50, 0.25)',
+    textColorAlert: 'rgba(255,70,70)',
+    bgcComplete: 'rgba(0, 128, 0, 0.1)',
+    textColorComplete: 'rgba(0,128,0)',
+    bgcPromotion: 'rgba(0, 128, 0, 0.1)',
+    textColorPromotion: 'rgba(0,128,0)',
+    inputBg: 'rgba(255, 255, 255, 0.5)',
 };
-
-export const light: Colors = {
-    primary: '#ff4500',
-    background: '#f5f5f5',
-    text: {
-        headline: 'rgba(0, 0, 0, 0.8)',
-    },
+export const dark = {
+    primary: 'rgb(0, 187, 255)',
+    baseBg: '#171B1C',
+    bgl1: '#30383B',
+    bgl2: '#293032',
+    bgl3: '#22282A',
+    maskA50: 'rgba(12, 13, 14, 0.5)',
+    textColor1: 'rgba(255, 255, 255, 0.90)',
+    textColor2: 'rgba(255, 255, 255, 0.75)',
+    textColor3: 'rgba(255, 255, 255, 0.50)',
+    textColor4: 'rgba(255, 255, 255, 0.25)',
+    textColor5: 'rgba(255, 255, 255, 0.10)',
+    bgcWarning: 'rgba(255, 255, 255, 0.1)',
+    textColorWarning: 'rgba(255,255,255,0)',
+    bgcAlert: 'rgba(255, 50, 50, 0.25)',
+    textColorAlert: 'rgba(255,70,70)',
+    bgcComplete: 'rgba(154, 205, 50, 0.1)',
+    textColorComplete: 'rgba(154,205,50)',
+    bgcPromotion: 'rgba(154, 205, 50, 0.1)',
+    textColorPromotion: 'rgba(154,205,50)',
+    inputBg: 'rgba(255, 255, 255, 0.5)',
 };
