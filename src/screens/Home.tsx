@@ -2,14 +2,16 @@ import React, { FC, useEffect, useLayoutEffect, useState } from 'react';
 import { NativeStackScreenProps } from '@react-navigation/native-stack';
 import { Appearance, Pressable, ScrollView, StatusBar, StyleSheet, Text } from 'react-native';
 import notifee from '@notifee/react-native';
-import { ScreenParams } from '@/navigator/navigator';
+import { MainTabScreenParams, ScreenParams } from '@/navigator/navigator';
 import { useLoading } from '@/components/loading';
 import useSWR from 'swr';
 import { fetchTodo } from '@/api/animal';
 import { firebaseState } from '@/utils/request-permission';
 import { useTheme } from '@/theme';
 
-const Home: FC<NativeStackScreenProps<ScreenParams, 'Home'>> = ({ navigation }) => {
+const Home: FC<NativeStackScreenProps<MainTabScreenParams & ScreenParams, 'Home'>> = ({
+    navigation,
+}) => {
     const loading = useLoading();
     const theme = useTheme();
 
@@ -115,6 +117,12 @@ const Home: FC<NativeStackScreenProps<ScreenParams, 'Home'>> = ({ navigation }) 
             </Pressable>
             <Pressable style={styles.pressable} onPress={() => navigation.navigate('CustomRender')}>
                 <Text style={styles.text}>custom html</Text>
+            </Pressable>
+            <Pressable
+                style={styles.pressable}
+                onPress={() => navigation.navigate('ScrollablePagerView')}
+            >
+                <Text style={styles.text}>scrollable page view</Text>
             </Pressable>
             <Pressable
                 style={styles.pressable}

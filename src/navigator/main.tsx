@@ -10,6 +10,7 @@ import Cart from '@/screens/Cart';
 import List from '@/screens/List';
 import Notice from '@/screens/Notice';
 import UserCenter from '@/screens/UserCenter';
+import { MainTabScreenParams } from './navigator';
 
 type LottieSourceType = string | AnimationObject | { uri: string } | undefined;
 interface ItemProps {
@@ -37,7 +38,7 @@ const sources = {
     User: user,
     List: settings,
 };
-const MainNavigator = createBottomTabNavigator();
+const MainNavigator = createBottomTabNavigator<MainTabScreenParams>();
 const Main = () => {
     const theme = useTheme();
     const [tabs, setTabs] = useState<TabBarProps[]>([

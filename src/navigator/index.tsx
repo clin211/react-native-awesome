@@ -6,7 +6,7 @@ import {
     createStackNavigator,
 } from '@react-navigation/stack';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
-import { ScreenParams } from './navigator';
+import { MainTabScreenParams, ScreenParams } from './navigator';
 import { fonts } from '@/theme';
 import Modal from '@/screens/Modal';
 import Fonts from '@/screens/Fonts';
@@ -24,8 +24,9 @@ import RenderHtml from '@/screens/RenderHtml';
 import CustomRender from '@/screens/CustomRender';
 import PrerenderHtml from '@/screens/PrerenderHtml';
 import Main from './main';
+import ScrollablePagerView from '@/screens/ScrollablePagerView';
 
-const RootNavigator = createStackNavigator<ScreenParams>();
+const RootNavigator = createStackNavigator<ScreenParams & MainTabScreenParams>();
 
 const Navigator = () => {
     const insets = useSafeAreaInsets();
@@ -68,6 +69,7 @@ const Navigator = () => {
                 <RootNavigator.Screen name="RenderHtml" component={RenderHtml} />
                 <RootNavigator.Screen name="CustomRender" component={CustomRender} />
                 <RootNavigator.Screen name="PrerenderHtml" component={PrerenderHtml} />
+                <RootNavigator.Screen name="ScrollablePagerView" component={ScrollablePagerView} />
             </RootNavigator.Navigator>
         </NavigationContainer>
     );

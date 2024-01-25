@@ -15,6 +15,7 @@ export type ScreenParams = {
     RenderHtml: undefined;
     CustomRender: undefined;
     PrerenderHtml: undefined;
+    ScrollablePagerView: undefined;
 };
 
 export type MainTabScreenParams = {
@@ -22,5 +23,5 @@ export type MainTabScreenParams = {
     Notice: undefined;
     List: undefined;
     Cart: CartParams;
-    UserCenter: undefined;
+    User: undefined;
 };
