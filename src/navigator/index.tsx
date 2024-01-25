@@ -8,7 +8,6 @@ import {
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import { ScreenParams } from './navigator';
 import { fonts } from '@/theme';
-import Home from '@/screens/Home';
 import Modal from '@/screens/Modal';
 import Fonts from '@/screens/Fonts';
 import FontDetail from '@/screens/FontDetail';
@@ -24,6 +23,7 @@ import Article from '@/screens/Article';
 import RenderHtml from '@/screens/RenderHtml';
 import CustomRender from '@/screens/CustomRender';
 import PrerenderHtml from '@/screens/PrerenderHtml';
+import Main from './main';
 
 const RootNavigator = createStackNavigator<ScreenParams>();
 
@@ -34,6 +34,7 @@ const Navigator = () => {
     return (
         <NavigationContainer>
             <RootNavigator.Navigator
+                initialRouteName="Main"
                 screenOptions={{
                     gestureEnabled: false,
                     headerTitleAlign: 'center',
@@ -47,7 +48,11 @@ const Navigator = () => {
                     cardStyleInterpolator: CardStyleInterpolators.forHorizontalIOS,
                 }}
             >
-                <RootNavigator.Screen name="Home" component={Home} />
+                <RootNavigator.Screen
+                    name="Main"
+                    component={Main}
+                    options={{ headerShown: false }}
+                />
                 <RootNavigator.Screen name="Modal" component={Modal} />
                 <RootNavigator.Screen name="Fonts" component={Fonts} />
                 <RootNavigator.Screen name="FontDetail" component={FontDetail} />

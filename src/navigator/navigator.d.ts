@@ -1,5 +1,5 @@
 export type ScreenParams = {
-    Home: undefined;
+    Main: MainTabScreenParams;
     Modal: undefined;
     Fonts: undefined;
     FontDetail: { font: string };
@@ -15,4 +15,12 @@ export type ScreenParams = {
     RenderHtml: undefined;
     CustomRender: undefined;
     PrerenderHtml: undefined;
+};
+
+export type MainTabScreenParams = {
+    Home: undefined;
+    Notice: undefined;
+    List: undefined;
+    Cart: CartParams;
+    UserCenter: undefined;
 };
