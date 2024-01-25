@@ -1,4 +1,5 @@
 import commonStyle from './common-style';
+import { light } from './color';
 
 type Colors = typeof light;
 

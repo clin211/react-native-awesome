@@ -1,6 +1,6 @@
 export const light = {
     primary: 'rgb(255, 69, 0)',
-    baseBg: '#1C1817',
+    baseBg: '#fff',
     bgl1: '#3B3330',
     bgl2: '#322C29',
     bgl3: '#2A2422',

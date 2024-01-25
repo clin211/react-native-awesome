@@ -144,8 +144,9 @@ const useStyles = () => {
     console.log('theme colors:', theme.colors.primary);
     return StyleSheet.create({
         container: {
-            paddingTop: global.insets?.top ?? 34,
-            backgroundColor: theme.colors.background,
+            flex: 1,
+            paddingTop: global.insets?.top,
+            backgroundColor: theme.colors.baseBg,
         },
         pressable: {
             marginHorizontal: 24,

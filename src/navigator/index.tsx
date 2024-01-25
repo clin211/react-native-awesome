@@ -30,7 +30,7 @@ const RootNavigator = createStackNavigator<ScreenParams & MainTabScreenParams>()
 
 const Navigator = () => {
     const insets = useSafeAreaInsets();
-    global.insets = insets;
+    global.insets = insets || { top: 33, left: 0, right: 0, bottom: 0 };
 
     return (
         <NavigationContainer>

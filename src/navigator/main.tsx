@@ -3,7 +3,7 @@ import { I18nManager, View, Text, Pressable } from 'react-native';
 import Tabbar from '@mindinventory/react-native-tab-bar-interaction';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import LottieView, { AnimationObject } from 'lottie-react-native';
-import { useTheme } from '@/theme';
+import { fonts, useTheme } from '@/theme';
 import { home, cart, search, settings, user } from '@/assets/lotties';
 import Home from '@/screens/Home';
 import Cart from '@/screens/Cart';
@@ -103,23 +103,45 @@ const Main = () => {
     return (
         <MainNavigator.Navigator
             initialRouteName="Home"
+            sceneContainerStyle={{ backgroundColor: theme.colors.baseBg }}
+            screenListeners={{
+                tabLongPress: e => {
+                    console.log('tab long press', e);
+                },
+                tabPress: e => {
+                    console.log('tab press', e);
+                },
+            }}
+            screenOptions={{
+                headerTitleAlign: 'center',
+                headerTitleStyle: {
+                    fontSize: 16,
+                    fontFamily: fonts.Manrope.Bold,
+                },
+                headerTitleAllowFontScaling: false,
+                headerBackgroundContainerStyle: {
+                    backgroundColor: theme.colors.baseBg,
+                },
+                headerShadowVisible: false,
+                headerTransparent: false,
+            }}
             tabBar={props => {
                 const routes = props.state.routes;
-                console.log('🚀 ~ Main ~ props:', JSON.stringify(props, null, 2));
                 return (
                     <View
                         style={{
                             width: '100%',
-                            paddingBottom: 12,
                             alignItems: 'center',
+                            backgroundColor: 'rgba(255, 255, 255, 0)',
                         }}
                     >
                         <View
                             style={{
-                                backgroundColor: '#ffc0c7',
                                 width: '90%',
+                                maxWidth: 420,
                                 height: 80,
                                 flexDirection: 'row',
+                                borderRadius: 50,
                             }}
                         >
                             {routes.map(item => {
@@ -129,7 +151,6 @@ const Main = () => {
                                         style={{
                                             width: `${100 / routes.length}%`,
                                             height: '100%',
-                                            borderWidth: 1,
                                             alignItems: 'center',
                                             justifyContent: 'center',
                                             zIndex: 1000,
@@ -137,6 +158,7 @@ const Main = () => {
                                         onPress={() => props.navigation.navigate(item.name)}
                                     >
                                         <LottieView source={cart} autoPlay />
+                                        <Text>{item.name}</Text>
                                     </Pressable>
                                 );
                             })}
