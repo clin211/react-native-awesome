@@ -16,6 +16,7 @@ export type ScreenParams = {
     CustomRender: undefined;
     PrerenderHtml: undefined;
     ScrollablePagerView: undefined;
+    Settings: undefined;
 };
 
 export type MainTabScreenParams = {

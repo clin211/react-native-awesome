@@ -25,6 +25,10 @@ import CustomRender from '@/screens/CustomRender';
 import PrerenderHtml from '@/screens/PrerenderHtml';
 import Main from './main';
 import ScrollablePagerView from '@/screens/ScrollablePagerView';
+import Settings from '@/screens/Settings';
+import { Pressable } from 'react-native';
+import EStyleSheet from 'react-native-extended-stylesheet';
+import Icon from 'react-native-vector-icons/FontAwesome6';
 
 const RootNavigator = createStackNavigator<ScreenParams & MainTabScreenParams>();
 
@@ -33,7 +37,7 @@ const Navigator = () => {
     global.insets = insets || { top: 33, left: 0, right: 0, bottom: 0 };
 
     return (
-        <NavigationContainer>
+        <NavigationContainer onReady={() => {}}>
             <RootNavigator.Navigator
                 initialRouteName="Main"
                 screenOptions={{
@@ -47,6 +51,24 @@ const Navigator = () => {
                     },
                     headerStyleInterpolator: HeaderStyleInterpolators.forUIKit,
                     cardStyleInterpolator: CardStyleInterpolators.forHorizontalIOS,
+                    headerLeft: () => {
+                        return (
+                            <Pressable
+                                style={{
+                                    width: 48,
+                                    height: 48,
+                                    alignItems: 'center',
+                                    justifyContent: 'center',
+                                }}
+                            >
+                                <Icon
+                                    name="chevron-left"
+                                    size={24}
+                                    color={EStyleSheet.value('$textColor1')}
+                                />
+                            </Pressable>
+                        );
+                    },
                 }}
             >
                 <RootNavigator.Screen
@@ -70,6 +92,7 @@ const Navigator = () => {
                 <RootNavigator.Screen name="CustomRender" component={CustomRender} />
                 <RootNavigator.Screen name="PrerenderHtml" component={PrerenderHtml} />
                 <RootNavigator.Screen name="ScrollablePagerView" component={ScrollablePagerView} />
+                <RootNavigator.Screen name="Settings" component={Settings} />
             </RootNavigator.Navigator>
         </NavigationContainer>
     );

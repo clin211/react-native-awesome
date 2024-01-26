@@ -1,21 +1,20 @@
-import React, { FC, useEffect, useLayoutEffect, useState } from 'react';
+import React, { FC, useEffect, useLayoutEffect } from 'react';
 import { NativeStackScreenProps } from '@react-navigation/native-stack';
-import { Appearance, Pressable, ScrollView, StatusBar, StyleSheet, Text } from 'react-native';
+import { Appearance, Pressable, ScrollView, StatusBar, Text } from 'react-native';
 import notifee from '@notifee/react-native';
+import useSWR from 'swr';
 import { MainTabScreenParams, ScreenParams } from '@/navigator/navigator';
 import { useLoading } from '@/components/loading';
-import useSWR from 'swr';
 import { fetchTodo } from '@/api/animal';
 import { firebaseState } from '@/utils/request-permission';
 import { useTheme } from '@/theme';
+import styles from '@/assets/styles/home';
 
 const Home: FC<NativeStackScreenProps<MainTabScreenParams & ScreenParams, 'Home'>> = ({
     navigation,
 }) => {
     const loading = useLoading();
     const theme = useTheme();
-
-    const styles = useStyles();
 
     const { data, error, isLoading, isValidating, mutate } = useSWR('todo', fetchTodo);
 
@@ -25,10 +24,10 @@ const Home: FC<NativeStackScreenProps<MainTabScreenParams & ScreenParams, 'Home'
         console.log('global push id', global.push_id);
     };
 
-    const handleSwitchMode = () => {
+    const handleSwitchMode = (type: 'auto' | 'notAuto') => {
         console.log('handle switch mode', theme.dark);
-        Appearance.setColorScheme(theme.isDark ? 'light' : 'dark');
-        console.log('current system theme', Appearance.getColorScheme());
+        const mode = theme.isDark ? 'light' : 'dark';
+        Appearance.setColorScheme(type === 'auto' ? null : mode);
     };
 
     useEffect(() => {
@@ -63,7 +62,7 @@ const Home: FC<NativeStackScreenProps<MainTabScreenParams & ScreenParams, 'Home'
     }, []);
 
     return (
-        <ScrollView style={[styles.container]}>
+        <ScrollView style={[[styles.container]]}>
             <Pressable style={styles.pressable} onPress={() => navigation.navigate('Modal')}>
                 <Text style={styles.text}>Modal</Text>
             </Pressable>
@@ -109,7 +108,10 @@ const Home: FC<NativeStackScreenProps<MainTabScreenParams & ScreenParams, 'Home'
             >
                 <Text style={styles.text}>internal webview</Text>
             </Pressable>
-            <Pressable style={styles.pressable} onPress={handleSwitchMode}>
+            <Pressable style={styles.pressable} onPress={() => handleSwitchMode('auto')}>
+                <Text style={styles.text}>跟随系统</Text>
+            </Pressable>
+            <Pressable style={styles.pressable} onPress={() => handleSwitchMode('notAuto')}>
                 <Text style={styles.text}>switch mode</Text>
             </Pressable>
             <Pressable style={styles.pressable} onPress={() => navigation.navigate('RenderHtml')}>
@@ -138,31 +140,3 @@ const Home: FC<NativeStackScreenProps<MainTabScreenParams & ScreenParams, 'Home'
 };
 
 export default Home;
-
-const useStyles = () => {
-    const theme = useTheme();
-    console.log('theme colors:', theme.colors.primary);
-    return StyleSheet.create({
-        container: {
-            flex: 1,
-            paddingTop: global.insets?.top,
-            backgroundColor: theme.colors.baseBg,
-        },
-        pressable: {
-            marginHorizontal: 24,
-            marginVertical: 8,
-            height: 40,
-            borderWidth: 1,
-            borderRadius: 4,
-            borderColor: theme.colors.primary,
-            alignItems: 'center',
-            justifyContent: 'center',
-        },
-        text: {
-            fontSize: 16,
-            fontWeight: '500',
-            fontStyle: 'italic',
-            color: theme.colors.primary,
-        },
-    });
-};

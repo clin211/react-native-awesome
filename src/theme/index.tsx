@@ -3,6 +3,7 @@ import { Animated, Appearance, useColorScheme } from 'react-native';
 import { Theme } from './theming';
 import { dark, light } from './color';
 import commonStyle from './common-style';
+import EStyleSheet from 'react-native-extended-stylesheet';
 
 export const fonts = {
     Manrope: {
@@ -37,7 +38,6 @@ export const defaultTheme: Theme = {
     light,
     common: commonStyle,
     variable: {},
-    colors: Appearance.getColorScheme() === 'dark' ? dark : light,
 };
 
 const ThemeContext = createContext<Theme>(defaultTheme);

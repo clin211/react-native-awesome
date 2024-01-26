@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useLayoutEffect, useState } from 'react';
 import { StatusBar, Platform, PermissionsAndroid, useColorScheme, Appearance } from 'react-native';
 import {
     SafeAreaProvider,
@@ -15,14 +15,20 @@ import LoadingProvider from '@/components/loading/';
 import { firebaseState } from '@/utils/request-permission';
 import ThemeProvider, { defaultTheme } from './theme';
 import { dark, light } from './theme/color';
+import EStyleSheet from 'react-native-extended-stylesheet';
 
 const App = () => {
     const [message, setMessage] = useState<FirebaseMessagingTypes.RemoteMessage[]>([]);
     const [currentSystemTheme, setCurrentSystemTheme] = useState(defaultTheme);
 
     const systemColorScheme = useColorScheme();
+    console.log('🚀 ~ App ~ systemColorScheme:', systemColorScheme);
+
     useEffect(() => {
+        console.log('current system theme', systemColorScheme);
         const isDark = systemColorScheme === 'dark';
+        const colors = isDark ? dark : light;
+        EStyleSheet.build(colors);
         setCurrentSystemTheme(dt => ({ ...dt, isDark, colors: isDark ? dark : light }));
     }, [systemColorScheme]);
 

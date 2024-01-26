@@ -1,8 +1,8 @@
 import React, { FC, useEffect, useState } from 'react';
 import { I18nManager, View, Text, Pressable } from 'react-native';
-import Tabbar from '@mindinventory/react-native-tab-bar-interaction';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import LottieView, { AnimationObject } from 'lottie-react-native';
+import EStyleSheet from 'react-native-extended-stylesheet';
 import { fonts, useTheme } from '@/theme';
 import { home, cart, search, settings, user } from '@/assets/lotties';
 import Home from '@/screens/Home';
@@ -31,6 +31,7 @@ interface TabBarProps {
     activeIcon: JSX.Element;
     inactiveIcon: JSX.Element;
 }
+
 const sources = {
     Home: home,
     Cart: cart,
@@ -100,10 +101,12 @@ const Main = () => {
         setTabs(temp);
         setBgColor(bgColor);
     };
+    const backgroundColor = EStyleSheet.value('$baseBg');
+    // console.log('🚀 ~ Main ~ backgroundColor:', backgroundColor);
     return (
         <MainNavigator.Navigator
             initialRouteName="Home"
-            sceneContainerStyle={{ backgroundColor: theme.colors.baseBg }}
+            sceneContainerStyle={{ backgroundColor }}
             screenListeners={{
                 tabLongPress: e => {
                     console.log('tab long press', e);
@@ -116,11 +119,13 @@ const Main = () => {
                 headerTitleAlign: 'center',
                 headerTitleStyle: {
                     fontSize: 16,
+                    lineHeight: 24,
                     fontFamily: fonts.Manrope.Bold,
+                    color: EStyleSheet.value('$textColor1'),
                 },
                 headerTitleAllowFontScaling: false,
                 headerBackgroundContainerStyle: {
-                    backgroundColor: theme.colors.baseBg,
+                    backgroundColor,
                 },
                 headerShadowVisible: false,
                 headerTransparent: false,
@@ -132,7 +137,7 @@ const Main = () => {
                         style={{
                             width: '100%',
                             alignItems: 'center',
-                            backgroundColor: 'rgba(255, 255, 255, 0)',
+                            backgroundColor: EStyleSheet.value('$transparent'),
                         }}
                     >
                         <View
@@ -157,8 +162,7 @@ const Main = () => {
                                         }}
                                         onPress={() => props.navigation.navigate(item.name)}
                                     >
-                                        <LottieView source={cart} autoPlay />
-                                        <Text>{item.name}</Text>
+                                        <Text style={styles['item-text']}>{item.name}</Text>
                                     </Pressable>
                                 );
                             })}
@@ -175,5 +179,14 @@ const Main = () => {
         </MainNavigator.Navigator>
     );
 };
+
+const styles = EStyleSheet.create({
+    'item-text': {
+        fontSize: 16,
+        lineHeight: 24,
+        fontFamily: fonts.Manrope.Medium,
+        color: '$primary',
+    },
+});
 
 export default Main;
