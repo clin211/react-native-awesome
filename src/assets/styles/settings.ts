@@ -2,7 +2,9 @@ import { fonts } from '@/theme';
 import EStyleSheet from 'react-native-extended-stylesheet';
 
 const styles = EStyleSheet.create({
-    container: {},
+    container: {
+        backgroundColor: '$baseBg',
+    },
     title: {
         fontSize: 16,
         lineHeight: 24,
@@ -26,6 +28,7 @@ const styles = EStyleSheet.create({
     label: {
         fontSize: 16,
         lineHeight: 24,
+        color: '$textColor1',
         fontFamily: fonts.AlimamaDongFangDaKai.Regular,
     },
 });

@@ -80,6 +80,13 @@
 		<string>Montserrat-ThinItalic.ttf</string>
 		<string>AaZCKSNon-CommercialUse.ttf</string>
 		<string>AlimamaDongFangDaKai-Regular.otf</string>
+		<string>SourceHanSerif-Bold.otf</string>
+		<string>SourceHanSerif-ExtraLight.otf</string>
+		<string>SourceHanSerif-Heavy.otf</string>
+		<string>SourceHanSerif-Light.otf</string>
+		<string>SourceHanSerif-Medium.otf</string>
+		<string>SourceHanSerif-Regular.otf</string>
+		<string>SourceHanSerif-SemiBold.otf</string>
 	</array>
 </dict>
 </plist>

@@ -28,6 +28,15 @@ export const fonts = {
         Bold: 'Montserrat-Bold',
         ExtraBold: 'Montserrat-ExtraBold',
     },
+    SourceHanSerif: {
+        Light: 'SourceHanSerif-Light',
+        ExtraLight: 'SourceHanSerif-ExtraLight',
+        Regular: 'SourceHanSerif-Regular',
+        Medium: 'SourceHanSerif-Medium',
+        SemiBold: 'SourceHanSerif-SemiBold',
+        Bold: 'SourceHanSerif-Bold',
+        ExtraBold: 'SourceHanSerif-Heavy',
+    },
 };
 
 export const fontAll: string[] = Object.values(fonts).flatMap(font => Object.values(font));

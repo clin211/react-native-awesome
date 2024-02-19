@@ -108,6 +108,34 @@
     {
       "path": "src/assets/fonts/DongFangDaKai/AlimamaDongFangDaKai-Regular.otf",
       "sha1": "5ea4ea1b99ec0e43ea97c6898b60892a3f35fea1"
+    },
+    {
+      "path": "src/assets/fonts/SourceHanSerif/SourceHanSerif-Bold.otf",
+      "sha1": "8cf47473fdc9668785a91f56c1b8ff7dae0baac6"
+    },
+    {
+      "path": "src/assets/fonts/SourceHanSerif/SourceHanSerif-ExtraLight.otf",
+      "sha1": "8fffab15d576ff295923ddf1c166cd66ac277d9e"
+    },
+    {
+      "path": "src/assets/fonts/SourceHanSerif/SourceHanSerif-Heavy.otf",
+      "sha1": "ba4f22642df243920ca6544bc90301f6396e2796"
+    },
+    {
+      "path": "src/assets/fonts/SourceHanSerif/SourceHanSerif-Light.otf",
+      "sha1": "3da9a65989140cd0bcdc23774603de815c32c130"
+    },
+    {
+      "path": "src/assets/fonts/SourceHanSerif/SourceHanSerif-Medium.otf",
+      "sha1": "1c5ce0379945d20557fdd556ff4e125920054ce1"
+    },
+    {
+      "path": "src/assets/fonts/SourceHanSerif/SourceHanSerif-Regular.otf",
+      "sha1": "521d4c44e3ca58566158fba7a8d60c135fb57b6f"
+    },
+    {
+      "path": "src/assets/fonts/SourceHanSerif/SourceHanSerif-SemiBold.otf",
+      "sha1": "39d9bd0d07f77bb6ce8fa0f5888b323d5e4508cc"
     }
   ]
 }

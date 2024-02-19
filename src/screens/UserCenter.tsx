@@ -24,7 +24,7 @@ const UserCenter: FC<NativeStackScreenProps<MainTabScreenParams & ScreenParams, 
             <Icon name="rocket" size={30} color="#900" />
             <Pressable style={styles.cell} onPress={() => navigateTo('settings')}>
                 <View style={styles.start}>
-                    <Icon name="gear" size={24} color="" />
+                    <Icon name="gear" size={24} color={EStyleSheet.value('$textColor3')} />
                     <Text style={styles.label}>Settings</Text>
                 </View>
                 <Icon name="angle-right" size={24} color={EStyleSheet.value('$textColor3')} />

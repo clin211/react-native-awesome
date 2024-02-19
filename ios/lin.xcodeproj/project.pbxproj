@@ -41,6 +41,13 @@
 		983BAB929B624A469985F3A8 /* Montserrat-ThinItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 5678C13B520A47AD9B86C045 /* Montserrat-ThinItalic.ttf */; };
 		C1995F0E7F0546FCAF228E04 /* AaZCKSNon-CommercialUse.ttf in Resources */ = {isa = PBXBuildFile; fileRef = EDE8839912E5472F898681A3 /* AaZCKSNon-CommercialUse.ttf */; };
 		C29F0FE2F1B741AEA0B049CE /* AlimamaDongFangDaKai-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 8A5C8C8E0DAF455AAA545049 /* AlimamaDongFangDaKai-Regular.otf */; };
+		F3B6F067DFDE4BAF83C1C76B /* SourceHanSerif-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 48BEFF47744B4E55B06975C3 /* SourceHanSerif-Bold.otf */; };
+		5B360D267BD3459AB74F6594 /* SourceHanSerif-ExtraLight.otf in Resources */ = {isa = PBXBuildFile; fileRef = 1E3D889265CE43E8AEC17852 /* SourceHanSerif-ExtraLight.otf */; };
+		D1ABA7911C7B422787D0286D /* SourceHanSerif-Heavy.otf in Resources */ = {isa = PBXBuildFile; fileRef = 946B5950FF30465DBE7A55E8 /* SourceHanSerif-Heavy.otf */; };
+		A13F5379792C4594BD5B3D65 /* SourceHanSerif-Light.otf in Resources */ = {isa = PBXBuildFile; fileRef = 9218B575624746CA96507578 /* SourceHanSerif-Light.otf */; };
+		3EF07FBCBFF24A5CAA05E7AD /* SourceHanSerif-Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = 67D67CA8769E41B3936633C9 /* SourceHanSerif-Medium.otf */; };
+		35109ED020494CB19D191BD7 /* SourceHanSerif-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 8DB237B6E7464E1E912BABD2 /* SourceHanSerif-Regular.otf */; };
+		85FA724712CE42AAAFCEC100 /* SourceHanSerif-SemiBold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 8EE40B0E87BE40F29FAECB2A /* SourceHanSerif-SemiBold.otf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -98,6 +105,13 @@
 		5678C13B520A47AD9B86C045 /* Montserrat-ThinItalic.ttf */ = {isa = PBXFileReference; name = "Montserrat-ThinItalic.ttf"; path = "../src/assets/fonts/Montserrat/Montserrat-ThinItalic.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
 		EDE8839912E5472F898681A3 /* AaZCKSNon-CommercialUse.ttf */ = {isa = PBXFileReference; name = "AaZCKSNon-CommercialUse.ttf"; path = "../src/assets/fonts/ZhaoCaiKaiShu/AaZCKSNon-CommercialUse.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
 		8A5C8C8E0DAF455AAA545049 /* AlimamaDongFangDaKai-Regular.otf */ = {isa = PBXFileReference; name = "AlimamaDongFangDaKai-Regular.otf"; path = "../src/assets/fonts/DongFangDaKai/AlimamaDongFangDaKai-Regular.otf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		48BEFF47744B4E55B06975C3 /* SourceHanSerif-Bold.otf */ = {isa = PBXFileReference; name = "SourceHanSerif-Bold.otf"; path = "../src/assets/fonts/SourceHanSerif/SourceHanSerif-Bold.otf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		1E3D889265CE43E8AEC17852 /* SourceHanSerif-ExtraLight.otf */ = {isa = PBXFileReference; name = "SourceHanSerif-ExtraLight.otf"; path = "../src/assets/fonts/SourceHanSerif/SourceHanSerif-ExtraLight.otf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		946B5950FF30465DBE7A55E8 /* SourceHanSerif-Heavy.otf */ = {isa = PBXFileReference; name = "SourceHanSerif-Heavy.otf"; path = "../src/assets/fonts/SourceHanSerif/SourceHanSerif-Heavy.otf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		9218B575624746CA96507578 /* SourceHanSerif-Light.otf */ = {isa = PBXFileReference; name = "SourceHanSerif-Light.otf"; path = "../src/assets/fonts/SourceHanSerif/SourceHanSerif-Light.otf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		67D67CA8769E41B3936633C9 /* SourceHanSerif-Medium.otf */ = {isa = PBXFileReference; name = "SourceHanSerif-Medium.otf"; path = "../src/assets/fonts/SourceHanSerif/SourceHanSerif-Medium.otf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		8DB237B6E7464E1E912BABD2 /* SourceHanSerif-Regular.otf */ = {isa = PBXFileReference; name = "SourceHanSerif-Regular.otf"; path = "../src/assets/fonts/SourceHanSerif/SourceHanSerif-Regular.otf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		8EE40B0E87BE40F29FAECB2A /* SourceHanSerif-SemiBold.otf */ = {isa = PBXFileReference; name = "SourceHanSerif-SemiBold.otf"; path = "../src/assets/fonts/SourceHanSerif/SourceHanSerif-SemiBold.otf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -233,6 +247,13 @@
 				5678C13B520A47AD9B86C045 /* Montserrat-ThinItalic.ttf */,
 				EDE8839912E5472F898681A3 /* AaZCKSNon-CommercialUse.ttf */,
 				8A5C8C8E0DAF455AAA545049 /* AlimamaDongFangDaKai-Regular.otf */,
+				48BEFF47744B4E55B06975C3 /* SourceHanSerif-Bold.otf */,
+				1E3D889265CE43E8AEC17852 /* SourceHanSerif-ExtraLight.otf */,
+				946B5950FF30465DBE7A55E8 /* SourceHanSerif-Heavy.otf */,
+				9218B575624746CA96507578 /* SourceHanSerif-Light.otf */,
+				67D67CA8769E41B3936633C9 /* SourceHanSerif-Medium.otf */,
+				8DB237B6E7464E1E912BABD2 /* SourceHanSerif-Regular.otf */,
+				8EE40B0E87BE40F29FAECB2A /* SourceHanSerif-SemiBold.otf */,
 			);
 			name = Resources;
 			sourceTree = "<group>";
@@ -361,6 +382,13 @@
 				983BAB929B624A469985F3A8 /* Montserrat-ThinItalic.ttf in Resources */,
 				C1995F0E7F0546FCAF228E04 /* AaZCKSNon-CommercialUse.ttf in Resources */,
 				C29F0FE2F1B741AEA0B049CE /* AlimamaDongFangDaKai-Regular.otf in Resources */,
+				F3B6F067DFDE4BAF83C1C76B /* SourceHanSerif-Bold.otf in Resources */,
+				5B360D267BD3459AB74F6594 /* SourceHanSerif-ExtraLight.otf in Resources */,
+				D1ABA7911C7B422787D0286D /* SourceHanSerif-Heavy.otf in Resources */,
+				A13F5379792C4594BD5B3D65 /* SourceHanSerif-Light.otf in Resources */,
+				3EF07FBCBFF24A5CAA05E7AD /* SourceHanSerif-Medium.otf in Resources */,
+				35109ED020494CB19D191BD7 /* SourceHanSerif-Regular.otf in Resources */,
+				85FA724712CE42AAAFCEC100 /* SourceHanSerif-SemiBold.otf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

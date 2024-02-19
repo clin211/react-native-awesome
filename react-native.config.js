@@ -7,6 +7,7 @@ module.exports = {
         './src/assets/fonts/Manrope',
         './src/assets/fonts/Montserrat',
         './src/assets/fonts/ZhaoCaiKaiShu',
-        './src/assets/fonts/DongFangDaKai'
+        './src/assets/fonts/DongFangDaKai',
+        './src/assets/fonts/SourceHanSerif'
     ],
 }
