@@ -7,15 +7,13 @@ import {RootStackParamList} from './typing';
 const Stack = createNativeStackNavigator<RootStackParamList>();
 
 const Navigation = () => {
-  return (
-    <NavigationContainer>
-      <Stack.Navigator
-        initialRouteName="Home"
-        screenOptions={{headerTitleAlign: 'center'}}>
-        <Stack.Screen name="Home" component={Home} />
-      </Stack.Navigator>
-    </NavigationContainer>
-  );
+    return (
+        <NavigationContainer>
+            <Stack.Navigator initialRouteName="Home" screenOptions={{headerTitleAlign: 'center'}}>
+                <Stack.Screen name="Home" component={Home} />
+            </Stack.Navigator>
+        </NavigationContainer>
+    );
 };
 
 export default Navigation;
