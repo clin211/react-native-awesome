@@ -5479,6 +5479,11 @@ react-is@^17.0.1:
   resolved "https://registry.npmmirror.com/react-is/-/react-is-17.0.2.tgz#e691d4a8e9c789365655539ab372762b0efb54f0"
   integrity sha512-w2GsyukL62IJnlaff/nRegPQR94C/XXamvMWmSHRJ4y7Ts/4ocGRmTHvOs8PSE6pB3dWOrD/nueuU5sduBsQ4w==
 
+react-native-unistyles@^2.4.0:
+  version "2.4.0"
+  resolved "https://registry.npmmirror.com/react-native-unistyles/-/react-native-unistyles-2.4.0.tgz#6622c44a76b77522c8674ba63b1b19d7c1e67a5b"
+  integrity sha512-d38FehTqb05uTSGM6ZV74xFCeWXSoJ4u2WGEZ9k0TaboAOG+CcLWeLPPGABh31MDuUBro11v5sf8RFV+Z+f46A==
+
 react-native@0.73.4:
   version "0.73.4"
   resolved "https://registry.npmmirror.com/react-native/-/react-native-0.73.4.tgz#81e07d4e7b6308c4649d5fa24038c0e87b17f2e1"
