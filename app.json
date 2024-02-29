@@ -1,4 +1,5 @@
 {
   "name": "awesome",
-  "displayName": "awesome"
+  "displayName": "awesome",
+  "userInterfaceStyle": "automatic"
 }
