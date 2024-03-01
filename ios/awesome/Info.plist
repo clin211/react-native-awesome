@@ -62,7 +62,6 @@
 		<string>Manrope-Medium.ttf</string>
 		<string>Manrope-Regular.ttf</string>
 		<string>Manrope-SemiBold.ttf</string>
-		<string>Manrope-VariableFont_wght.ttf</string>
 		<string>Montserrat-Black.ttf</string>
 		<string>Montserrat-BlackItalic.ttf</string>
 		<string>Montserrat-Bold.ttf</string>
@@ -99,6 +98,20 @@
 		<string>Roboto-Regular.ttf</string>
 		<string>Roboto-Thin.ttf</string>
 		<string>Roboto-ThinItalic.ttf</string>
+		<string>SourceHanSerifSC-Bold.otf</string>
+		<string>SourceHanSerifSC-ExtraLight.otf</string>
+		<string>SourceHanSerifSC-Heavy.otf</string>
+		<string>SourceHanSerifSC-Light.otf</string>
+		<string>SourceHanSerifSC-Medium.otf</string>
+		<string>SourceHanSerifSC-Regular.otf</string>
+		<string>SourceHanSerifSC-SemiBold.otf</string>
+		<string>SourceHanSansCN-Bold.otf</string>
+		<string>SourceHanSansCN-ExtraLight.otf</string>
+		<string>SourceHanSansCN-Heavy.otf</string>
+		<string>SourceHanSansCN-Light.otf</string>
+		<string>SourceHanSansCN-Medium.otf</string>
+		<string>SourceHanSansCN-Normal.otf</string>
+		<string>SourceHanSansCN-Regular.otf</string>
 	</array>
 </dict>
 </plist>

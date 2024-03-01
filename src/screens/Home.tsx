@@ -2,8 +2,10 @@ import React, {FC} from 'react';
 import {View, Text, Pressable, Appearance} from 'react-native';
 import {createStyleSheet, useStyles} from 'react-native-unistyles';
 import useCounterStore from '../stores/counter';
+import {NativeStackScreenProps} from '@react-navigation/native-stack';
+import {RootStackParamList} from '../navigation/typing';
 
-const Home: FC = () => {
+const Home: FC<NativeStackScreenProps<RootStackParamList, 'Home'>> = ({navigation}) => {
     const {styles} = useStyles(styleSheet);
     const {count, increment, decrement, reset} = useCounterStore(state => state);
 
@@ -30,6 +32,12 @@ const Home: FC = () => {
                 onPress={handlePressSwitchTheme}
             >
                 <Text style={styles['press-text']}>switch theme</Text>
+            </Pressable>
+            <Pressable
+                style={({pressed}) => styles.press(pressed)}
+                onPress={() => navigation.navigate('Manrope')}
+            >
+                <Text style={styles['press-text']}>Manrope</Text>
             </Pressable>
         </View>
     );

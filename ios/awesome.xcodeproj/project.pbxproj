@@ -27,7 +27,6 @@
 		2D73301B7CF84DE4B910CF38 /* Manrope-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 641B9C232B1A46259761974E /* Manrope-Medium.ttf */; };
 		1F93D0EE6CD0492690D819A9 /* Manrope-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 2892E144241E404987AAA685 /* Manrope-Regular.ttf */; };
 		183E4D72604E4A00A7707002 /* Manrope-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = BFBB00AFD4254F6B9F9AD66D /* Manrope-SemiBold.ttf */; };
-		505EBF124A8D4745B9B9CB77 /* Manrope-VariableFont_wght.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 8D3E386DCE114FDE9F3FBAF7 /* Manrope-VariableFont_wght.ttf */; };
 		98E0741D8B2946F29CAD012B /* Montserrat-Black.ttf in Resources */ = {isa = PBXBuildFile; fileRef = BE542EEF55CD42AFBD5F0F6F /* Montserrat-Black.ttf */; };
 		BC782A1888B04BAF91F255AE /* Montserrat-BlackItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 5B63E1B3B6674DFFAE5F7F36 /* Montserrat-BlackItalic.ttf */; };
 		1BBF0F6F893148A8950EC6C7 /* Montserrat-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = D32BA669A2674380942B24EC /* Montserrat-Bold.ttf */; };
@@ -64,6 +63,20 @@
 		388CF32C547E492ABBC55DB4 /* Roboto-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A43360CE7AD647CDB5C00E3A /* Roboto-Regular.ttf */; };
 		91AB2A79AFDD4C07A06067CA /* Roboto-Thin.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 6C0AB21DEA4A4732A78A3B63 /* Roboto-Thin.ttf */; };
 		8133B92016A94E97AEC3A4ED /* Roboto-ThinItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B63DE1A04CBF494DBDEFB4C8 /* Roboto-ThinItalic.ttf */; };
+		3BA3F56EAA7A48458859D4C6 /* SourceHanSerifSC-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = BD85FFBFA86E449B9FBFBED4 /* SourceHanSerifSC-Bold.otf */; };
+		1272AED6F7AB4E46A2FBA744 /* SourceHanSerifSC-ExtraLight.otf in Resources */ = {isa = PBXBuildFile; fileRef = B85B56EDCB154506AA91602B /* SourceHanSerifSC-ExtraLight.otf */; };
+		1BBD319C1CD2499085D83C46 /* SourceHanSerifSC-Heavy.otf in Resources */ = {isa = PBXBuildFile; fileRef = F7C93FEE0CFC4FC6A7101381 /* SourceHanSerifSC-Heavy.otf */; };
+		C6CC0C41E4164F34BBA9A28C /* SourceHanSerifSC-Light.otf in Resources */ = {isa = PBXBuildFile; fileRef = 441F557CFDDA432C88AA4395 /* SourceHanSerifSC-Light.otf */; };
+		887AE2279256421E90180384 /* SourceHanSerifSC-Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = 45AB4F587EB44BCB96C7867C /* SourceHanSerifSC-Medium.otf */; };
+		A232FFE2CFCD4AE9B190D762 /* SourceHanSerifSC-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = F1BB4E4FF5F846FEB4B1476A /* SourceHanSerifSC-Regular.otf */; };
+		9369C2074404417DB6BBEF06 /* SourceHanSerifSC-SemiBold.otf in Resources */ = {isa = PBXBuildFile; fileRef = FD3E580E45914CFC9ACDAD55 /* SourceHanSerifSC-SemiBold.otf */; };
+		4F897CA143DE4683B33AFBCF /* SourceHanSansCN-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 43964255A2984F84AC396432 /* SourceHanSansCN-Bold.otf */; };
+		76400220EFA141AEBB25BDB6 /* SourceHanSansCN-ExtraLight.otf in Resources */ = {isa = PBXBuildFile; fileRef = 5E2CF50EB26646338D981425 /* SourceHanSansCN-ExtraLight.otf */; };
+		2A85F4E914704AEBB3AED753 /* SourceHanSansCN-Heavy.otf in Resources */ = {isa = PBXBuildFile; fileRef = F3EEF290D46E4833A609C659 /* SourceHanSansCN-Heavy.otf */; };
+		900B0AF13926492AA5B81E83 /* SourceHanSansCN-Light.otf in Resources */ = {isa = PBXBuildFile; fileRef = 5121661C0F024912BA176B24 /* SourceHanSansCN-Light.otf */; };
+		D22B903B9822474DB2B50996 /* SourceHanSansCN-Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = 5290C44A60B24937A72C92A9 /* SourceHanSansCN-Medium.otf */; };
+		7F51901FF93F41B5BEDFB12E /* SourceHanSansCN-Normal.otf in Resources */ = {isa = PBXBuildFile; fileRef = 8A098CA28E294F1EA5C5B4B7 /* SourceHanSansCN-Normal.otf */; };
+		BD4E7BDB0F7A480CB2C81049 /* SourceHanSansCN-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 665DB3498131487CB5A710FE /* SourceHanSansCN-Regular.otf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -107,7 +120,6 @@
 		641B9C232B1A46259761974E /* Manrope-Medium.ttf */ = {isa = PBXFileReference; name = "Manrope-Medium.ttf"; path = "../src/assets/fonts/Manrope/Manrope-Medium.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
 		2892E144241E404987AAA685 /* Manrope-Regular.ttf */ = {isa = PBXFileReference; name = "Manrope-Regular.ttf"; path = "../src/assets/fonts/Manrope/Manrope-Regular.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
 		BFBB00AFD4254F6B9F9AD66D /* Manrope-SemiBold.ttf */ = {isa = PBXFileReference; name = "Manrope-SemiBold.ttf"; path = "../src/assets/fonts/Manrope/Manrope-SemiBold.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
-		8D3E386DCE114FDE9F3FBAF7 /* Manrope-VariableFont_wght.ttf */ = {isa = PBXFileReference; name = "Manrope-VariableFont_wght.ttf"; path = "../src/assets/fonts/Manrope/Manrope-VariableFont_wght.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
 		BE542EEF55CD42AFBD5F0F6F /* Montserrat-Black.ttf */ = {isa = PBXFileReference; name = "Montserrat-Black.ttf"; path = "../src/assets/fonts/Montserrat/Montserrat-Black.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
 		5B63E1B3B6674DFFAE5F7F36 /* Montserrat-BlackItalic.ttf */ = {isa = PBXFileReference; name = "Montserrat-BlackItalic.ttf"; path = "../src/assets/fonts/Montserrat/Montserrat-BlackItalic.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
 		D32BA669A2674380942B24EC /* Montserrat-Bold.ttf */ = {isa = PBXFileReference; name = "Montserrat-Bold.ttf"; path = "../src/assets/fonts/Montserrat/Montserrat-Bold.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
@@ -144,6 +156,20 @@
 		A43360CE7AD647CDB5C00E3A /* Roboto-Regular.ttf */ = {isa = PBXFileReference; name = "Roboto-Regular.ttf"; path = "../src/assets/fonts/Roboto/Roboto-Regular.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
 		6C0AB21DEA4A4732A78A3B63 /* Roboto-Thin.ttf */ = {isa = PBXFileReference; name = "Roboto-Thin.ttf"; path = "../src/assets/fonts/Roboto/Roboto-Thin.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
 		B63DE1A04CBF494DBDEFB4C8 /* Roboto-ThinItalic.ttf */ = {isa = PBXFileReference; name = "Roboto-ThinItalic.ttf"; path = "../src/assets/fonts/Roboto/Roboto-ThinItalic.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		BD85FFBFA86E449B9FBFBED4 /* SourceHanSerifSC-Bold.otf */ = {isa = PBXFileReference; name = "SourceHanSerifSC-Bold.otf"; path = "../src/assets/fonts/SourceHanSerifSC/SourceHanSerifSC-Bold.otf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		B85B56EDCB154506AA91602B /* SourceHanSerifSC-ExtraLight.otf */ = {isa = PBXFileReference; name = "SourceHanSerifSC-ExtraLight.otf"; path = "../src/assets/fonts/SourceHanSerifSC/SourceHanSerifSC-ExtraLight.otf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		F7C93FEE0CFC4FC6A7101381 /* SourceHanSerifSC-Heavy.otf */ = {isa = PBXFileReference; name = "SourceHanSerifSC-Heavy.otf"; path = "../src/assets/fonts/SourceHanSerifSC/SourceHanSerifSC-Heavy.otf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		441F557CFDDA432C88AA4395 /* SourceHanSerifSC-Light.otf */ = {isa = PBXFileReference; name = "SourceHanSerifSC-Light.otf"; path = "../src/assets/fonts/SourceHanSerifSC/SourceHanSerifSC-Light.otf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		45AB4F587EB44BCB96C7867C /* SourceHanSerifSC-Medium.otf */ = {isa = PBXFileReference; name = "SourceHanSerifSC-Medium.otf"; path = "../src/assets/fonts/SourceHanSerifSC/SourceHanSerifSC-Medium.otf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		F1BB4E4FF5F846FEB4B1476A /* SourceHanSerifSC-Regular.otf */ = {isa = PBXFileReference; name = "SourceHanSerifSC-Regular.otf"; path = "../src/assets/fonts/SourceHanSerifSC/SourceHanSerifSC-Regular.otf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		FD3E580E45914CFC9ACDAD55 /* SourceHanSerifSC-SemiBold.otf */ = {isa = PBXFileReference; name = "SourceHanSerifSC-SemiBold.otf"; path = "../src/assets/fonts/SourceHanSerifSC/SourceHanSerifSC-SemiBold.otf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		43964255A2984F84AC396432 /* SourceHanSansCN-Bold.otf */ = {isa = PBXFileReference; name = "SourceHanSansCN-Bold.otf"; path = "../src/assets/fonts/SourceHanSansCN/SourceHanSansCN-Bold.otf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		5E2CF50EB26646338D981425 /* SourceHanSansCN-ExtraLight.otf */ = {isa = PBXFileReference; name = "SourceHanSansCN-ExtraLight.otf"; path = "../src/assets/fonts/SourceHanSansCN/SourceHanSansCN-ExtraLight.otf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		F3EEF290D46E4833A609C659 /* SourceHanSansCN-Heavy.otf */ = {isa = PBXFileReference; name = "SourceHanSansCN-Heavy.otf"; path = "../src/assets/fonts/SourceHanSansCN/SourceHanSansCN-Heavy.otf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		5121661C0F024912BA176B24 /* SourceHanSansCN-Light.otf */ = {isa = PBXFileReference; name = "SourceHanSansCN-Light.otf"; path = "../src/assets/fonts/SourceHanSansCN/SourceHanSansCN-Light.otf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		5290C44A60B24937A72C92A9 /* SourceHanSansCN-Medium.otf */ = {isa = PBXFileReference; name = "SourceHanSansCN-Medium.otf"; path = "../src/assets/fonts/SourceHanSansCN/SourceHanSansCN-Medium.otf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		8A098CA28E294F1EA5C5B4B7 /* SourceHanSansCN-Normal.otf */ = {isa = PBXFileReference; name = "SourceHanSansCN-Normal.otf"; path = "../src/assets/fonts/SourceHanSansCN/SourceHanSansCN-Normal.otf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		665DB3498131487CB5A710FE /* SourceHanSansCN-Regular.otf */ = {isa = PBXFileReference; name = "SourceHanSansCN-Regular.otf"; path = "../src/assets/fonts/SourceHanSansCN/SourceHanSansCN-Regular.otf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -265,7 +291,6 @@
 				641B9C232B1A46259761974E /* Manrope-Medium.ttf */,
 				2892E144241E404987AAA685 /* Manrope-Regular.ttf */,
 				BFBB00AFD4254F6B9F9AD66D /* Manrope-SemiBold.ttf */,
-				8D3E386DCE114FDE9F3FBAF7 /* Manrope-VariableFont_wght.ttf */,
 				BE542EEF55CD42AFBD5F0F6F /* Montserrat-Black.ttf */,
 				5B63E1B3B6674DFFAE5F7F36 /* Montserrat-BlackItalic.ttf */,
 				D32BA669A2674380942B24EC /* Montserrat-Bold.ttf */,
@@ -302,6 +327,20 @@
 				A43360CE7AD647CDB5C00E3A /* Roboto-Regular.ttf */,
 				6C0AB21DEA4A4732A78A3B63 /* Roboto-Thin.ttf */,
 				B63DE1A04CBF494DBDEFB4C8 /* Roboto-ThinItalic.ttf */,
+				BD85FFBFA86E449B9FBFBED4 /* SourceHanSerifSC-Bold.otf */,
+				B85B56EDCB154506AA91602B /* SourceHanSerifSC-ExtraLight.otf */,
+				F7C93FEE0CFC4FC6A7101381 /* SourceHanSerifSC-Heavy.otf */,
+				441F557CFDDA432C88AA4395 /* SourceHanSerifSC-Light.otf */,
+				45AB4F587EB44BCB96C7867C /* SourceHanSerifSC-Medium.otf */,
+				F1BB4E4FF5F846FEB4B1476A /* SourceHanSerifSC-Regular.otf */,
+				FD3E580E45914CFC9ACDAD55 /* SourceHanSerifSC-SemiBold.otf */,
+				43964255A2984F84AC396432 /* SourceHanSansCN-Bold.otf */,
+				5E2CF50EB26646338D981425 /* SourceHanSansCN-ExtraLight.otf */,
+				F3EEF290D46E4833A609C659 /* SourceHanSansCN-Heavy.otf */,
+				5121661C0F024912BA176B24 /* SourceHanSansCN-Light.otf */,
+				5290C44A60B24937A72C92A9 /* SourceHanSansCN-Medium.otf */,
+				8A098CA28E294F1EA5C5B4B7 /* SourceHanSansCN-Normal.otf */,
+				665DB3498131487CB5A710FE /* SourceHanSansCN-Regular.otf */,
 			);
 			name = Resources;
 			sourceTree = "<group>";
@@ -415,7 +454,6 @@
 				2D73301B7CF84DE4B910CF38 /* Manrope-Medium.ttf in Resources */,
 				1F93D0EE6CD0492690D819A9 /* Manrope-Regular.ttf in Resources */,
 				183E4D72604E4A00A7707002 /* Manrope-SemiBold.ttf in Resources */,
-				505EBF124A8D4745B9B9CB77 /* Manrope-VariableFont_wght.ttf in Resources */,
 				98E0741D8B2946F29CAD012B /* Montserrat-Black.ttf in Resources */,
 				BC782A1888B04BAF91F255AE /* Montserrat-BlackItalic.ttf in Resources */,
 				1BBF0F6F893148A8950EC6C7 /* Montserrat-Bold.ttf in Resources */,
@@ -452,6 +490,20 @@
 				388CF32C547E492ABBC55DB4 /* Roboto-Regular.ttf in Resources */,
 				91AB2A79AFDD4C07A06067CA /* Roboto-Thin.ttf in Resources */,
 				8133B92016A94E97AEC3A4ED /* Roboto-ThinItalic.ttf in Resources */,
+				3BA3F56EAA7A48458859D4C6 /* SourceHanSerifSC-Bold.otf in Resources */,
+				1272AED6F7AB4E46A2FBA744 /* SourceHanSerifSC-ExtraLight.otf in Resources */,
+				1BBD319C1CD2499085D83C46 /* SourceHanSerifSC-Heavy.otf in Resources */,
+				C6CC0C41E4164F34BBA9A28C /* SourceHanSerifSC-Light.otf in Resources */,
+				887AE2279256421E90180384 /* SourceHanSerifSC-Medium.otf in Resources */,
+				A232FFE2CFCD4AE9B190D762 /* SourceHanSerifSC-Regular.otf in Resources */,
+				9369C2074404417DB6BBEF06 /* SourceHanSerifSC-SemiBold.otf in Resources */,
+				4F897CA143DE4683B33AFBCF /* SourceHanSansCN-Bold.otf in Resources */,
+				76400220EFA141AEBB25BDB6 /* SourceHanSansCN-ExtraLight.otf in Resources */,
+				2A85F4E914704AEBB3AED753 /* SourceHanSansCN-Heavy.otf in Resources */,
+				900B0AF13926492AA5B81E83 /* SourceHanSansCN-Light.otf in Resources */,
+				D22B903B9822474DB2B50996 /* SourceHanSansCN-Medium.otf in Resources */,
+				7F51901FF93F41B5BEDFB12E /* SourceHanSansCN-Normal.otf in Resources */,
+				BD4E7BDB0F7A480CB2C81049 /* SourceHanSansCN-Regular.otf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

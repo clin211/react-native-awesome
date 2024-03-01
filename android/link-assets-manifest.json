@@ -30,10 +30,6 @@
       "sha1": "bddda86b0acdca04d282660d7c5175e30fd6b35c"
     },
     {
-      "path": "src/assets/fonts/Manrope/Manrope-VariableFont_wght.ttf",
-      "sha1": "79105b278f576486dda90139fe564b27b5960268"
-    },
-    {
       "path": "src/assets/fonts/Montserrat/Montserrat-Black.ttf",
       "sha1": "d6efdc8c120df6af92ad5836c150bcbdac58b44e"
     },
@@ -200,6 +196,62 @@
     {
       "path": "src/assets/fonts/Roboto/Roboto-ThinItalic.ttf",
       "sha1": "4c80f7c044a7e9a83865f625559e114ea4d7d2b1"
+    },
+    {
+      "path": "src/assets/fonts/SourceHanSerifSC/SourceHanSerifSC-Bold.otf",
+      "sha1": "f5efdae664cdee0f693f55af9cda18eac364a840"
+    },
+    {
+      "path": "src/assets/fonts/SourceHanSerifSC/SourceHanSerifSC-ExtraLight.otf",
+      "sha1": "4102f9665cadef2d0ccd6ec7c2b65a410690a9e1"
+    },
+    {
+      "path": "src/assets/fonts/SourceHanSerifSC/SourceHanSerifSC-Heavy.otf",
+      "sha1": "e88c17abfb22c0222509c3dff2204dc1f4d506f8"
+    },
+    {
+      "path": "src/assets/fonts/SourceHanSerifSC/SourceHanSerifSC-Light.otf",
+      "sha1": "4069ea07cdac10368d43cbde1176378091d1e724"
+    },
+    {
+      "path": "src/assets/fonts/SourceHanSerifSC/SourceHanSerifSC-Medium.otf",
+      "sha1": "58aa581843df746d5654452e7d2d9e23d601c771"
+    },
+    {
+      "path": "src/assets/fonts/SourceHanSerifSC/SourceHanSerifSC-Regular.otf",
+      "sha1": "69f11b2316baf910caeb8cf3cc9fb50105238c8e"
+    },
+    {
+      "path": "src/assets/fonts/SourceHanSerifSC/SourceHanSerifSC-SemiBold.otf",
+      "sha1": "7d321158c32b3a6909f0111a54da2321ce508e4d"
+    },
+    {
+      "path": "src/assets/fonts/SourceHanSansCN/SourceHanSansCN-Bold.otf",
+      "sha1": "b59fc60d95321a669d116d55c72959fc1882caeb"
+    },
+    {
+      "path": "src/assets/fonts/SourceHanSansCN/SourceHanSansCN-ExtraLight.otf",
+      "sha1": "54cb63b63db1cc64569059b25cb0c3a58ab80635"
+    },
+    {
+      "path": "src/assets/fonts/SourceHanSansCN/SourceHanSansCN-Heavy.otf",
+      "sha1": "72ef36e1c4eca6cce898bf580fd07c0871df2a3d"
+    },
+    {
+      "path": "src/assets/fonts/SourceHanSansCN/SourceHanSansCN-Light.otf",
+      "sha1": "af35d7ded49b4765d4db7f7bea2fd61136f1c70d"
+    },
+    {
+      "path": "src/assets/fonts/SourceHanSansCN/SourceHanSansCN-Medium.otf",
+      "sha1": "a8806560219afd79d7ea1775fa29bd054725e7c7"
+    },
+    {
+      "path": "src/assets/fonts/SourceHanSansCN/SourceHanSansCN-Normal.otf",
+      "sha1": "192bcc55c44c531da66359815767a3fe834c7ac1"
+    },
+    {
+      "path": "src/assets/fonts/SourceHanSansCN/SourceHanSansCN-Regular.otf",
+      "sha1": "a3fba1908c940e50eb1c5ff56227db34bd865bc7"
     }
   ]
 }
