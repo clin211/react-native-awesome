@@ -3,6 +3,7 @@ import {View, Text, Pressable, Appearance} from 'react-native';
 import {createStyleSheet, useStyles} from 'react-native-unistyles';
 import useCounterStore from '../stores/counter';
 import {NativeStackScreenProps} from '@react-navigation/native-stack';
+import Switch from '../components/Switch/index';
 import {RootStackParamList} from '../navigation/typing';
 
 const Home: FC<NativeStackScreenProps<RootStackParamList, 'Home'>> = ({navigation}) => {
@@ -39,6 +40,7 @@ const Home: FC<NativeStackScreenProps<RootStackParamList, 'Home'>> = ({navigatio
             >
                 <Text style={styles['press-text']}>Manrope</Text>
             </Pressable>
+            <Switch onToggle={() => {}} />
         </View>
     );
 };
