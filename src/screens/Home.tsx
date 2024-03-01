@@ -1,11 +1,15 @@
 import React, {FC} from 'react';
-import {View, Text, Pressable} from 'react-native';
+import {View, Text, Pressable, Appearance} from 'react-native';
 import {createStyleSheet, useStyles} from 'react-native-unistyles';
 import useCounterStore from '../stores/counter';
 
 const Home: FC = () => {
     const {styles} = useStyles(styleSheet);
     const {count, increment, decrement, reset} = useCounterStore(state => state);
+
+    const handlePressSwitchTheme = () => {
+        Appearance.setColorScheme(Appearance.getColorScheme() === 'light' ? 'dark' : 'light');
+    };
     return (
         <View style={styles.container}>
             <Text style={styles.text}>Home Screen</Text>
@@ -20,6 +24,12 @@ const Home: FC = () => {
             </Pressable>
             <Pressable onPress={() => reset()}>
                 <Text style={styles.text}>Reset</Text>
+            </Pressable>
+            <Pressable
+                style={({pressed}) => styles.press(pressed)}
+                onPress={handlePressSwitchTheme}
+            >
+                <Text style={styles['press-text']}>switch theme</Text>
             </Pressable>
         </View>
     );
@@ -54,5 +64,22 @@ const styleSheet = createStyleSheet(theme => ({
             xl: 200,
         },
         backgroundColor: theme.colors.primary,
+    },
+
+    press(pressed: boolean) {
+        return {
+            width: 160,
+            height: 44,
+            borderRadius: 22,
+            backgroundColor: theme.colors.primary,
+            justifyContent: 'center',
+            alignItems: 'center',
+            opacity: pressed ? 0.5 : 1,
+        };
+    },
+    'press-text': {
+        fontSize: 16,
+        color: 'white',
+        fontFamily: 'Manrope-SemiBold',
     },
 }));
