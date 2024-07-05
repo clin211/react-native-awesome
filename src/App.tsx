@@ -39,6 +39,7 @@ const App = () => {
         const colors = isDark ? dark : light;
         EStyleSheet.build(colors);
         setCurrentSystemTheme(dt => ({ ...dt, isDark, colors: isDark ? dark : light }));
+        StatusBar.setBarStyle(isDark ? 'light-content' : 'dark-content');
     }, [systemColorScheme]);
 
     useEffect(() => {
