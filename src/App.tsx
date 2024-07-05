@@ -1,5 +1,13 @@
 import React, { useEffect, useLayoutEffect, useState } from 'react';
-import { StatusBar, Platform, PermissionsAndroid, useColorScheme, Appearance } from 'react-native';
+import {
+    StatusBar,
+    Platform,
+    PermissionsAndroid,
+    useColorScheme,
+    Appearance,
+    AppState,
+    AppStateStatus,
+} from 'react-native';
 import {
     SafeAreaProvider,
     SafeAreaView,
@@ -16,6 +24,7 @@ import { firebaseState } from '@/utils/request-permission';
 import ThemeProvider, { defaultTheme } from './theme';
 import { dark, light } from './theme/color';
 import EStyleSheet from 'react-native-extended-stylesheet';
+import { SWRConfig } from 'swr';
 
 const App = () => {
     const [message, setMessage] = useState<FirebaseMessagingTypes.RemoteMessage[]>([]);
@@ -74,20 +83,56 @@ const App = () => {
     }, []);
 
     return (
-        <SafeAreaProvider initialMetrics={initialWindowMetrics}>
-            <GestureHandlerRootView style={{ flex: 1 }}>
-                <ThemeProvider value={currentSystemTheme}>
-                    <LoadingProvider>
-                        <ModalProvider stack={stack}>
-                            <Navigator />
-                            {Platform.OS === 'android' && (
-                                <SafeAreaView mode="margin" edges={['bottom']} />
-                            )}
-                        </ModalProvider>
-                    </LoadingProvider>
-                </ThemeProvider>
-            </GestureHandlerRootView>
-        </SafeAreaProvider>
+        <SWRConfig
+            value={{
+                provider: () => new Map(),
+                isOnline() {
+                    /* 自定义网络状态检测器 */
+                    return true;
+                },
+                isVisible() {
+                    /* 自定义 visibility 状态检测器 */
+                    return true;
+                },
+                initFocus(callback) {
+                    /* 向状态 provider 注册侦听器 */
+                    let appState = AppState.currentState;
+
+                    const onAppStateChange = (nextAppState: AppStateStatus) => {
+                        /* 如果正在从后台或非 active 模式恢复到 active 模式 */
+                        if (appState.match(/inactive|background/) && nextAppState === 'active') {
+                            callback();
+                        }
+                        appState = nextAppState;
+                    };
+
+                    // 订阅 app 状态更改事件
+                    const subscription = AppState.addEventListener('change', onAppStateChange);
+
+                    return () => {
+                        subscription.remove();
+                    };
+                },
+                initReconnect(callback) {
+                    /* 向状态 provider 注册侦听器 */
+                },
+            }}
+        >
+            <SafeAreaProvider initialMetrics={initialWindowMetrics}>
+                <GestureHandlerRootView style={{ flex: 1 }}>
+                    <ThemeProvider value={currentSystemTheme}>
+                        <LoadingProvider>
+                            <ModalProvider stack={stack}>
+                                <Navigator />
+                                {Platform.OS === 'android' && (
+                                    <SafeAreaView mode="margin" edges={['bottom']} />
+                                )}
+                            </ModalProvider>
+                        </LoadingProvider>
+                    </ThemeProvider>
+                </GestureHandlerRootView>
+            </SafeAreaProvider>
+        </SWRConfig>
     );
 };
 

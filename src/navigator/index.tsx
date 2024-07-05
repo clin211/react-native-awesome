@@ -29,6 +29,7 @@ import Settings from '@/screens/Settings';
 import { Pressable } from 'react-native';
 import EStyleSheet from 'react-native-extended-stylesheet';
 import Icon from 'react-native-vector-icons/FontAwesome6';
+import ModalScreen from '@/screens/ModalScreen';
 
 const RootNavigator = createStackNavigator<ScreenParams & MainTabScreenParams>();
 
@@ -93,6 +94,7 @@ const Navigator = () => {
                 <RootNavigator.Screen name="PrerenderHtml" component={PrerenderHtml} />
                 <RootNavigator.Screen name="ScrollablePagerView" component={ScrollablePagerView} />
                 <RootNavigator.Screen name="Settings" component={Settings} />
+                <RootNavigator.Screen name="ModalScreen" component={ModalScreen} />
             </RootNavigator.Navigator>
         </NavigationContainer>
     );
