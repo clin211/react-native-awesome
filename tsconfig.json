@@ -3,6 +3,8 @@
   "compilerOptions": {
     "target": "esnext",
     "module": "ESNext",
-    "jsx": "preserve"
+    "jsx": "preserve",
+    "noUnusedParameters": true,
+    "noUnusedLocals": true
   }
 }
