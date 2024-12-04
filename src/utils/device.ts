@@ -78,7 +78,7 @@ import {
     supported32BitAbisSync,
     supported64BitAbisSync,
     supportedAbisSync,
-    syncUniqueId
+    syncUniqueId,
 } from 'react-native-device-info';
 
 export async function getDeviceInfo() {
@@ -175,7 +175,7 @@ export async function getDeviceInfo() {
             syncUniqueId: Platform.OS === 'ios' ? await syncUniqueId() : getUniqueIdSync(), // 此方法适用于 iOS, 这将使 uniqueId 与 IDFV 同步，或设置新的随机字符串。在 iOS 上，它使用 DeviceUID uid 标识符。在其他平台上，只需调用本模块中的 getUniqueId()
             supportedMediaTypeList: getSupportedMediaTypeListSync(), // 此方法可获取支持的媒体编解码器列表。["audio/mpeg", "audio/mp4a-latm", "audio/mp4a-latm", "audio/mp4a-latm", "audio/mp4a-latm", "video/avc", "video/3gpp", "video/hevc", "video/mp4v-es", "video/av01", "video/avc", "video/avc", "video/avc", "video/avc"]
 
-        }
+        };
     } catch (error) {
         console.log('get device info error:', error);
     }
