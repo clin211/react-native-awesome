@@ -6,5 +6,17 @@
     "jsx": "preserve",
     "noUnusedParameters": true,
     "noUnusedLocals": true,
+    "lib": [
+      "ESNext"
+    ],
+    "types": [
+      "react-native",
+      "jest",
+      "node"
+    ],
+    "moduleResolution": "NodeNext",
+    "baseUrl": "./",
+    "allowSyntheticDefaultImports": true,
+    "esModuleInterop": true,
   }
 }

@@ -1,16 +1,32 @@
 import React, { useEffect } from 'react';
 import { View, Text, StatusBar, Pressable, StyleSheet } from 'react-native';
 import { getDeviceInfo } from './src/utils/device';
-import { createDeviceInfo } from './src/services/device';
-
+import { createDeviceInfo, fetchDeviceInfo } from './src/services/device';
 
 const App = () => {
 
   const handleOnPress = async () => {
-    const deviceInfo = await getDeviceInfo();
-    console.log('🚀 ~ handleOnPress ~ deviceInfo:', deviceInfo)
-    const res = await createDeviceInfo(deviceInfo);
-    console.log('handle on press data:', res);
+    try {
+      const deviceInfo = await getDeviceInfo();
+      const res = await createDeviceInfo(deviceInfo as any);
+      console.log('🚀 ~ handleOnPress ~ res:', res);
+    } catch (error) {
+      console.log('error:', error);
+    }
+  };
+
+  const handleOnPressGetDevices = async () => {
+    try {
+      const res = await fetchDeviceInfo({
+        'order': '',
+        'page': 1,
+        'pageSize': 20,
+      });
+      console.log('🚀 ~ handleOnPressGetDevices ~ res:', res);
+    } catch (error) {
+      console.log('🚀 ~ handleOnPressGetDevices ~ error:', error);
+
+    }
   };
 
   useEffect(() => {
@@ -19,16 +35,23 @@ const App = () => {
   }, []);
 
   return (
-    <View style={{ flex: 1, alignItems: 'flex-start' }}>
+    <View style={styles.container}>
       <Text>App</Text>
       <Pressable style={styles.btn} onPress={handleOnPress}>
         <Text style={styles.text}>Press</Text>
+      </Pressable>
+      <Pressable style={styles.btn} onPress={handleOnPressGetDevices}>
+        <Text style={styles.text}>Press GET devices</Text>
       </Pressable>
     </View>
   );
 };
 
 const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    alignItems: 'flex-start',
+  },
   btn: {
     borderRadius: 50,
     borderWidth: 1,
