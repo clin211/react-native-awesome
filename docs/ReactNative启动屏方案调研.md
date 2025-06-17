@@ -736,6 +736,7 @@ react-native-bootsplash 在 GitHub 上拥有 3.9k 的 Stars 和 270+ 的 Forks�
 - npm 版本：10.2.3
 - iOS 开发：Xcode 16.3 ，iOS 部署目标 18.3
 - Android 开发：Android SDK 21，Gradle 8.13
+- VS Code：1.101.0
 
 **项目结构要求：**
 
@@ -827,6 +828,42 @@ npm run ios
 npm run android
 ```
 
+![](https://files.mdnice.com/user/8213/6279fa41-c1f1-4c4c-b89e-680796a01851.png)
+
+从图中可以看到，iOS 启动失败，原因是创建项目的时候，依赖构建有问题，现在来重新构建一下：
+
+```sh
+# 1. 进入 iOS 目录
+cd ios
+
+# 2. 清理 CocoaPods 缓存
+pod deintegrate
+pod cache clean --all
+
+# 3. 重新安装 CocoaPods 依赖
+pod install --repo-update
+
+# 4. 如果还有问题，尝试
+rm -rf Pods Podfile.lock
+pod install
+```
+
+> 上面这个执行过程会根据网络情况而导致安装时间不一样，可能比较久（12min~30min）！
+
+安装完成后如下图：
+
+![](https://files.mdnice.com/user/8213/9fa45954-6a3a-45f1-ae35-948c59135640.png)
+
+再继续运行 `npm run ios` 命令，安装到真机上的效果如下：
+
+![](https://files.mdnice.com/user/8213/92e58ea9-165e-4d49-899f-790c5109bfd6.png)
+
+ios 启动成功之后，准备开始启动 Android 端，运行 `npm run android`：
+
+![](https://files.mdnice.com/user/8213/7561d081-a6a6-43e9-bf26-9dc5f6b0823a.png)
+
+![](https://files.mdnice.com/user/8213/1f43d90a-3b27-489d-abbd-42ed5017fe55.jpg)
+
 #### 4.2.2 安装与基础配置
 
 **步骤1：安装依赖包**
@@ -842,24 +879,25 @@ yarn add react-native-bootsplash
 cd ios && pod install && cd ..
 ```
 
+![](https://files.mdnice.com/user/8213/4e2ea084-cfb7-4357-8088-6ecd0e53f5fd.png)
+
 **步骤2：准备启动屏资源**
 
-首先准备启动屏所需的图片资源：
+![图片来自官网截图](https://files.mdnice.com/user/8213/fb09d7c0-165f-47cf-a656-1eb6e126bdbd.png)
 
-```bash
-# 创建资源目录
-mkdir -p assets/images
+首先准备启动屏所需的图片资源，如果在公司，这部分的资源可以找设计团队要，我们这里是演示示例，我就用 AI 来生成所需的 icon 资源了，我这里用的是 [iconikai](https://www.iconikai.com/)，打开之后（如上图），使用 Google 授权登录就可以开始已使用了，首次使用，它会送 10 credits，慎用！用完要付费。
 
-# 准备 logo 图片（建议使用 PNG 或 SVG 格式）
-# logo.png - 主要标识图片
-# brand.png - 品牌图片（可选）
-```
+登录之后选择 App Icon Generate，然后就填写提示词，颜色颜色、大小及风格和数量，然后点击 Generate 按钮，生成成功之后下载图片，如下图（箭头所指）：
 
-**资源规格建议：**
+![](https://files.mdnice.com/user/8213/e9eae37c-f2fc-4825-8a8f-88f4675116a1.png)
 
-- Logo 图片：建议尺寸 200x200px，PNG 格式，透明背景
-- 品牌图片：建议尺寸 300x100px，PNG 格式
-- 文件大小：单个文件不超过 500KB
+它会生成各个尺寸的 icon 和高清原图，如下：
+
+![](https://files.mdnice.com/user/8213/601f4adb-4c3a-44cf-b3ed-8c37ee366eb0.png)
+
+> 在 Android 和 iOS 中，其实可以直接使用这些资源，但是项目中用到了 bootsplash 的 CLI 工具，所以这里就只用高清原图就好了，我会这些资源也放进项目中！
+
+将高清高清原图放到 `src/assets/images` 中，并命名为 `logo.png`，建议使用 PNG 或 SVG 格式。
 
 **步骤3：使用 CLI 生成资源文件**
 
@@ -867,22 +905,24 @@ mkdir -p assets/images
 
 ```bash
 # 基础命令（生成基本的启动屏资源）
-npx react-native-bootsplash generate assets/images/logo.png \
+npx react-native-bootsplash generate src/assets/images/logo.png \
+  --platforms=android,ios \
   --background=ffffff \
   --logo-width=100 \
   --assets-output=assets/bootsplash
 
 # 完整命令（包含深色模式和品牌图片）
-npx react-native-bootsplash generate assets/images/logo.png \
+npx react-native-bootsplash generate src/assets/images/logo.png \
   --platforms=android,ios \
   --background=ffffff \
   --logo-width=100 \
   --assets-output=assets/bootsplash \
-  --brand=assets/images/brand.png \
+  --license-key=xxxxx \
+  --brand=svgs/light-brand.svg \
   --brand-width=80 \
-  --dark-background=000000 \
-  --dark-logo=assets/images/logo-dark.png \
-  --dark-brand=assets/images/brand-dark.png
+  --dark-background=ffffff \
+  --dark-logo=src/assets/images/logo.png \
+  --dark-brand=src/assets/images/logo.png
 ```
 
 **CLI 参数说明：**
@@ -894,11 +934,25 @@ npx react-native-bootsplash generate assets/images/logo.png \
 - `--brand`: 品牌图片路径
 - `--dark-*`: 深色模式相关配置
 
+文章中使用的基础命令生成的，如下图：
+
+```sh
+npx react-native-bootsplash generate src/assets/images/logo.png \
+  --platforms=android,ios \
+  --background=ffffff \
+  --logo-width=100 \
+  --assets-output=assets/bootsplash
+```
+
+执行后效果图如下：
+
+![](https://files.mdnice.com/user/8213/1c844edc-ed34-4661-92a0-566d19b38cbc.png)
+
 #### 4.2.3 iOS 平台配置
 
 **步骤1：修改 AppDelegate 文件**
 
-对于 React Native 0.79+ 版本，编辑 `ios/YourApp/AppDelegate.swift`：
+编辑 `ios/BootSplashScreen/AppDelegate.swift`：
 
 ```swift
 import ReactAppDependencyProvider
@@ -918,45 +972,34 @@ class ReactNativeDelegate: RCTDefaultReactNativeFactoryDelegate {
 }
 ```
 
-对于 React Native 0.77+ 版本：
-
-```swift
-import ReactAppDependencyProvider
-import RNBootSplash // ⬅️ 添加导入
-
-// ...
-
-@main
-class AppDelegate: RCTAppDelegate {
-  
-  // ...
-  
-  // ⬇️ 重写此方法
-  override func customize(_ rootView: RCTRootView!) {
-    super.customize(rootView)
-    RNBootSplash.initWithStoryboard("BootSplash", rootView: rootView) // ⬅️ 初始化启动屏
-  }
-}
-```
-
+> 下面两个步骤 bootsplash CLI 会自动修改，不过我们要验证！
 **步骤2：验证 Storyboard 文件**
 
 CLI 工具会自动生成 `ios/YourApp/BootSplash.storyboard` 文件，确保该文件已正确添加到 Xcode 项目中。
 
+![](https://files.mdnice.com/user/8213/3e6866f4-d8ec-45d4-bee5-702fa1ca80c3.png)
+
+![](https://files.mdnice.com/user/8213/67bbfb93-b20e-48c3-8d36-6488fae88607.png)
+
 **步骤3：配置 Info.plist**
 
-确保 `ios/YourApp/Info.plist` 中包含正确的启动屏配置：
+确保 `ios/BootSplashScreen/Info.plist` 中包含正确的启动屏配置：
 
 ```xml
 <key>UILaunchStoryboardName</key>
 <string>BootSplash</string>
 ```
 
+如下图：
+![](https://files.mdnice.com/user/8213/d6ea042e-8553-4a88-9a8e-60ca76e1ccea.png)
+
+配置完成之后，就来验证以下结果，看看结果怎么样，执行命令 `npm run start --force-cache` 和 `npm run ios`，执行后倒是没啥问题，但是一直显示，是因为我们的隐藏逻辑没有完善！下面将 Android 一起配置好后再完善这块逻辑。
+
 #### 4.2.4 Android 平台配置
 
 **步骤1：修改 MainActivity 文件**
 
-编辑 `android/app/src/main/java/com/yourapp/MainActivity.kt`：
+编辑 `android/app/src/main/java/com/bootsplashscreen/MainActivity.kt`：
 
 ```kotlin
 // ⬇️ 添加必要的导入
@@ -976,50 +1019,76 @@ class MainActivity : ReactActivity() {
 }
 ```
 
+> 下面两步也是 bootsplash CLI 自动完成！基本上不用调整。
+
 **步骤2：验证资源文件**
 
 CLI 工具会自动生成以下 Android 资源文件，请确认它们存在：
 
-```
-android/app/src/main/res/
-├── drawable-*/bootsplash_logo.png
-├── values/colors.xml
-├── values/styles.xml
-└── values-night/ (如果启用深色模式)
-    ├── colors.xml
-    └── styles.xml
-```
+![](https://files.mdnice.com/user/8213/ffa9b26e-e1d8-4af5-bd73-942c92a4d609.png)
 
 **步骤3：配置 AndroidManifest.xml**
 
 确保 `android/app/src/main/AndroidManifest.xml` 中的 MainActivity 使用正确的主题：
 
 ```xml
-<activity
-  android:name=".MainActivity"
-  android:theme="@style/BootTheme"
-  android:exported="true"
-  android:launchMode="singleTask">
-  <!-- ... -->
-</activity>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android">
+  <uses-permission android:name="android.permission.INTERNET" />
+
+  <application
+    android:name=".MainApplication"
+    android:label="@string/app_name"
+    android:icon="@mipmap/ic_launcher"
+    android:roundIcon="@mipmap/ic_launcher_round"
+    android:allowBackup="false"
+    android:theme="@style/AppTheme"
+    android:supportsRtl="true">
+    <activity
+      android:name=".MainActivity"
+      android:label="@string/app_name"
+      android:configChanges="keyboard|keyboardHidden|orientation|screenLayout|screenSize|smallestScreenSize|uiMode"
+      android:launchMode="singleTask"
+      android:windowSoftInputMode="adjustResize"
+      android:exported="true"
+      android:theme="@style/BootTheme">
+      <intent-filter>
+        <action android:name="android.intent.action.MAIN" />
+        <category android:name="android.intent.category.LAUNCHER" />
+      </intent-filter>
+    </activity>
+  </application>
+</manifest>
 ```
 
-#### 4.2.5 JavaScript 代码集成
-
-**步骤1：基础隐藏实现**
-
-在应用的主组件中添加启动屏控制逻辑：
+在应用的主组件中添加启动屏控制逻辑，将根目录下的 App.tsx 文件移入 src 目录下，并添加下面隐藏逻辑的实现：
 
 ```typescript
-import React, { useEffect } from 'react';
-import { Text, View } from 'react-native';
+/**
+ * Sample React Native App
+ * https://github.com/facebook/react-native
+ *
+ * @format
+ */
+
+import { useEffect } from 'react';
+import { StatusBar, StyleSheet, useColorScheme, View } from 'react-native'
+import { NewAppScreen } from '@react-native/new-app-screen';
 import BootSplash from 'react-native-bootsplash';
 
-const App = () => {
+// 模拟应用初始化过程
+const performAppInitialization = async () => {
+  // 模拟异步操作
+  await new Promise(resolve => setTimeout(resolve, 2000));
+};
+
+function App() {
+  const isDarkMode = useColorScheme() === 'dark';
+
   useEffect(() => {
     const init = async () => {
       // 执行应用初始化任务
       // 例如：加载用户数据、初始化第三方SDK等
+      // 使用定时器模拟异步操作
       await performAppInitialization();
     };
 
@@ -1031,22 +1100,27 @@ const App = () => {
   }, []);
 
   return (
-    <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
-      <Text>My awesome app</Text>
+    <View style={styles.container}>
+      <StatusBar barStyle={isDarkMode ? 'light-content' : 'dark-content'} />
+      <NewAppScreen templateFileName="App.tsx" />
     </View>
   );
-};
+}
 
-// 模拟应用初始化过程
-const performAppInitialization = async () => {
-  // 模拟异步操作
-  await new Promise(resolve => setTimeout(resolve, 2000));
-};
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+  },
+});
 
 export default App;
 ```
 
-**步骤2：与 React Navigation 集成**
+上面的代码就实现了启动屏的效果！（因为要视屏录制，视频资源有大小限制，所以这里就不录制了，可以运行源码查看效果。）
+
+上面的代码在 [https://github.com/clin211/react-native-awesome/tree/BootSplashScreen](https://github.com/clin211/react-native-awesome/tree/BootSplashScreen) 可以完整的查看！
+
+### 4.3 react-native-bootsplash 与 react-navigation 结合
 
 如果项目使用 React Navigation，推荐在导航容器准备就绪时隐藏启动屏：
 
@@ -1213,118 +1287,9 @@ ls -la android/app/src/main/res/values/styles.xml
 
 ## 五、总结与建议
 
-### 5.1 方案总结
+### 5.1 未来展望
 
-#### 5.1.1 技术方案总结
-
-通过本次深入调研，我们对 React Native 启动屏解决方案有了全面的认识：
-
-**主流方案对比结果：**
-
-1. **react-native-splash-screen**
-   - 适合：简单需求、老项目维护
-   - 局限：功能有限、维护停滞、不支持新架构
-   - 评分：5.9/10
-
-2. **react-native-bootsplash**
-   - 适合：现代化项目、功能完整需求、长期维护
-   - 优势：功能丰富、技术先进、持续维护
-   - 评分：8.6/10
-
-**技术架构优势：**
-
-- **新架构兼容**：完全支持 React Native 新架构，为未来升级提供保障
-- **现代化实现**：使用 Objective-C++/Kotlin 实现，代码质量高
-- **完整功能集**：深色模式、自定义动画、CLI 工具等一应俱全
-- **优秀体验**：开发体验好，文档完善，社区活跃
-
-#### 5.1.2 实现效果评估
-
-基于 `react-native-bootsplash` 的实现方案能够达到以下效果：
-
-**功能完整性：** ⭐⭐⭐⭐⭐
-
-- ✅ 支持 iOS/Android/Web 三端
-- ✅ 深色模式自动适配
-- ✅ 自定义动画效果
-- ✅ React Navigation 无缝集成
-- ✅ TypeScript 完整支持
-
-**性能表现：** ⭐⭐⭐⭐⭐
-
-- ✅ 启动时间：1-2秒内完成初始化
-- ✅ 内存占用：< 10MB 额外开销
-- ✅ 包体积：< 2MB 增量
-- ✅ 动画流畅：60fps 流畅动画
-
-**开发体验：** ⭐⭐⭐⭐⭐
-
-- ✅ CLI 工具自动化配置
-- ✅ 详细文档和示例
-- ✅ 完整的错误处理
-- ✅ 测试友好的 Mock 支持
-
-**维护成本：** ⭐⭐⭐⭐⭐
-
-- ✅ 配置简单，维护成本低
-- ✅ 社区活跃，问题响应快
-- ✅ 持续更新，兼容性好
-- ✅ 向前兼容，升级平滑
-
-#### 5.1.3 成本收益分析
-
-**投入成本分析：**
-
-| 成本项目 | 预估工时                 | 说明                         |
-| -------- | ------------------------ | ---------------------------- |
-| 学习成本 | 0.5人天                  | 阅读文档、了解API            |
-| 实施成本 | 1-2人天                  | 安装配置、资源准备、代码集成 |
-| 测试成本 | 0.5人天                  | 功能测试、兼容性测试         |
-| 维护成本 | 0.1人天/月               | 日常维护、版本更新           |
-| **总计** | **2-3人天 + 0.1人天/月** | **一次性投入 + 持续维护**    |
-
-**收益价值评估：**
-
-| 收益维度         | 量化指标               | 业务价值                     |
-| ---------------- | ---------------------- | ---------------------------- |
-| **用户体验提升** | 启动体验评分 +30%      | 提升用户满意度，降低流失率   |
-| **开发效率提升** | 配置时间减少 50%       | 加速开发进度，降低人力成本   |
-| **维护成本降低** | 维护工时减少 40%       | 减少技术债务，提升团队效率   |
-| **技术债务减少** | 兼容性问题减少 80%     | 降低未来升级风险和成本       |
-| **品牌价值提升** | 应用评分提升 0.2-0.5分 | 增强品牌形象，提升市场竞争力 |
-
-**ROI 计算：**
-
-- 一次性投入：2-3人天（约 ¥4,000-6,000）
-- 年度收益：开发效率提升 + 维护成本降低（约 ¥20,000-30,000）
-- **投资回报率：300-500%**
-
-### 5.2 未来展望
-
-#### 5.2.1 可能的优化方向
-
-**1. 性能优化**
-
-- **预加载优化**：实现关键资源的预加载机制
-- **动画优化**：使用原生动画引擎提升动画性能
-- **内存优化**：优化资源加载策略，减少内存占用
-- **启动时间优化**：通过代码分割和懒加载进一步缩短启动时间
-
-**2. 功能扩展**
-
-- **动态配置**：支持远程配置启动屏内容
-- **A/B 测试**：支持不同启动屏方案的 A/B 测试
-- **数据统计**：集成启动屏相关的用户行为统计
-- **个性化定制**：根据用户偏好动态调整启动屏样式
-
-**3. 开发体验优化**
-
-- **可视化配置**：开发可视化的启动屏配置工具
-- **实时预览**：支持开发过程中的实时预览功能
-- **自动化测试**：完善自动化测试覆盖率
-- **性能监控**：集成性能监控和报警机制
-
-#### 5.2.2 新技术趋势
+#### 5.1.1 新技术趋势
 
 **1. React Native 新架构**
 
@@ -1346,7 +1311,7 @@ ls -la android/app/src/main/res/values/styles.xml
 - **个性化体验**：基于用户行为和偏好的个性化启动体验
 - **无障碍访问**：更好的无障碍访问支持
 
-#### 5.2.3 持续改进建议
+#### 5.1.2 持续改进建议
 
 **1. 技术层面**
 

@@ -24,6 +24,6 @@ class MainActivity : ReactActivity() {
 
   override fun onCreate(savedInstanceState: Bundle?) {
     RNBootSplash.init(this, R.style.BootTheme) // ⬅️ 初始化启动屏
-    super.onCreate(savedInstanceState) // 注意：如果使用 react-native-screens，这里应该是 super.onCreate(null)
+    super.onCreate(null) // 注意：如果使用 react-native-screens，这里应该是 super.onCreate(null)
   }
 }
